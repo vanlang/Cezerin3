@@ -1,0 +1,14 @@
+{
+  "name": "theme",
+  "version": "0.1.0",
+  "description": "Theme for cezein3.",
+  "main": "dist/index.js",
+  "license": "Unlicense",
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "rc-slider": "^8.6.1",
+    "react-image-gallery": "^0.8.7",
+    "react-image-lightbox": "^4.6.0",
+    "react-lazyload": "^2.3.0"
+  }
+}
