@@ -14,3 +14,9 @@ are accepted and appreciated.
 
 Issues sections have from small things to large things you can contribute always,
 you can also ask for new features, errors, any other thing you can do as a community member....
+
+If you like to ask for fair price to solve issues or add new features,
+Make a comment or a new issue reagarding details about that and a fair price,
+If it's accepted, you'll be given the job and once the your pull request been accepted,
+The payment will be transffered from organization open collective to a possible
+means of transfer and will put on the ledger.
