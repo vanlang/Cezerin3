@@ -42,14 +42,14 @@ class ProductOptionsService {
       .collection("products")
       .updateOne(
         {
-          _id: productObjectID
+          _id: productObjectID,
         },
         {
           $pull: {
             options: {
-              id: optionObjectID
-            }
-          }
+              id: optionObjectID,
+            },
+          },
         }
       )
       .then(res => this.getOptions(productId))
@@ -83,7 +83,7 @@ class ProductOptionsService {
       .updateOne(
         {
           _id: productObjectID,
-          "options.id": optionObjectID
+          "options.id": optionObjectID,
         },
         { $set: optionData }
       )
@@ -97,7 +97,7 @@ class ProductOptionsService {
       control: parse.getString(data.control),
       required: parse.getBooleanIfValid(data.required, true),
       position: parse.getNumberIfPositive(data.position) || 0,
-      values: []
+      values: [],
     }
 
     if (option.control === "") {

@@ -16,7 +16,7 @@ const DynamicEditControl = ({
   fieldName,
   label,
   options,
-  properties
+  properties,
 }) => {
   const hasOptions = options && Array.isArray(options) && options.length > 0
   const hasProperties =

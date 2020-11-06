@@ -60,7 +60,7 @@ const getOrderStateIcons = order => {
         className="material-icons"
       >
         not_interested
-      </FontIcon>
+      </FontIcon>,
     ]
   }
 
@@ -73,7 +73,7 @@ const getOrderStateIcons = order => {
         className="material-icons"
       >
         done
-      </FontIcon>
+      </FontIcon>,
     ]
   }
 

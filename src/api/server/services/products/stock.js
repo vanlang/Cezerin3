@@ -67,7 +67,7 @@ class ProductStockService {
       const productQuantity = product.stock_quantity || 0
       const newProductQuantity = productQuantity + quantity
       await ProductsService.updateProduct(productId, {
-        stock_quantity: newProductQuantity
+        stock_quantity: newProductQuantity,
       })
 
       if (this.isVariant(variantId)) {
@@ -78,7 +78,7 @@ class ProductStockService {
         )
         const newVariantQuantity = variantQuantity + quantity
         await ProductVariantsService.updateVariant(productId, variantId, {
-          stock_quantity: newVariantQuantity
+          stock_quantity: newVariantQuantity,
         })
       }
     }
@@ -109,7 +109,7 @@ class ProductStockService {
   async getOrder(orderId) {
     const filter = {
       _id: new ObjectID(orderId),
-      draft: false
+      draft: false,
     }
 
     const order = await db.collection("orders").findOne(filter)

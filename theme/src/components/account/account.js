@@ -46,7 +46,7 @@ class Account extends React.Component {
       profileSection: 1,
       profileEdit: false,
       reinitialized: false,
-      cartLayer: false
+      cartLayer: false,
     }
   }
 
@@ -144,7 +144,7 @@ class Account extends React.Component {
             .country !== null
             ? this.props.customerProperties.customer_settings.addresses[0]
                 .country
-            : ""
+            : "",
       },
       shipping_address: {
         address1:
@@ -228,12 +228,12 @@ class Account extends React.Component {
             .country !== null
             ? this.props.customerProperties.customer_settings.addresses[0]
                 .country
-            : ""
-      }
+            : "",
+      },
     })
     this.setState({ reinitialized: true })
     this.setState({
-      emailValues: this.props.customerProperties.customer_settings.email
+      emailValues: this.props.customerProperties.customer_settings.email,
     })
   }
 
@@ -396,7 +396,7 @@ class Account extends React.Component {
       customerProperties,
       cartlayerBtnInitialized,
       cart,
-      initialValues
+      initialValues,
     } = this.props
 
     Lscache.flushExpired()
@@ -427,7 +427,7 @@ class Account extends React.Component {
       return (
         <Redirect
           to={{
-            pathname: "/login"
+            pathname: "/login",
           }}
         />
       )
@@ -441,7 +441,7 @@ class Account extends React.Component {
       return (
         <Redirect
           to={{
-            pathname: "/checkout"
+            pathname: "/checkout",
           }}
         />
       )
@@ -587,7 +587,7 @@ class Account extends React.Component {
       }
 
       tableStyle = {
-        align: "center"
+        align: "center",
       }
 
       return (
@@ -1008,5 +1008,5 @@ class Account extends React.Component {
 export default reduxForm({
   form: "Account",
   enableReinitialize: true,
-  keepDirtyOnReinitialize: true
+  keepDirtyOnReinitialize: true,
 })(Account)

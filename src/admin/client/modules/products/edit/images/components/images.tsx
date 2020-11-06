@@ -11,7 +11,7 @@ export default class ProductImages extends React.Component {
     super(props)
     this.state = {
       openEdit: false,
-      imageData: null
+      imageData: null,
     }
   }
 
@@ -35,7 +35,7 @@ export default class ProductImages extends React.Component {
 
   handleAltChange = (event, value) => {
     const newImageData = Object.assign({}, this.state.imageData, {
-      alt: value
+      alt: value,
     })
     this.setState({ imageData: newImageData })
   }
@@ -47,7 +47,7 @@ export default class ProductImages extends React.Component {
       onImageDelete,
       onImageSort,
       onImageUpload,
-      uploadingImages
+      uploadingImages,
     } = this.props
     const { openEdit, imageData } = this.state
     const alt = imageData ? imageData.alt : ""
@@ -63,7 +63,7 @@ export default class ProductImages extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.handleEditSave}
-      />
+      />,
     ]
 
     return (

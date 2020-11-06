@@ -10,7 +10,7 @@ export default class Gallery extends React.Component {
     super(props)
     this.state = {
       lightboxIsOpen: false,
-      lightboxPhotoIndex: 0
+      lightboxPhotoIndex: 0,
     }
   }
 
@@ -41,7 +41,7 @@ export default class Gallery extends React.Component {
           themeSettings.previewThumbnailWidth
         ),
         originalAlt: image.alt,
-        thumbnailAlt: image.alt
+        thumbnailAlt: image.alt,
       }))
 
       const originalImages = images.map(image => image.url)
@@ -82,13 +82,13 @@ export default class Gallery extends React.Component {
                 this.setState({
                   lightboxPhotoIndex:
                     (lightboxPhotoIndex + originalImages.length - 1) %
-                    originalImages.length
+                    originalImages.length,
                 })
               }
               onMoveNextRequest={() =>
                 this.setState({
                   lightboxPhotoIndex:
-                    (lightboxPhotoIndex + 1) % originalImages.length
+                    (lightboxPhotoIndex + 1) % originalImages.length,
                 })
               }
             />

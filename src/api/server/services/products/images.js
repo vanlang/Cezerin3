@@ -114,17 +114,17 @@ class ProductImagesService {
             id: new ObjectID(),
             alt: "",
             position: 99,
-            filename: file.name
+            filename: file.name,
           }
 
           uploadedFiles.push(imageData)
 
           await db.collection("products").updateOne(
             {
-              _id: productObjectID
+              _id: productObjectID,
             },
             {
-              $push: { images: imageData }
+              $push: { images: imageData },
             }
           )
         }
@@ -151,7 +151,7 @@ class ProductImagesService {
     return db.collection("products").updateOne(
       {
         _id: productObjectID,
-        "images.id": imageObjectID
+        "images.id": imageObjectID,
       },
       { $set: imageData }
     )

@@ -33,7 +33,7 @@ class Form extends React.Component {
       pristine,
       submitting,
       isSaving,
-      initialValues
+      initialValues,
     } = this.props
 
     let statusId = null
@@ -85,5 +85,5 @@ class Form extends React.Component {
 export default reduxForm({
   form: "FormOrderStatus",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(Form)

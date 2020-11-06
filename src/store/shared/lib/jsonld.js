@@ -19,7 +19,7 @@ const getBreadcrumbsForProduct = (product, categories) => {
     return {
       "@context": "http://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: breadcrumbs
+      itemListElement: breadcrumbs,
     }
   } else {
     return null
@@ -42,7 +42,7 @@ const getBreadcrumbsForCategory = (currentCategoryId, categories) => {
     return {
       "@context": "http://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: breadcrumbs
+      itemListElement: breadcrumbs,
     }
   } else {
     return null
@@ -54,8 +54,8 @@ const getBreadcrumbItem = (url, name, position) => ({
   position: position,
   item: {
     "@id": url,
-    name: name
-  }
+    name: name,
+  },
 })
 
 const getProduct = (product, settings) => {
@@ -76,8 +76,8 @@ const getProduct = (product, settings) => {
       availability:
         product.stock_status === "available"
           ? "http://schema.org/InStock"
-          : "http://schema.org/OutOfStock"
-    }
+          : "http://schema.org/OutOfStock",
+    },
   }
 }
 

@@ -14,92 +14,92 @@ const menuItems = [
   {
     title: messages.drawer_home,
     url: "/admin/",
-    icon: "home"
+    icon: "home",
   },
   {
     title: messages.drawer_products,
     url: "/admin/products",
-    icon: "local_offer"
+    icon: "local_offer",
   },
   {
     title: messages.drawer_orders,
     url: "/admin/orders",
-    icon: "shopping_cart"
+    icon: "shopping_cart",
   },
   {
     title: messages.drawer_customers,
     url: "/admin/customers",
-    icon: "person"
+    icon: "person",
   },
   {
     title: messages.settings_pages,
     url: "/admin/pages",
-    icon: "description"
+    icon: "description",
   },
   {
     title: messages.files,
     url: "/admin/files",
-    icon: "folder"
+    icon: "folder",
   },
   {
     title: "-",
-    url: "settings"
+    url: "settings",
   },
   {
     title: messages.drawer_settings,
     url: "/admin/settings",
-    icon: "settings"
+    icon: "settings",
   },
   {
     title: messages.apps,
     url: "/admin/apps",
-    icon: "apps"
+    icon: "apps",
   },
   {
     title: messages.drawer_logout,
     url: "/admin/logout",
-    icon: "exit_to_app"
-  }
+    icon: "exit_to_app",
+  },
 ]
 
 const styles = {
   link: {
     display: "block",
     color: "rgba(0,0,0,0.82)",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   linkActive: {
     color: "rgb(25, 118, 210)",
-    backgroundColor: "rgba(0,0,0,0.05)"
+    backgroundColor: "rgba(0,0,0,0.05)",
   },
   icon: {
     left: 12,
-    color: "rgba(0,0,0,0.54)"
+    color: "rgba(0,0,0,0.54)",
   },
   iconActive: {
     left: 12,
-    color: "inherit"
+    color: "inherit",
   },
   itemInnerDiv: {
     paddingLeft: 76,
     fontSize: 14,
     fontWeight: 500,
-    color: "inherit"
+    color: "inherit",
   },
   item: {
-    color: "inherit"
+    color: "inherit",
   },
   appBar: {
     backgroundColor: "#fff",
-    paddingLeft: 28
+    paddingLeft: 28,
   },
   appBarTitle: {
     color: "#777",
-    fontSize: 18
+    fontSize: 18,
   },
   menu: {
-    paddingTop: 0
-  }
+    paddingTop: 0,
+  },
 }
 
 const DrawerMenu = ({ open, onClose, currentUrl }) => {

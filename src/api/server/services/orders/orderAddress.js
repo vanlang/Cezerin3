@@ -23,7 +23,7 @@ class OrderAddressService {
       .collection("orders")
       .updateOne(
         {
-          _id: orderObjectID
+          _id: orderObjectID,
         },
         { $set: billing_address }
       )
@@ -45,7 +45,7 @@ class OrderAddressService {
       .collection("orders")
       .updateOne(
         {
-          _id: orderObjectID
+          _id: orderObjectID,
         },
         { $set: shipping_address }
       )

@@ -30,7 +30,7 @@ const Sort = ({ defaultSort, currentSort, setSort }) => (
 Sort.propTypes = {
   defaultSort: PropTypes.string.isRequired,
   currentSort: PropTypes.string.isRequired,
-  setSort: PropTypes.func.isRequired
+  setSort: PropTypes.func.isRequired,
 }
 
 export default Sort

@@ -28,7 +28,7 @@ class EmailSettings extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Paper className="paper-box" zDepth={1}>
@@ -104,5 +104,5 @@ class EmailSettings extends React.Component {
 
 export default reduxForm({
   form: "EmailSettingsForm",
-  enableReinitialize: false
+  enableReinitialize: false,
 })(EmailSettings)

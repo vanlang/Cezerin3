@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
-    paymentMethods: state.settings.paymentMethods
+    paymentMethods: state.settings.paymentMethods,
   }
 }
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoad: () => {
       dispatch(fetchPaymentMethods())
-    }
+    },
   }
 }
 

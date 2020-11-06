@@ -7,13 +7,13 @@ class FooterMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isActive: false
+      isActive: false,
     }
   }
 
   isActiveToggle = () => {
     this.setState({
-      isActive: !this.state.isActive
+      isActive: !this.state.isActive,
     })
   }
 
@@ -87,7 +87,7 @@ const Contacts = ({ contacts }) => {
 
 export default class Footer extends React.PureComponent {
   static propTypes = {
-    settings: PropTypes.shape({}).isRequired
+    settings: PropTypes.shape({}).isRequired,
   }
 
   render() {

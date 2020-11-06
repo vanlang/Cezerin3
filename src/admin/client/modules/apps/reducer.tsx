@@ -6,7 +6,7 @@ const initialState = {
   service: null,
   serviceSettings: null,
   serviceLogs: null,
-  loadingEnableDisableService: false
+  loadingEnableDisableService: false,
 }
 
 export default (state = initialState, action) => {
@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { serviceSettings: null })
     case t.SERVICE_SETTINGS_RECEIVE:
       return Object.assign({}, state, {
-        serviceSettings: action.serviceSettings
+        serviceSettings: action.serviceSettings,
       })
     case t.SERVICE_LOGS_RECEIVE:
       return Object.assign({}, state, { serviceLogs: action.serviceLogs })

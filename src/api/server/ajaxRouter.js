@@ -21,7 +21,7 @@ const STORE_ACCESS_TOKEN = jwt.sign(TOKEN_PAYLOAD, serverSettings.jwtSecretKey)
 
 const api = new CezerinClient({
   apiBaseUrl: serverSettings.apiBaseUrl,
-  apiToken: STORE_ACCESS_TOKEN
+  apiToken: STORE_ACCESS_TOKEN,
 })
 
 const DEFAULT_CACHE_CONTROL = "public, max-age=60"
@@ -33,7 +33,7 @@ const getCartCookieOptions = isHttps => ({
   httpOnly: true,
   signed: true,
   secure: isHttps,
-  sameSite: "strict"
+  sameSite: "strict",
 })
 
 const getIP = req => {
@@ -81,7 +81,7 @@ const fillCartItems = cartResponse => {
       .list({
         ids: productIds,
         fields:
-          "images,enabled,stock_quantity,variants,path,stock_backorder,stock_preorder"
+          "images,enabled,stock_quantity,variants,path,stock_backorder,stock_preorder",
       })
       .then(({ status, json }) => {
         const newCartItem = cart.items.map(cartItem =>
@@ -97,21 +97,25 @@ const fillCartItems = cartResponse => {
 ajaxRouter.get("/products", (req, res) => {
   const filter = req.query
   filter.enabled = true
-  api.products.list(filter).then(({ status, json }) =>
-    res
-      .status(status)
-      .header("Cache-Control", PRODUCTS_CACHE_CONTROL)
-      .send(json)
-  )
+  api.products
+    .list(filter)
+    .then(({ status, json }) =>
+      res
+        .status(status)
+        .header("Cache-Control", PRODUCTS_CACHE_CONTROL)
+        .send(json)
+    )
 })
 
 ajaxRouter.get("/products/:id", (req, res) => {
-  api.products.retrieve(req.params.id).then(({ status, json }) =>
-    res
-      .status(status)
-      .header("Cache-Control", PRODUCT_DETAILS_CACHE_CONTROL)
-      .send(json)
-  )
+  api.products
+    .retrieve(req.params.id)
+    .then(({ status, json }) =>
+      res
+        .status(status)
+        .header("Cache-Control", PRODUCT_DETAILS_CACHE_CONTROL)
+        .send(json)
+    )
 })
 
 ajaxRouter.get("/cart", (req, res) => {
@@ -134,7 +138,7 @@ ajaxRouter.post("/reset-password", async (req, res, next) => {
     const data = {
       status: false,
       id: null,
-      verified: false
+      verified: false,
     }
 
     const userId =
@@ -143,10 +147,10 @@ ajaxRouter.post("/reset-password", async (req, res, next) => {
         : AuthHeader.decodeUserLoginAuth(req.body.id).userId.userId
 
     const filter = {
-      id: userId
+      id: userId,
     }
     const customerDraft = {
-      password: hash
+      password: hash,
     }
 
     // update customer password after checking customer id
@@ -179,10 +183,10 @@ ajaxRouter.post("/reset-password", async (req, res, next) => {
 
 ajaxRouter.post("/forgot-password", async (req, res, next) => {
   const filter = {
-    email: req.body.email.toLowerCase()
+    email: req.body.email.toLowerCase(),
   }
   const data = {
-    status: true
+    status: true,
   }
 
   // send forgot password email
@@ -191,7 +195,7 @@ ajaxRouter.post("/forgot-password", async (req, res, next) => {
     const [emailTemp] = await Promise.all([
       EmailTemplatesService.getEmailTemplate(
         `forgot_password_${serverSettings.language}`
-      )
+      ),
     ])
     await handlebars.registerHelper("forgot_password_link", obj => {
       const url = `${serverSettings.storeBaseUrl}${
@@ -207,17 +211,17 @@ ajaxRouter.post("/forgot-password", async (req, res, next) => {
     })
     const [bodyTemplate, settings] = await Promise.all([
       handlebars.compile(emailTemp.body),
-      SettingsService.getSettings()
+      SettingsService.getSettings(),
     ])
     await Promise.all([
       mailer.send({
         to: req.body.email,
         subject: `${emailTemp.subject} ${settings.store_name}`,
         html: bodyTemplate({
-          shop_name: settings.store_name
-        })
+          shop_name: settings.store_name,
+        }),
       }),
-      res.send(data)
+      res.send(data),
     ])
   }
 
@@ -237,7 +241,7 @@ ajaxRouter.post("/customer-account", async (req, res, next) => {
     token: "",
     authenticated: false,
     customer_settings: null,
-    order_statuses: null
+    order_statuses: null,
   }
 
   if (req.body.token) {
@@ -249,7 +253,7 @@ ajaxRouter.post("/customer-account", async (req, res, next) => {
       } catch (erro) {}
 
       const filter = {
-        customer_id: userId
+        customer_id: userId,
       }
 
       // retrieve customer data
@@ -276,7 +280,7 @@ ajaxRouter.post("/login", async (req, res, next) => {
     loggedin_failed: false,
     customer_settings: null,
     order_statuses: null,
-    cartLayer: req.body.cartLayer !== undefined ? req.body.cartLayer : false
+    cartLayer: req.body.cartLayer !== undefined ? req.body.cartLayer : false,
   }
   // check if customer exists in database and grant or denie access
   await db
@@ -310,7 +314,7 @@ ajaxRouter.post("/login", async (req, res, next) => {
             customerData.customer_settings.password = "*******"
 
             const filter = {
-              customer_id: json.id
+              customer_id: json.id,
             }
             api.orders.list(filter).then(({ status, json }) => {
               customerData.order_statuses = json
@@ -330,10 +334,10 @@ ajaxRouter.post("/register", async (req, res, next) => {
   const data = {
     status: false,
     isRightToken: true,
-    isCustomerSaved: false
+    isCustomerSaved: false,
   }
   const filter = {
-    email: req.body.email
+    email: req.body.email,
   }
 
   // check if url params contains token
@@ -395,7 +399,7 @@ ajaxRouter.post("/register", async (req, res, next) => {
         first_name: firstName,
         last_name: lastName,
         email: eMail.toLowerCase(),
-        password: hashPassword
+        password: hashPassword,
       }
 
       // create new customer in database
@@ -415,7 +419,7 @@ ajaxRouter.post("/register", async (req, res, next) => {
       const [emailTemp] = await Promise.all([
         EmailTemplatesService.getEmailTemplate(
           `register_doi_${serverSettings.language}`
-        )
+        ),
       ])
       await handlebars.registerHelper("register_doi_link", obj => {
         const url = `${serverSettings.storeBaseUrl}${
@@ -431,7 +435,7 @@ ajaxRouter.post("/register", async (req, res, next) => {
       })
       const [bodyTemplate, settings] = await Promise.all([
         handlebars.compile(emailTemp.body),
-        SettingsService.getSettings()
+        SettingsService.getSettings(),
       ])
       const tokenConcatString = `${AuthHeader.encodeUserLoginAuth(
         req.body.first_name
@@ -445,10 +449,10 @@ ajaxRouter.post("/register", async (req, res, next) => {
           to: req.body.email,
           subject: `${emailTemp.subject} ${settings.store_name}`,
           html: bodyTemplate({
-            shop_name: settings.store_name
-          })
+            shop_name: settings.store_name,
+          }),
         }),
-        res.status("200").send(data)
+        res.status("200").send(data),
       ])
     }
     return false
@@ -489,7 +493,7 @@ ajaxRouter.put("/customer-account", async (req, res, next) => {
     token: "",
     authenticated: false,
     customer_settings: null,
-    order_statuses: null
+    order_statuses: null,
   }
   const customerDraftObj = {
     full_name: `${customerData.first_name} ${customerData.last_name}`,
@@ -497,10 +501,10 @@ ajaxRouter.put("/customer-account", async (req, res, next) => {
     last_name: customerData.last_name,
     email: customerData.email.toLowerCase(),
     password: hashPassword,
-    addresses: [customerData.billing_address, customerData.shipping_address]
+    addresses: [customerData.billing_address, customerData.shipping_address],
   }
   const filter = {
-    email: customerData.email
+    email: customerData.email,
   }
   // update customer profile and addresses
   await api.customers.list(filter).then(({ status, json }) => {
@@ -514,7 +518,7 @@ ajaxRouter.put("/customer-account", async (req, res, next) => {
     await db.collection("customers").updateMany(
       { _id: ObjectID(userId) },
       {
-        $set: customerDraftObj
+        $set: customerDraftObj,
       },
       { ordered: false },
       async (error, result) => {
@@ -540,8 +544,8 @@ ajaxRouter.put("/customer-account", async (req, res, next) => {
           {
             $set: {
               shipping_address: customerData.shipping_address,
-              billing_address: customerData.billing_address
-            }
+              billing_address: customerData.billing_address,
+            },
           },
           (error, result) => {
             if (error) {
@@ -579,9 +583,9 @@ ajaxRouter.post("/cart/items", (req, res, next) => {
       landing_url: req.signedCookies.landing_url,
       browser: {
         ip: getIP(req),
-        user_agent: getUserAgent(req)
+        user_agent: getUserAgent(req),
       },
-      shipping_address: {}
+      shipping_address: {},
     }
 
     api.settings
@@ -663,7 +667,7 @@ ajaxRouter.put("/cart/checkout", (req, res, next) => {
               : `${serverSettings.storeBaseUrl}${items.path},`
         })
         const data = {
-          landing_url: paths
+          landing_url: paths,
         }
         api.orders.update(order_id, data)
         res.clearCookie("order_id")
@@ -678,7 +682,7 @@ ajaxRouter.put("/cart", async (req, res) => {
   const cartData = req.body
   const {
     shipping_address: shippingAddress,
-    billing_address: billingAddress
+    billing_address: billingAddress,
   } = cartData
   const orderId = req.signedCookies.order_id
   if (orderId) {
@@ -741,19 +745,13 @@ ajaxRouter.post("/cart/charge", async (req, res) => {
 
 ajaxRouter.get("/pages", (req, res) => {
   api.pages.list(req.query).then(({ status, json }) => {
-    res
-      .status(status)
-      .header("Cache-Control", DEFAULT_CACHE_CONTROL)
-      .send(json)
+    res.status(status).header("Cache-Control", DEFAULT_CACHE_CONTROL).send(json)
   })
 })
 
 ajaxRouter.get("/pages/:id", (req, res) => {
   api.pages.retrieve(req.params.id).then(({ status, json }) => {
-    res
-      .status(status)
-      .header("Cache-Control", DEFAULT_CACHE_CONTROL)
-      .send(json)
+    res.status(status).header("Cache-Control", DEFAULT_CACHE_CONTROL).send(json)
   })
 })
 
@@ -784,7 +782,7 @@ ajaxRouter.get("/sitemap", async (req, res) => {
 ajaxRouter.get("/payment_methods", (req, res) => {
   const filter = {
     enabled: true,
-    order_id: req.signedCookies.order_id
+    order_id: req.signedCookies.order_id,
   }
   api.paymentMethods.list(filter).then(({ status, json }) => {
     const methods = json.map(item => {
@@ -799,7 +797,7 @@ ajaxRouter.get("/payment_methods", (req, res) => {
 ajaxRouter.get("/shipping_methods", (req, res) => {
   const filter = {
     enabled: true,
-    order_id: req.signedCookies.order_id
+    order_id: req.signedCookies.order_id,
   }
   api.shippingMethods.list(filter).then(({ status, json }) => {
     res.status(status).send(json)

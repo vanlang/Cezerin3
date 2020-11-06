@@ -14,7 +14,7 @@ export default ({
   setActive,
   setDiscontinued,
   setOnSale,
-  setStock
+  setStock,
 }) => {
   return (
     <div className={style.filter}>

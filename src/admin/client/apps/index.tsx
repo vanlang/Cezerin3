@@ -9,5 +9,5 @@ export default [
   SiteVerificationApp,
   JivositeApp,
   FacebookSDKApp,
-  FacebookCustomerChatApp
+  FacebookCustomerChatApp,
 ]

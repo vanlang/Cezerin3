@@ -267,5 +267,5 @@ tinymce.addI18n("kab", {
   Tools: "Ifecka",
   "Powered by {0}": "Iteddu s {0} ",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"
+    "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help",
 })

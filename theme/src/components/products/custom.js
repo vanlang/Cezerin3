@@ -7,7 +7,7 @@ export default class CustomProducts extends React.Component {
   static propTypes = {
     ids: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string)
+      PropTypes.arrayOf(PropTypes.string),
     ]),
     sku: PropTypes.string,
     sort: PropTypes.string,
@@ -17,7 +17,7 @@ export default class CustomProducts extends React.Component {
     attributes: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired
+        value: PropTypes.string.isRequired,
       })
     ),
     price_from: PropTypes.number,
@@ -31,7 +31,7 @@ export default class CustomProducts extends React.Component {
     columnCountOnTablet: PropTypes.number,
     columnCountOnDesktop: PropTypes.number,
     columnCountOnWidescreen: PropTypes.number,
-    columnCountOnFullhd: PropTypes.number
+    columnCountOnFullhd: PropTypes.number,
   }
 
   static defaultProps = {
@@ -50,11 +50,11 @@ export default class CustomProducts extends React.Component {
     columnCountOnTablet: 3,
     columnCountOnDesktop: 4,
     columnCountOnWidescreen: 4,
-    columnCountOnFullhd: 4
+    columnCountOnFullhd: 4,
   }
 
   state = {
-    products: []
+    products: [],
   }
 
   componentDidMount() {
@@ -80,7 +80,7 @@ export default class CustomProducts extends React.Component {
     attributes,
     price_from,
     price_to,
-    on_sale
+    on_sale,
   }) => {
     const filter = {
       ids,
@@ -95,7 +95,7 @@ export default class CustomProducts extends React.Component {
       fields:
         "path,id,name,category_id,category_name,sku,images,enabled,discontinued,stock_status,stock_quantity,price,on_sale,regular_price,attributes,tags",
       limit: limit || 4,
-      offset: 0
+      offset: 0,
     }
 
     if (attributes && Array.isArray(attributes) && attributes.length > 0) {
@@ -109,7 +109,7 @@ export default class CustomProducts extends React.Component {
       .then(({ json }) => {
         if (!this.isCancelled) {
           this.setState({
-            products: json.data
+            products: json.data,
           })
         }
       })
@@ -126,7 +126,7 @@ export default class CustomProducts extends React.Component {
       columnCountOnTablet,
       columnCountOnDesktop,
       columnCountOnWidescreen,
-      columnCountOnFullhd
+      columnCountOnFullhd,
     } = this.props
 
     const { products } = this.state

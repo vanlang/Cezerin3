@@ -16,7 +16,7 @@ export default ({
   setDelivered,
   setPaid,
   setHold,
-  setDraft
+  setDraft,
 }) => {
   return (
     <div className={style.filter}>

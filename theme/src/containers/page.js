@@ -6,7 +6,7 @@ import PageList from "../components/pageList"
 
 const PageContainer = props => {
   const {
-    state: { pageDetails }
+    state: { pageDetails },
   } = props
   const pageListTag = themeSettings.page_list_tag
   const pageListTagDefined = pageListTag && pageListTag.length > 0
@@ -30,7 +30,7 @@ const PageContainer = props => {
             <div
               className="page-content"
               dangerouslySetInnerHTML={{
-                __html: pageDetails.content
+                __html: pageDetails.content,
               }}
             />
             {showPageList && (
@@ -45,8 +45,8 @@ const PageContainer = props => {
 
 PageContainer.propTypes = {
   state: PropTypes.shape({
-    pageDetails: PropTypes.shape({})
-  }).isRequired
+    pageDetails: PropTypes.shape({}),
+  }).isRequired,
 }
 
 export default PageContainer

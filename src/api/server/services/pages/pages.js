@@ -33,7 +33,7 @@ class PagesService {
             "-"
           )
             ? -1
-            : 1
+            : 1,
         }))
       )
     } else {
@@ -104,7 +104,7 @@ class PagesService {
   getValidDocumentForInsert(data) {
     let page = {
       is_system: false,
-      date_created: new Date()
+      date_created: new Date(),
     }
 
     page.content = parse.getString(data.content)
@@ -131,7 +131,7 @@ class PagesService {
     } else {
       return this.getSinglePage(id).then(prevPageData => {
         let page = {
-          date_updated: new Date()
+          date_updated: new Date(),
         }
 
         if (data.content !== undefined) {

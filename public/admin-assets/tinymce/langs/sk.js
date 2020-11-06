@@ -262,5 +262,5 @@ tinymce.addI18n("sk", {
   Table: "Tabu\u013eka",
   Tools: "N\u00e1stroje",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Textov\u00e9 pole. Stla\u010dte ALT-F9 pre zobrazenie menu, ALT-F10 pre zobrazenie panela n\u00e1strojov, ALT-0 pre n\u00e1povedu."
+    "Textov\u00e9 pole. Stla\u010dte ALT-F9 pre zobrazenie menu, ALT-F10 pre zobrazenie panela n\u00e1strojov, ALT-0 pre n\u00e1povedu.",
 })

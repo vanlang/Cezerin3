@@ -5,7 +5,7 @@ import Form from "./components/form"
 const mapStateToProps = state => {
   return {
     initialValues: state.settings.themeSettings,
-    settingsSchema: state.settings.themeSettingsSchema
+    settingsSchema: state.settings.themeSettingsSchema,
   }
 }
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
     },
     onSubmit: values => {
       dispatch(updateThemeSettings(values))
-    }
+    },
   }
 }
 

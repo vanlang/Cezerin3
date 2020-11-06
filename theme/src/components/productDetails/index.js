@@ -28,7 +28,7 @@ export default class ProductDetails extends React.Component {
       selectedOptions: {},
       selectedVariant: null,
       isAllOptionsSelected: false,
-      quantity: 1
+      quantity: 1,
     }
 
     this.onOptionChange = this.onOptionChange.bind(this)
@@ -80,7 +80,7 @@ export default class ProductDetails extends React.Component {
 
     let item = {
       product_id: product.id,
-      quantity: quantity
+      quantity: quantity,
     }
 
     if (selectedVariant) {

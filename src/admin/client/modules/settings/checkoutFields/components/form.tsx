@@ -12,7 +12,7 @@ import { RadioButton } from "material-ui/RadioButton"
 
 const radioButtonStyle = {
   marginTop: 14,
-  marginBottom: 14
+  marginBottom: 14,
 }
 
 class CheckoutFieldForm extends React.Component {
@@ -32,7 +32,7 @@ class CheckoutFieldForm extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Paper className="paper-box" zDepth={1}>
@@ -91,5 +91,5 @@ class CheckoutFieldForm extends React.Component {
 
 export default reduxForm({
   form: "CheckoutFieldForm",
-  enableReinitialize: true
+  enableReinitialize: true,
 })(CheckoutFieldForm)

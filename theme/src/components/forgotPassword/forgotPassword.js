@@ -173,5 +173,5 @@ class ForgotPassword extends React.Component {
   }
 }
 export default reduxForm({
-  form: "ForgotPassword"
+  form: "ForgotPassword",
 })(ForgotPassword)

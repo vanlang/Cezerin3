@@ -6,11 +6,11 @@ import FontIcon from "material-ui/FontIcon"
 
 const styles = {
   selectedItem: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)"
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
   },
   innerItem: {
-    paddingLeft: 55
-  }
+    paddingLeft: 55,
+  },
 }
 
 const FolderIcon = <FontIcon className="material-icons">folder</FontIcon>

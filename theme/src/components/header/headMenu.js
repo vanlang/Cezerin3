@@ -6,14 +6,14 @@ class HeadMenuItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isActive: false
+      isActive: false,
     }
   }
 
   onMouseEnterHandler = () => {
     if (!this.props.isMobile && this.props.level === 1) {
       this.setState({
-        isActive: true
+        isActive: true,
       })
     }
   }
@@ -21,14 +21,14 @@ class HeadMenuItem extends React.Component {
   onMouseLeaveHandler = () => {
     if (!this.props.isMobile && this.props.level === 1) {
       this.setState({
-        isActive: false
+        isActive: false,
       })
     }
   }
 
   isActiveToggle = () =>
     this.setState({
-      isActive: !this.state.isActive
+      isActive: !this.state.isActive,
     })
 
   render() {
@@ -94,7 +94,7 @@ export default class HeadMenu extends React.PureComponent {
         name: item.text,
         path: item.url,
         id: item.id || "",
-        parent_id: item.parent_id || null
+        parent_id: item.parent_id || null,
       }))
     }
     const menuItems = [...categories, ...addItemsToMenu]

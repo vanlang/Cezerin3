@@ -7,7 +7,7 @@ import {
   updateOrderItem,
   updateShippingAddress,
   clearOrderDetails,
-  checkoutOrder
+  checkoutOrder,
 } from "../actions"
 import OrderDetails from "./components/details"
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     settings: state.settings.settings,
     order: state.orders.editOrder,
-    processingCheckout: state.orders.processingCheckout
+    processingCheckout: state.orders.processingCheckout,
   }
 }
 
@@ -52,14 +52,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           comments: order.comments,
           note: order.note,
           email: order.email,
-          mobile: order.mobile
+          mobile: order.mobile,
         })
       )
     },
     onCheckout: () => {
       const { orderId } = ownProps.match.params
       dispatch(checkoutOrder(orderId))
-    }
+    },
   }
 }
 

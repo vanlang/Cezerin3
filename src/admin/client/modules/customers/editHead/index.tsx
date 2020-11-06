@@ -6,7 +6,7 @@ import Buttons from "./components/buttons"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    customer: state.customers.editCustomer
+    customer: state.customers.editCustomer,
   }
 }
 
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onDelete: () => {
       dispatch(deleteCurrentCustomer())
       ownProps.history.push("/admin/customers")
-    }
+    },
   }
 }
 

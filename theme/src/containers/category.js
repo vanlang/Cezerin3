@@ -55,7 +55,7 @@ const CategoryHero = ({ categoryDetails, categories }) => (
 
 CategoryHero.propTypes = {
   categoryDetails: PropTypes.shape({}).isRequired,
-  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 }
 
 const CategoryContainer = props => {
@@ -73,8 +73,8 @@ const CategoryContainer = props => {
       productsHasMore,
       categories,
       loadingProducts,
-      loadingMoreProducts
-    }
+      loadingMoreProducts,
+    },
   } = props
 
   const filterAttributesSummary = getFilterAttributesSummary(productFilter)
@@ -155,8 +155,8 @@ CategoryContainer.propTypes = {
     categoryDetails: PropTypes.shape({}),
     categories: PropTypes.arrayOf(PropTypes.shape({})),
     loadingProducts: PropTypes.bool,
-    loadingMoreProducts: PropTypes.bool
-  }).isRequired
+    loadingMoreProducts: PropTypes.bool,
+  }).isRequired,
 }
 
 export default CategoryContainer

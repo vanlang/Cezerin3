@@ -39,7 +39,7 @@ const Scopes = [
   "read:settings",
   "write:settings",
   "read:files",
-  "write:files"
+  "write:files",
 ]
 
 const validate = values => {
@@ -59,7 +59,7 @@ class EditTokenForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showRevokeDialog: false
+      showRevokeDialog: false,
     }
   }
 
@@ -79,7 +79,7 @@ class EditTokenForm extends React.Component {
       initialValues,
       tokenId,
       newToken,
-      onDelete
+      onDelete,
     } = this.props
     const isTokenAdded = !!newToken
     const isAdd = tokenId === null || tokenId === undefined
@@ -163,5 +163,5 @@ class EditTokenForm extends React.Component {
 export default reduxForm({
   form: "EditTokenForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(EditTokenForm)

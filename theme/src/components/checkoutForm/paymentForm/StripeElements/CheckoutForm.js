@@ -6,24 +6,24 @@ class CheckoutForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      inProgress: false
+      inProgress: false,
     }
     this.submit = this.submit.bind(this)
   }
 
   async submit(ev) {
     this.setState({
-      inProgress: true
+      inProgress: true,
     })
     const { formSettings, onCreateToken, stripe } = this.props
     const { token } = await stripe.createToken({
-      name: formSettings.email
+      name: formSettings.email,
     })
     if (token && token !== "undefined") {
       onCreateToken(token.id)
     } else {
       this.setState({
-        inProgress: false
+        inProgress: false,
       })
     }
   }

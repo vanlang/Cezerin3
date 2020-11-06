@@ -13,7 +13,7 @@ const AppDescription = ({
   description,
   coverUrl,
   developer,
-  enabled
+  enabled,
 }) => (
   <div style={{ maxWidth: 720, width: "100%" }}>
     <Paper className="paper-box" zDepth={1}>

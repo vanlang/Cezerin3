@@ -170,5 +170,5 @@ var APPLICATION_DATA_CURRENCIES = {
   ZAR: "South African Rand",
   ZMK: "Zambian Kwacha (pre-2013)",
   ZMW: "Zambian Kwacha",
-  ZWL: "Zimbabwean Dollar"
+  ZWL: "Zimbabwean Dollar",
 }

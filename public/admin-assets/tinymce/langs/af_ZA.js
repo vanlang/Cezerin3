@@ -234,5 +234,5 @@ tinymce.addI18n("af_ZA", {
   Tools: "Gereedskap",
   View: "Formaat",
   Table: "Tabel",
-  Format: "Formateer"
+  Format: "Formateer",
 })

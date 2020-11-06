@@ -233,5 +233,5 @@ tinymce.addI18n("cy", {
   Tools: "Offer",
   View: "Dangos",
   Table: "Tabl",
-  Format: "Fformat"
+  Format: "Fformat",
 })

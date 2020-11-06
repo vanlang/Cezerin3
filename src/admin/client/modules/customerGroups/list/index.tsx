@@ -6,7 +6,7 @@ import List from "../components/list"
 const mapStateToProps = state => {
   return {
     items: state.customerGroups.items,
-    selectedId: state.customerGroups.selectedId
+    selectedId: state.customerGroups.selectedId,
   }
 }
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
     onSelect: groupId => {
       dispatch(selectGroup(groupId))
       dispatch(fetchCustomers())
-    }
+    },
   }
 }
 

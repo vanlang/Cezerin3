@@ -266,5 +266,5 @@ tinymce.addI18n("da", {
   Tools: "V\u00e6rkt\u00f8j",
   "Powered by {0}": "Drevet af",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Rich Text omr\u00e5de. Tryk ALT-F9 for menu. Tryk ALT-F10 for toolbar. Tryk ALT-0 for hj\u00e6lp"
+    "Rich Text omr\u00e5de. Tryk ALT-F9 for menu. Tryk ALT-F10 for toolbar. Tryk ALT-0 for hj\u00e6lp",
 })

@@ -37,7 +37,7 @@ module.exports = {
     user: "",
     pass: "",
     fromName: "Cezerin",
-    fromAddress: "vam@test.com"
+    fromAddress: "vam@test.com",
   },
   // key to sign tokens
   jwtSecretKey: "-", // must change on .env file as well
@@ -67,5 +67,5 @@ module.exports = {
   // for production: recommended salRounds > 12
   saltRounds: process.env.SALT_ROUNDS || 12,
 
-  developerMode: true
+  developerMode: true,
 }

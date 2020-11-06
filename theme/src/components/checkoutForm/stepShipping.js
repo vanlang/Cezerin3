@@ -54,13 +54,13 @@ class CheckoutStepShipping extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      billingAsShipping: true
+      billingAsShipping: true,
     }
   }
 
   onChangeBillingAsShipping = event => {
     this.setState({
-      billingAsShipping: event.target.checked
+      billingAsShipping: event.target.checked,
     })
   }
 
@@ -84,7 +84,7 @@ class CheckoutStepShipping extends React.Component {
       show,
       isReadOnly,
       showPaymentForm,
-      onEdit
+      onEdit,
     } = this.props
 
     const hideBillingAddress = settings.hide_billing_address === true
@@ -310,5 +310,5 @@ class CheckoutStepShipping extends React.Component {
 export default reduxForm({
   form: "CheckoutStepShipping",
   enableReinitialize: true,
-  keepDirtyOnReinitialize: false
+  keepDirtyOnReinitialize: false,
 })(CheckoutStepShipping)

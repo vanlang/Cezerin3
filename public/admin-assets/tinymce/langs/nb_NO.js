@@ -266,5 +266,5 @@ tinymce.addI18n("nb_NO", {
   Tools: "Verkt\u00f8y",
   "Powered by {0}": "Redigert med {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Tekstredigering. Tast ALT-F9 for meny. Tast ALT-F10 for verkt\u00f8ys-rader. Tast ALT-0 for hjelp."
+    "Tekstredigering. Tast ALT-F9 for meny. Tast ALT-F10 for verkt\u00f8ys-rader. Tast ALT-0 for hjelp.",
 })

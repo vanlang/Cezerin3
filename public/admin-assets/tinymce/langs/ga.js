@@ -262,5 +262,5 @@ tinymce.addI18n("ga", {
   Table: "T\u00e1bla",
   Tools: "Uirlis\u00ed",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Limist\u00e9ar M\u00e9ith-Th\u00e9acs. Br\u00faigh ALT-F9 le haghaidh roghchl\u00e1ir, ALT-F10 le haghaidh barra uirlis\u00ed, agus ALT-0 le c\u00fanamh a fh\u00e1il"
+    "Limist\u00e9ar M\u00e9ith-Th\u00e9acs. Br\u00faigh ALT-F9 le haghaidh roghchl\u00e1ir, ALT-F10 le haghaidh barra uirlis\u00ed, agus ALT-0 le c\u00fanamh a fh\u00e1il",
 })

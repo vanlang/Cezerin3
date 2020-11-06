@@ -6,7 +6,7 @@ const mapStateToProps = state => {
   return {
     files: state.files.files,
     uploading: state.files.uploading,
-    settings: state.settings.settings
+    settings: state.settings.settings,
   }
 }
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     },
     onUpload: form => {
       dispatch(uploadFiles(form))
-    }
+    },
   }
 }
 

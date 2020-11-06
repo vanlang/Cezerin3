@@ -6,7 +6,7 @@ import CheckoutForm from "../components/checkoutForm"
 
 const CheckoutContainer = props => {
   const {
-    state: { pageDetails }
+    state: { pageDetails },
   } = props
 
   return (
@@ -37,8 +37,8 @@ const CheckoutContainer = props => {
 
 CheckoutContainer.propTypes = {
   state: PropTypes.shape({
-    pageDetails: PropTypes.shape({})
-  }).isRequired
+    pageDetails: PropTypes.shape({}),
+  }).isRequired,
 }
 
 export default CheckoutContainer

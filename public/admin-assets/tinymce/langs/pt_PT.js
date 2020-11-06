@@ -267,5 +267,5 @@ tinymce.addI18n("pt_PT", {
   Tools: "Ferramentas",
   "Powered by {0}": "Criado em {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Caixa de texto formatado. Pressione ALT-F9 para exibir o menu. Pressione ALT-F10 para exibir a barra de ferramentas. Pressione ALT-0 para exibir a ajuda"
+    "Caixa de texto formatado. Pressione ALT-F9 para exibir o menu. Pressione ALT-F10 para exibir a barra de ferramentas. Pressione ALT-0 para exibir a ajuda",
 })

@@ -10,7 +10,7 @@ export default class ForgotPasswordForm extends React.Component {
   handleFormSubmit = values => {
     this.props.forgotPassword({
       email: values.email,
-      history: this.props.history
+      history: this.props.history,
     })
   }
 
@@ -19,7 +19,7 @@ export default class ForgotPasswordForm extends React.Component {
 
     const {
       checkoutInputClass = "checkout-field",
-      checkoutButtonClass = "checkout-button"
+      checkoutButtonClass = "checkout-button",
     } = themeSettings
 
     return (

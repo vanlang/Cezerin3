@@ -6,7 +6,7 @@ import {
   selectProduct,
   deselectProduct,
   selectAllProduct,
-  deselectAllProduct
+  deselectAllProduct,
 } from "../actions"
 import List from "./components/list"
 
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     selected: state.products.selected,
     loadingItems: state.products.loadingItems,
     hasMore: state.products.hasMore,
-    totalCount: state.products.totalCount
+    totalCount: state.products.totalCount,
   }
 }
 
@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loadMore: () => {
       dispatch(fetchMoreProducts())
-    }
+    },
   }
 }
 

@@ -4,39 +4,39 @@ import messages from "lib/text"
 
 const receiveAccount = account => ({
   type: t.ACCOUNT_RECEIVE,
-  account
+  account,
 })
 
 const receiveServices = services => ({
   type: t.SERVICES_RECEIVE,
-  services
+  services,
 })
 
 const receiveService = service => ({
   type: t.SERVICE_RECEIVE,
-  service
+  service,
 })
 
 const requestEnableDisableService = () => ({
-  type: t.SERVICE_ENABLE_REQUEST
+  type: t.SERVICE_ENABLE_REQUEST,
 })
 
 const receiveEnableDisableService = () => ({
-  type: t.SERVICE_ENABLE_RECEIVE
+  type: t.SERVICE_ENABLE_RECEIVE,
 })
 
 const requestServiceSettings = () => ({
-  type: t.SERVICE_SETTINGS_REQUEST
+  type: t.SERVICE_SETTINGS_REQUEST,
 })
 
 const receiveServiceSettings = serviceSettings => ({
   type: t.SERVICE_SETTINGS_RECEIVE,
-  serviceSettings
+  serviceSettings,
 })
 
 const receiveServiceLogs = serviceLogs => ({
   type: t.SERVICE_LOGS_RECEIVE,
-  serviceLogs
+  serviceLogs,
 })
 
 export const fetchAccount = () => (dispatch, getState) => {

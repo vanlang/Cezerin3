@@ -7,7 +7,7 @@ import Buttons from "./components/buttons"
 const mapStateToProps = (state, ownProps) => {
   return {
     search: state.orders.filter.search,
-    selectedCount: state.orders.selected.length
+    selectedCount: state.orders.selected.length,
   }
 }
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onCreate: () => {
       dispatch(createOrder(ownProps.history))
-    }
+    },
   }
 }
 

@@ -2,7 +2,7 @@ import React from "react"
 import {
   SortableContainer,
   SortableElement,
-  arrayMove
+  arrayMove,
 } from "react-sortable-hoc"
 import settings from "lib/settings"
 import style from "./style.css"
@@ -44,7 +44,7 @@ const Gallery = ({
   onImageSort,
   onImageUpload,
   uploading,
-  onImageEdit
+  onImageEdit,
 }) => {
   if (images && images.length > 0) {
     return (

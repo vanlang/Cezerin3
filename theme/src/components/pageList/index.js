@@ -6,7 +6,7 @@ export default class CustomPageList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      pages: []
+      pages: [],
     }
   }
 
@@ -21,12 +21,12 @@ export default class CustomPageList extends React.Component {
   fetchData = ({ tags, sort }) => {
     const filter = {
       tags: tags,
-      sort: sort
+      sort: sort,
     }
 
     api.ajax.pages.list(filter).then(({ status, json }) => {
       this.setState({
-        pages: json
+        pages: json,
       })
     })
   }

@@ -4,7 +4,7 @@ import {
   updatePaymentMethod,
   fetchShippingMethods,
   createPaymentMethod,
-  receivePaymentMethod
+  receivePaymentMethod,
 } from "../actions"
 import Form from "./components/form"
 
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     gateway: gateway,
     settings: state.settings.settings,
     initialValues: state.settings.paymentMethodEdit,
-    shippingMethods: state.settings.shippingMethods
+    shippingMethods: state.settings.shippingMethods,
   }
 }
 
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(createPaymentMethod(method))
         ownProps.history.push("/admin/settings/payments")
       }
-    }
+    },
   }
 }
 

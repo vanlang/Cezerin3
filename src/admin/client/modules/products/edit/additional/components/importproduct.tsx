@@ -31,7 +31,7 @@ class ProductImport extends React.Component {
       deleteCounter: 1,
       uploadedProducts: 0,
       errors: 0,
-      dashboardsettings: true
+      dashboardsettings: true,
     }
     this.loader = React.createRef()
     this.fetchData = this.fetchData.bind(this)
@@ -48,7 +48,7 @@ class ProductImport extends React.Component {
     this.loader.current.style.setProperty("display", "inline-block")
     const filter = {
       fields:
-        "id,name,category_id,category_ids,category_name,sku,images,enabled,discontinued,stock_status,stock_quantity,price,on_sale,regular_price,url"
+        "id,name,category_id,category_ids,category_name,sku,images,enabled,discontinued,stock_status,stock_quantity,price,on_sale,regular_price,url",
     }
 
     api.products
@@ -109,7 +109,7 @@ class ProductImport extends React.Component {
         regular_price: null,
         name: null,
         sku: null,
-        path: null
+        path: null,
       }
       if (this.state.product_items[i] !== undefined) {
         productDraft.category_name = this.state.product_items[i][
@@ -147,7 +147,7 @@ class ProductImport extends React.Component {
         updateProductArray.push({
           category_name: productDraft.category_name,
           sub_category_name: productDraft.sub_category_name,
-          draft: productDraft
+          draft: productDraft,
         })
         if (i === this.state.product_items.length - 1) {
           this.removeCategories()
@@ -168,7 +168,7 @@ class ProductImport extends React.Component {
     let catArray = []
     api.productCategories.list().then(({ status, json }) => {
       catArray = json
-      json.forEach(function(element) {
+      json.forEach(function (element) {
         api.productCategories.delete(element.id).then(({ status, json }) => {
           if (catArray.length <= 1) {
             this.recreateCategories()
@@ -215,7 +215,7 @@ class ProductImport extends React.Component {
       catArray.reduce(
         (acc, cur) =>
           Object.assign(acc, {
-            [cur.name]: cur
+            [cur.name]: cur,
           }),
         {}
       )
@@ -279,7 +279,7 @@ class ProductImport extends React.Component {
                 .create({
                   enabled: true,
                   name: elem.sub_category_name,
-                  parent_id: item.id
+                  parent_id: item.id,
                 })
                 .then(({ status, json }) => {
                   elem.draft.category_id = json.id
@@ -319,7 +319,7 @@ class ProductImport extends React.Component {
         .then(({ status, json }) => {
           imageFilesArray.push({
             id: json.id,
-            url: pArrayItem.draft.path.split(",")
+            url: pArrayItem.draft.path.split(","),
           })
           that.setState({ deleteCounter: 0 })
           that.setState({ uploadedProducts: i + 1 })
@@ -351,7 +351,7 @@ class ProductImport extends React.Component {
               xhr.responseType = "arraybuffer"
               var form = null
 
-              xhr.onload = function(e) {
+              xhr.onload = function (e) {
                 // Obtain a blob: URL for the image data.
                 var arrayBufferView = new Uint8Array(this.response)
                 var blob = new Blob([arrayBufferView], { type: "image/jpeg" })
@@ -491,11 +491,11 @@ class ProductImport extends React.Component {
     })
 
     const tableStyle = {
-      align: "center"
+      align: "center",
     }
 
     const showLoader = {
-      display: "none"
+      display: "none",
     }
     return (
       <Fragment>

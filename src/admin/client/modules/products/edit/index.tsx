@@ -65,7 +65,7 @@ import { fetchCategoriesIfNeeded } from "modules/productCategories/actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    product: state.products.editProduct
+    product: state.products.editProduct,
   }
 }
 
@@ -78,7 +78,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     eraseData: () => {
       dispatch(cancelProductEdit())
-    }
+    },
   }
 }
 

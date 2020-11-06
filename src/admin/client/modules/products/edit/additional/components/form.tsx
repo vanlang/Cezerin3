@@ -42,7 +42,7 @@ const ProductShort = ({
   priceFormatted,
   enabled,
   discontinued,
-  actions
+  actions,
 }) => (
   <div
     className={
@@ -131,7 +131,7 @@ class ProductsArray extends React.Component {
     super(props)
     this.state = {
       showAddItem: false,
-      products: []
+      products: [],
     }
   }
 
@@ -169,14 +169,14 @@ class ProductsArray extends React.Component {
           limit: 50,
           fields:
             "id,name,enabled,discontinued,price,on_sale,regular_price,images",
-          ids: ids
+          ids: ids,
         })
         .then(productsResponse => {
           this.setState({ products: productsResponse.json.data })
         })
     } else {
       this.setState({
-        products: []
+        products: [],
       })
     }
   }
@@ -185,7 +185,7 @@ class ProductsArray extends React.Component {
     const {
       settings,
       fields,
-      meta: { touched, error, submitFailed }
+      meta: { touched, error, submitFailed },
     } = this.props
     const { products } = this.state
 
@@ -237,7 +237,7 @@ const ProductAdditionalForm = ({
   submitting,
   initialValues,
   settings,
-  categories
+  categories,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -248,7 +248,7 @@ const ProductAdditionalForm = ({
             style={{
               padding: "0 0 15px 0",
               borderBottom: "1px solid #e0e0e0",
-              marginBottom: 20
+              marginBottom: 20,
             }}
           >
             <div className="col-xs-12 col-sm-4">{messages.category}</div>
@@ -266,7 +266,7 @@ const ProductAdditionalForm = ({
             style={{
               padding: "0 0 15px 0",
               borderBottom: "1px solid #e0e0e0",
-              marginBottom: 25
+              marginBottom: 25,
             }}
           >
             <div className="col-xs-12 col-sm-4">
@@ -346,5 +346,5 @@ const ProductAdditionalForm = ({
 
 export default reduxForm({
   form: "ProductAdditionalForm",
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ProductAdditionalForm)

@@ -5,7 +5,7 @@ import ProductAttributesForm from "./components/form"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    initialValues: state.products.editProduct
+    initialValues: state.products.editProduct,
   }
 }
 
@@ -15,10 +15,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(
         updateProduct({
           id: values.id,
-          attributes: values.attributes
+          attributes: values.attributes,
         })
       )
-    }
+    },
   }
 }
 

@@ -259,5 +259,5 @@ tinymce.addI18n("gl", {
   Table: "T\u00e1boa",
   Tools: "Ferramentas",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "\u00c1rea de texto mellorado. Prema ALT-F9 para o men\u00fa. Prema ALT-F10 para a barra de ferramentas. Prema ALT-0 para a axuda"
+    "\u00c1rea de texto mellorado. Prema ALT-F9 para o men\u00fa. Prema ALT-F10 para a barra de ferramentas. Prema ALT-0 para a axuda",
 })

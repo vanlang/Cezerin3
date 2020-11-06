@@ -40,7 +40,7 @@ class ThemesService {
         exec(`npm run theme:install ${fileName}`, (error, stdout, stderr) => {
           dashboardWebSocket.send({
             event: dashboardWebSocket.events.THEME_INSTALLED,
-            payload: fileName
+            payload: fileName,
           })
 
           if (error) {
@@ -72,7 +72,7 @@ class ThemesService {
         }
         // else - will save to /tmp
       })
-      .on("file", function(field, file) {
+      .on("file", function (field, file) {
         // every time a file has been uploaded successfully,
         if (file.name.endsWith(".zip")) {
           file_name = file.name

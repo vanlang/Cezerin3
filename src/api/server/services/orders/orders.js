@@ -157,14 +157,14 @@ class OrdersService {
       db.collection("orders").countDocuments(filter),
       OrderStatusesService.getStatuses(),
       ShippingMethodsLightService.getMethods(),
-      PaymentMethodsLightService.getMethods()
+      PaymentMethodsLightService.getMethods(),
     ]).then(
       ([
         orders,
         ordersCount,
         orderStatuses,
         shippingMethods,
-        paymentMethods
+        paymentMethods,
       ]) => {
         const items = orders.map(order =>
           this.changeProperties(
@@ -177,7 +177,7 @@ class OrdersService {
         const result = {
           total_count: ordersCount,
           has_more: offset + items.length < ordersCount,
-          data: items
+          data: items,
         }
         return result
       }
@@ -230,7 +230,7 @@ class OrdersService {
               mobile: order.mobile,
               browser: order.browser,
               // addresses: customer.addresses
-              addresses: order.shipping_address
+              addresses: order.shipping_address,
             }).then(customer => customer.id)
           }
         )
@@ -260,7 +260,7 @@ class OrdersService {
     if (updatedOrder.draft === false) {
       await webhooks.trigger({
         event: webhooks.events.ORDER_UPDATED,
-        payload: updatedOrder
+        payload: updatedOrder,
       })
     }
     await this.updateCustomerStatistics(updatedOrder.customer_id)
@@ -275,7 +275,7 @@ class OrdersService {
     const order = await this.getSingleOrder(orderId)
     await webhooks.trigger({
       event: webhooks.events.ORDER_DELETED,
-      payload: order
+      payload: order,
     })
     const deleteResponse = await db
       .collection("orders")
@@ -288,7 +288,7 @@ class OrdersService {
       ? {
           id: new ObjectID(),
           name: parse.getString(discount.name),
-          amount: parse.getNumberIfPositive(discount.amount)
+          amount: parse.getNumberIfPositive(discount.amount),
         }
       : null
   }
@@ -299,7 +299,7 @@ class OrdersService {
           id: new ObjectID(),
           product_id: parse.getObjectIDIfValid(item.product_id),
           variant_id: parse.getObjectIDIfValid(item.variant_id),
-          quantity: parse.getNumberIfPositive(item.quantity)
+          quantity: parse.getNumberIfPositive(item.quantity),
           // "sku":"",
           // "name":"",
           // "variant_name":"",
@@ -324,7 +324,7 @@ class OrdersService {
           details: transaction.details,
           success: parse.getBooleanIfValid(transaction.success),
           date_created: new Date(),
-          date_updated: null
+          date_updated: null,
         }
       : null
   }
@@ -350,7 +350,7 @@ class OrdersService {
           date_paid: null,
           date_cancelled: null,
           number: orderNumber,
-          shipping_status: ""
+          shipping_status: "",
           // 'weight_total': 0,
           // 'discount_total': 0, //sum(items.discount_total)+sum(discounts.amount)
           // 'tax_included_total': 0, //if(item_tax_included, 0, item_tax) + if(shipment_tax_included, 0, shipping_tax)
@@ -436,7 +436,7 @@ class OrdersService {
       }
 
       const order = {
-        date_updated: new Date()
+        date_updated: new Date(),
       }
 
       if (data.payment_token !== undefined) {
@@ -690,13 +690,13 @@ class OrdersService {
       mailer.send({
         to: toEmail,
         subject,
-        html: body
+        html: body,
       }),
       mailer.send({
         to: copyTo,
         subject,
-        html: body
-      })
+        html: body,
+      }),
     ])
   }
 
@@ -712,11 +712,11 @@ class OrdersService {
         this.updateOrder(orderId, {
           customer_id,
           date_placed: new Date(),
-          draft: false
+          draft: false,
         })
       ),
       EmailTemplatesService.getEmailTemplate("order_confirmation"),
-      SettingsService.getSettings()
+      SettingsService.getSettings(),
     ])
 
     const subject = this.getEmailSubject(emailTemplate, order)
@@ -725,16 +725,16 @@ class OrdersService {
 
     dashboardWebSocket.send({
       event: dashboardWebSocket.events.ORDER_CREATED,
-      payload: order
+      payload: order,
     })
 
     await Promise.all([
       webhooks.trigger({
         event: webhooks.events.ORDER_CREATED,
-        payload: order
+        payload: order,
       }),
       this.sendAllMails(order.email, copyTo, subject, body),
-      ProductStockService.handleOrderCheckout(orderId)
+      ProductStockService.handleOrderCheckout(orderId),
     ])
 
     return order
@@ -743,7 +743,7 @@ class OrdersService {
   cancelOrder(orderId) {
     const orderData = {
       cancelled: true,
-      date_cancelled: new Date()
+      date_cancelled: new Date(),
     }
 
     return ProductStockService.handleCancelOrder(orderId).then(() =>
@@ -754,7 +754,7 @@ class OrdersService {
   closeOrder(orderId) {
     const orderData = {
       closed: true,
-      date_closed: new Date()
+      date_closed: new Date(),
     }
 
     return this.updateOrder(orderId, orderData)

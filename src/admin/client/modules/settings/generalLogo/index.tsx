@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
-    settings: state.settings.settings
+    settings: state.settings.settings,
   }
 }
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
     },
     onImageUpload: form => {
       dispatch(uploadLogo(form))
-    }
+    },
   }
 }
 

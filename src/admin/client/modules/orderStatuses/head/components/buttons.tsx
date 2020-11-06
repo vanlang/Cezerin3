@@ -14,7 +14,7 @@ export default class Buttons extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      openDelete: false
+      openDelete: false,
     }
   }
 

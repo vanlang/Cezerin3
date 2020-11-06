@@ -29,7 +29,7 @@ class CustomerEditForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      groups: []
+      groups: [],
     }
   }
 
@@ -45,7 +45,7 @@ class CustomerEditForm extends React.Component {
       pristine,
       submitting,
       initialValues,
-      onCancel
+      onCancel,
     } = this.props
 
     let groupItems = this.state.groups.map((item, index) => (
@@ -64,7 +64,7 @@ class CustomerEditForm extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <div>
@@ -128,5 +128,5 @@ class CustomerEditForm extends React.Component {
 export default reduxForm({
   form: "CustomerEditForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(CustomerEditForm)

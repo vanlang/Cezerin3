@@ -28,7 +28,7 @@ class ThemeSettings extends React.Component {
       submitting,
       initialValues,
       reset,
-      settingsSchema
+      settingsSchema,
     } = this.props
     if (initialValues && settingsSchema) {
       let lastSection = null
@@ -63,7 +63,7 @@ class ThemeSettings extends React.Component {
           onSubmit={handleSubmit}
           style={{
             display: "initial",
-            width: "100%"
+            width: "100%",
           }}
         >
           <div style={{ margin: 20, color: "rgba(0, 0, 0, 0.52)" }}>
@@ -97,5 +97,5 @@ class ThemeSettings extends React.Component {
 
 export default reduxForm({
   form: "ThemeSettingsForm",
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ThemeSettings)

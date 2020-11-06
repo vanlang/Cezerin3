@@ -9,7 +9,7 @@ export default class ServiceDetails extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      timer: null
+      timer: null,
     }
   }
 
@@ -41,7 +41,7 @@ export default class ServiceDetails extends React.Component {
       enableService,
       disableService,
       updateSettings,
-      fetchServiceLogs
+      fetchServiceLogs,
     } = this.props
     let actions = null
     const serviceError = serviceSettings && serviceSettings.error === true

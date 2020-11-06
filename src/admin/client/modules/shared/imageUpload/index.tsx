@@ -13,20 +13,20 @@ export default class ImageUpload extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      imagePreview: this.props.imageUrl
+      imagePreview: this.props.imageUrl,
     }
   }
 
   onDelete = () => {
     this.setState({
-      imagePreview: null
+      imagePreview: null,
     })
     this.props.onDelete()
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      imagePreview: nextProps.imageUrl
+      imagePreview: nextProps.imageUrl,
     })
   }
 

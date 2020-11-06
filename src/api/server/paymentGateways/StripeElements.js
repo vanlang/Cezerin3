@@ -9,7 +9,7 @@ const getPaymentFormSettings = options => {
     amount,
     currency,
     email: order.email,
-    public_key: gatewaySettings.public_key
+    public_key: gatewaySettings.public_key,
   }
   return Promise.resolve(formSettings)
 }
@@ -23,9 +23,9 @@ const processOrderPayment = async ({ order, gatewaySettings, settings }) => {
       description: `Order #${order.number}`,
       statement_descriptor: `Order #${order.number}`,
       metadata: {
-        order_id: order.id
+        order_id: order.id,
       },
-      source: order.payment_token
+      source: order.payment_token,
     })
 
     // status: succeeded, pending, failed
@@ -35,7 +35,7 @@ const processOrderPayment = async ({ order, gatewaySettings, settings }) => {
     if (paymentSucceeded) {
       await OrdersService.updateOrder(order.id, {
         paid: true,
-        date_paid: new Date()
+        date_paid: new Date(),
       })
     }
 
@@ -45,7 +45,7 @@ const processOrderPayment = async ({ order, gatewaySettings, settings }) => {
       currency: charge.currency,
       status: charge.status,
       details: charge.outcome.seller_message,
-      success: paymentSucceeded
+      success: paymentSucceeded,
     })
 
     return paymentSucceeded
@@ -57,5 +57,5 @@ const processOrderPayment = async ({ order, gatewaySettings, settings }) => {
 
 export default {
   getPaymentFormSettings,
-  processOrderPayment
+  processOrderPayment,
 }

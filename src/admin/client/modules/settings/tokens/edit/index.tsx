@@ -4,7 +4,7 @@ import {
   updateToken,
   createToken,
   receiveToken,
-  deleteToken
+  deleteToken,
 } from "../../actions"
 import Form from "./components/form"
 
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     tokenId: tokenId,
     initialValues: state.settings.tokenEdit,
-    newToken: state.settings.newToken
+    newToken: state.settings.newToken,
   }
 }
 
@@ -38,7 +38,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       const { tokenId } = ownProps.match.params
       dispatch(deleteToken(tokenId))
       ownProps.history.push("/admin/settings/tokens")
-    }
+    },
   }
 }
 

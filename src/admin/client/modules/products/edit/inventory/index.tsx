@@ -6,7 +6,7 @@ import ProductInventoryForm from "./components/form"
 const mapStateToProps = (state, ownProps) => {
   return {
     settings: state.settings.settings,
-    initialValues: state.products.editProduct
+    initialValues: state.products.editProduct,
   }
 }
 
@@ -28,10 +28,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           stock_preorder: values.stock_preorder,
           stock_backorder: values.stock_backorder,
           discontinued: values.discontinued,
-          enabled: values.enabled
+          enabled: values.enabled,
         })
       )
-    }
+    },
   }
 }
 

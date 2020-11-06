@@ -21,7 +21,7 @@ export const Description = {
     <li>Set payment method</li>
     <li>Purchase</li>
   </ol>
-  <p>This App will add gtag.js to your site. The Global Site Tag (gtag.js) provides a framework for streamlined web page tagging – giving you better control while making implementation easier. Using gtag.js lets you benefit from the latest tracking features and integrations as they become available.</p>`
+  <p>This App will add gtag.js to your site. The Global Site Tag (gtag.js) provides a framework for streamlined web page tagging – giving you better control while making implementation easier. Using gtag.js lets you benefit from the latest tracking features and integrations as they become available.</p>`,
 }
 
 const GTAG_CODE = `<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,13 +37,13 @@ export class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      trackingId: ""
+      trackingId: "",
     }
   }
 
   handleTrackingIdChange = event => {
     this.setState({
-      trackingId: event.target.value
+      trackingId: event.target.value,
     })
   }
 
@@ -69,11 +69,11 @@ export class App extends React.Component {
         : ""
 
     api.apps.settings.update("google-analytics", {
-      GA_TRACKING_ID: trackingId
+      GA_TRACKING_ID: trackingId,
     })
     api.theme.placeholders.update("google-analytics", {
       place: "head_start",
-      value: gtag
+      value: gtag,
     })
   }
 

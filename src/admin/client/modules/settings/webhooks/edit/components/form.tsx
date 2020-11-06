@@ -19,7 +19,7 @@ const WEBHOOK_EVENTS = [
   "transaction.deleted",
   "customer.created",
   "customer.updated",
-  "customer.deleted"
+  "customer.deleted",
 ]
 
 const validate = values => {
@@ -50,7 +50,7 @@ class EditWebhookForm extends React.Component {
       pristine,
       submitting,
       initialValues,
-      webhookId
+      webhookId,
     } = this.props
     const isAdd = webhookId === null || webhookId === undefined
 
@@ -120,5 +120,5 @@ class EditWebhookForm extends React.Component {
 export default reduxForm({
   form: "EditWebhookForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(EditWebhookForm)

@@ -4,65 +4,65 @@ import messages from "lib/text"
 
 function requestStatuses() {
   return {
-    type: t.STATUSES_REQUEST
+    type: t.STATUSES_REQUEST,
   }
 }
 
 function receiveStatuses(items) {
   return {
     type: t.STATUSES_RECEIVE,
-    items
+    items,
   }
 }
 
 function receiveErrorStatuses(error) {
   return {
     type: t.STATUSES_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectStatus(id) {
   return {
     type: t.STATUSES_SELECT,
-    selectedId: id
+    selectedId: id,
   }
 }
 
 export function deselectStatus() {
   return {
-    type: t.STATUSES_DESELECT
+    type: t.STATUSES_DESELECT,
   }
 }
 
 function requestUpdateStatus(id) {
   return {
-    type: t.STATUS_UPDATE_REQUEST
+    type: t.STATUS_UPDATE_REQUEST,
   }
 }
 
 function receiveUpdateStatus() {
   return {
-    type: t.STATUS_UPDATE_SUCCESS
+    type: t.STATUS_UPDATE_SUCCESS,
   }
 }
 
 function errorUpdateStatus(error) {
   return {
     type: t.STATUS_UPDATE_FAILURE,
-    error
+    error,
   }
 }
 
 function successCreateStatus(id) {
   return {
-    type: t.STATUS_CREATE_SUCCESS
+    type: t.STATUS_CREATE_SUCCESS,
   }
 }
 
 function successDeleteStatus(id) {
   return {
-    type: t.STATUS_DELETE_SUCCESS
+    type: t.STATUS_DELETE_SUCCESS,
   }
 }
 

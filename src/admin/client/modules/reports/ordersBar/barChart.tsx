@@ -16,7 +16,7 @@ const BarChart = ({ data, title, subTitle, legendDisplay }) => (
             height={200}
             options={{
               legend: {
-                display: legendDisplay
+                display: legendDisplay,
               },
               scales: {
                 xAxes: [
@@ -26,14 +26,14 @@ const BarChart = ({ data, title, subTitle, legendDisplay }) => (
                     categoryPercentage: 0.99,
                     gridLines: {
                       display: false,
-                      drawBorder: false
+                      drawBorder: false,
                     },
                     ticks: {
                       display: true,
                       fontColor: "rgba(0,0,0,0.3)",
-                      padding: 0
-                    }
-                  }
+                      padding: 0,
+                    },
+                  },
                 ],
                 yAxes: [
                   {
@@ -41,17 +41,17 @@ const BarChart = ({ data, title, subTitle, legendDisplay }) => (
                     gridLines: {
                       display: true,
                       drawBorder: false,
-                      color: "rgba(0,0,0,0.08)"
+                      color: "rgba(0,0,0,0.08)",
                     },
                     ticks: {
                       maxTicksLimit: 4,
                       display: true,
                       padding: 10,
-                      fontColor: "rgba(0,0,0,0.3)"
-                    }
-                  }
-                ]
-              }
+                      fontColor: "rgba(0,0,0,0.3)",
+                    },
+                  },
+                ],
+              },
             }}
           />
         </div>

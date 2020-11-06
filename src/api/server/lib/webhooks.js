@@ -29,8 +29,8 @@ const send = ({ event, payload, webhook }) => {
       headers: {
         "Content-Type": "application/json",
         "X-Hook-Event": event,
-        "X-Hook-Signature": signature
-      }
+        "X-Hook-Signature": signature,
+      },
     }).catch(() => {})
   }
 }
@@ -55,10 +55,10 @@ const events = {
   TRANSACTION_DELETED: "transaction.deleted",
   CUSTOMER_CREATED: "customer.created",
   CUSTOMER_UPDATED: "customer.updated",
-  CUSTOMER_DELETED: "customer.deleted"
+  CUSTOMER_DELETED: "customer.deleted",
 }
 
 export default {
   trigger: trigger,
-  events: events
+  events: events,
 }

@@ -34,7 +34,7 @@ class CustomerAddressForm extends React.Component {
       pristine,
       submitting,
       initialValues,
-      onCancel
+      onCancel,
     } = this.props
 
     return (
@@ -42,7 +42,7 @@ class CustomerAddressForm extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <div>
@@ -137,5 +137,5 @@ class CustomerAddressForm extends React.Component {
 export default reduxForm({
   form: "CustomerAddressForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(CustomerAddressForm)

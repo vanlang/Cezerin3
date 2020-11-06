@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableHeaderColumn,
   TableRow,
-  TableRowColumn
+  TableRowColumn,
 } from "material-ui/Table"
 
 const SearchBox = ({ text, onChange }) => {
@@ -64,14 +64,14 @@ export default class ConfirmationDialog extends React.Component {
       open: props.open,
       products: [],
       search: "",
-      selectedId: null
+      selectedId: null,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.state.open !== nextProps.open) {
       this.setState({
-        open: nextProps.open
+        open: nextProps.open,
       })
     }
   }
@@ -98,7 +98,7 @@ export default class ConfirmationDialog extends React.Component {
           ? this.state.products[selectedIndex].id
           : null
       this.setState({
-        selectedId: selectedProductId
+        selectedId: selectedProductId,
       })
     }
   }
@@ -113,12 +113,12 @@ export default class ConfirmationDialog extends React.Component {
         discontinued: false,
         fields:
           "id,name,category_id,category_name,sku,enabled,discontinued,price,on_sale,regular_price",
-        search: value
+        search: value,
       })
       .then(productsResponse => {
         console.log(productsResponse.json.data)
         this.setState({
-          products: productsResponse.json.data
+          products: productsResponse.json.data,
         })
       })
   }
@@ -129,7 +129,7 @@ export default class ConfirmationDialog extends React.Component {
       submitLabel,
       cancelLabel,
       modal = false,
-      settings
+      settings,
     } = this.props
 
     const actions = [
@@ -142,7 +142,7 @@ export default class ConfirmationDialog extends React.Component {
         label={submitLabel}
         primary={true}
         onClick={this.handleSubmit}
-      />
+      />,
     ]
 
     return (

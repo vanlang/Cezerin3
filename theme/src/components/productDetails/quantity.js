@@ -5,7 +5,7 @@ export default class Quantity extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      quantity: 1
+      quantity: 1,
     }
   }
 

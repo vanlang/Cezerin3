@@ -41,7 +41,7 @@ class SwitchContainers extends React.Component {
         animateScroll.scrollToTop({
           duration: 500,
           delay: 100,
-          smooth: true
+          smooth: true,
         })
       }
     }
@@ -92,7 +92,7 @@ class SwitchContainers extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentPage: state.app.currentPage
+    currentPage: state.app.currentPage,
   }
 }
 
@@ -100,7 +100,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     setCurrentPage: location => {
       dispatch(setCurrentPage(location))
-    }
+    },
   }
 }
 

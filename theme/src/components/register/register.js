@@ -42,7 +42,7 @@ const InputField = field => (
 const initialData = {
   status: false,
   isRightToken: null,
-  isCustomerSaved: null
+  isCustomerSaved: null,
 }
 
 class Register extends React.Component {
@@ -50,7 +50,7 @@ class Register extends React.Component {
     super(props)
 
     this.state = {
-      comparePassword: ""
+      comparePassword: "",
     }
   }
 
@@ -306,5 +306,5 @@ class Register extends React.Component {
 }
 
 export default reduxForm({
-  form: "Register"
+  form: "Register",
 })(Register)

@@ -6,7 +6,7 @@ class AttributeValue extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      checked: props.checked
+      checked: props.checked,
     }
   }
 
@@ -21,7 +21,7 @@ class AttributeValue extends React.Component {
       attributeName,
       valueName,
       setFilterAttribute,
-      unsetFilterAttribute
+      unsetFilterAttribute,
     } = this.props
     const checked = event.target.checked
 
@@ -57,7 +57,7 @@ class AttributeValue extends React.Component {
 const AttributeSet = ({
   attribute,
   setFilterAttribute,
-  unsetFilterAttribute
+  unsetFilterAttribute,
 }) => {
   const values = attribute.values.map((value, index) => (
     <AttributeValue
@@ -82,7 +82,7 @@ const AttributeSet = ({
 const AttributeFilter = ({
   attributes,
   setFilterAttribute,
-  unsetFilterAttribute
+  unsetFilterAttribute,
 }) => {
   const attributeSets = attributes.map((attribute, index) => (
     <AttributeSet

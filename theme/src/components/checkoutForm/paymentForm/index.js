@@ -9,13 +9,13 @@ export default class PaymentForm extends React.Component {
     super(props)
     this.state = {
       formSettings: null,
-      loading: false
+      loading: false,
     }
   }
 
   fetchFormSettings = () => {
     this.setState({
-      loading: true
+      loading: true,
     })
 
     api.ajax.paymentFormSettings
@@ -23,13 +23,13 @@ export default class PaymentForm extends React.Component {
       .then(({ status, json }) => {
         this.setState({
           formSettings: json,
-          loading: false
+          loading: false,
         })
       })
       .catch(e => {
         this.setState({
           formSettings: null,
-          loading: false
+          loading: false,
         })
         console.log(e)
       })

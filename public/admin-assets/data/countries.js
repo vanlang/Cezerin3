@@ -251,5 +251,5 @@ var APPLICATION_DATA_COUNTRIES = {
   EH: "Western Sahara",
   YE: "Yemen",
   ZM: "Zambia",
-  ZW: "Zimbabwe"
+  ZW: "Zimbabwe",
 }

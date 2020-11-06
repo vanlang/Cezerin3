@@ -270,5 +270,5 @@ tinymce.addI18n("cs", {
   Tools: "N\u00e1stroje",
   "Powered by {0}": "Vytvo\u0159il {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Editor. Stiskn\u011bte ALT-F9 pro menu, ALT-F10 pro n\u00e1strojovou li\u0161tu a ALT-0 pro n\u00e1pov\u011bdu."
+    "Editor. Stiskn\u011bte ALT-F9 pro menu, ALT-F10 pro n\u00e1strojovou li\u0161tu a ALT-0 pro n\u00e1pov\u011bdu.",
 })

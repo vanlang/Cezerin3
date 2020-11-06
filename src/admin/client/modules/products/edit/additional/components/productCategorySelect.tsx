@@ -13,7 +13,7 @@ export default class ProductCategorySelect extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
   }
 
@@ -33,7 +33,7 @@ export default class ProductCategorySelect extends React.Component {
     const {
       categories,
       input,
-      meta: { touched, error }
+      meta: { touched, error },
     } = this.props
     const { open } = this.state
     const selectedCategoryId = input.value
@@ -51,7 +51,7 @@ export default class ProductCategorySelect extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.close}
-      />
+      />,
     ]
 
     return (

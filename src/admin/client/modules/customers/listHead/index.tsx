@@ -4,14 +4,14 @@ import {
   fetchCustomers,
   deleteCustomers,
   setGroup,
-  setFilterSearch
+  setFilterSearch,
 } from "../actions"
 import Buttons from "./components/buttons"
 
 const mapStateToProps = state => {
   return {
     search: state.customers.search,
-    selectedCount: state.customers.selected.length
+    selectedCount: state.customers.selected.length,
   }
 }
 
@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
     },
     onSetGroup: group_id => {
       dispatch(setGroup(group_id))
-    }
+    },
   }
 }
 

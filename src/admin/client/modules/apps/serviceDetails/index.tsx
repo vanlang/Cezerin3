@@ -4,7 +4,7 @@ import {
   enableService,
   disableService,
   updateServiceSettings,
-  fetchServiceLogs
+  fetchServiceLogs,
 } from "../actions"
 import Details from "./components/details"
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     service: state.apps.service,
     serviceSettings: state.apps.serviceSettings,
     serviceLogs: state.apps.serviceLogs,
-    loadingEnableDisable: state.apps.loadingEnableDisableService
+    loadingEnableDisable: state.apps.loadingEnableDisableService,
   }
 }
 
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchServiceLogs: () => {
       const { serviceId } = ownProps.match.params
       dispatch(fetchServiceLogs(serviceId))
-    }
+    },
   }
 }
 

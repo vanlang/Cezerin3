@@ -43,7 +43,7 @@ class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      unauthorized: false
+      unauthorized: false,
     }
   }
 
@@ -119,7 +119,7 @@ class Login extends React.Component {
     const {
       handleSubmit,
       customerProperties,
-      cartlayerBtnInitialized
+      cartlayerBtnInitialized,
     } = this.props
 
     if (
@@ -129,7 +129,7 @@ class Login extends React.Component {
       return (
         <Redirect
           to={{
-            pathname: "/customer-account"
+            pathname: "/customer-account",
           }}
         />
       )
@@ -231,5 +231,5 @@ class Login extends React.Component {
   }
 }
 export default reduxForm({
-  form: "Login"
+  form: "Login",
 })(Login)

@@ -9,10 +9,10 @@ const styles = {
   card: {
     width: 280,
     marginBottom: 15,
-    marginRight: 15
+    marginRight: 15,
   },
   textContainer: {
-    paddingBottom: 0
+    paddingBottom: 0,
   },
   title: {
     color: "#212121",
@@ -20,7 +20,7 @@ const styles = {
     lineHeight: "18px",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
   },
   subtitle: {
     color: "#616161",
@@ -29,11 +29,11 @@ const styles = {
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    marginTop: 5
+    marginTop: 5,
   },
   link: {
-    textDecoration: "none"
-  }
+    textDecoration: "none",
+  },
 }
 
 const Item = ({ path, coverUrl, title, developer, enabled }) => {

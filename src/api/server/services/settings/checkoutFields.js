@@ -33,7 +33,7 @@ class CheckoutFieldsService {
       .updateOne(
         { name: name },
         {
-          $set: field
+          $set: field,
         },
         { upsert: true }
       )
@@ -70,7 +70,7 @@ class CheckoutFieldsService {
       return {
         status: "required",
         label: "",
-        placeholder: ""
+        placeholder: "",
       }
     }
 

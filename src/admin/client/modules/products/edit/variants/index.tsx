@@ -5,7 +5,7 @@ import {
   updateVariant,
   setVariantOption,
   deleteVariant,
-  createOption
+  createOption,
 } from "../../actions"
 import ProductVariantsGrid from "./components/grid"
 
@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     options: state.products.editProductOptions || oldOptions,
     variants: state.products.editProductVariants || oldVariants,
-    productId: productId
+    productId: productId,
   }
 }
 
@@ -61,10 +61,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         name: "New option",
         position: 0,
         required: true,
-        control: "select"
+        control: "select",
       }
       dispatch(createOption(productId, newOption))
-    }
+    },
   }
 }
 

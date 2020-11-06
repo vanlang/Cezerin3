@@ -4,7 +4,7 @@ import SitemapService from "../services/sitemap"
 const slugConfig = {
   symbols: false, // replace unicode symbols or not
   remove: null, // (optional) regex to remove characters
-  lower: true // result in lower case
+  lower: true, // result in lower case
 }
 
 const cleanSlug = text => {
@@ -48,5 +48,5 @@ export default {
   cleanSlug: cleanSlug,
   getAvailableSlug: getAvailableSlug,
   getCorrectFileName: getCorrectFileName,
-  getProjectionFromFields: getProjectionFromFields
+  getProjectionFromFields: getProjectionFromFields,
 }

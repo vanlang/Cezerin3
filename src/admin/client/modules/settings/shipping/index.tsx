@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
-    shippingMethods: state.settings.shippingMethods
+    shippingMethods: state.settings.shippingMethods,
   }
 }
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoad: () => {
       dispatch(fetchShippingMethods())
-    }
+    },
   }
 }
 

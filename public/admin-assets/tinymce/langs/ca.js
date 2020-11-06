@@ -267,5 +267,5 @@ tinymce.addI18n("ca", {
   Tools: "Eines",
   "Powered by {0}": "Impulsat per {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "\u00c0rea de text amb format. Premeu ALT-F9 per mostrar el men\u00fa, ALT F10 per la barra d'eines i ALT-0 per ajuda."
+    "\u00c0rea de text amb format. Premeu ALT-F9 per mostrar el men\u00fa, ALT F10 per la barra d'eines i ALT-0 per ajuda.",
 })

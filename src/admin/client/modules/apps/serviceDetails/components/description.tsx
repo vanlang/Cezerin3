@@ -13,7 +13,7 @@ const ServiceDescription = ({
   service,
   loadingEnableDisable,
   enableService,
-  disableService
+  disableService,
 }) => {
   if (service) {
     return (

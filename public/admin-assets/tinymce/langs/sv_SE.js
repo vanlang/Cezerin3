@@ -268,5 +268,5 @@ tinymce.addI18n("sv_SE", {
   Tools: "Verktyg",
   "Powered by {0}": "Powered by {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Textredigerare. Tryck ALT-F9 f\u00f6r menyn. Tryck ALT-F10 f\u00f6r verktygsrader. Tryck ALT-0 f\u00f6r hj\u00e4lp."
+    "Textredigerare. Tryck ALT-F9 f\u00f6r menyn. Tryck ALT-F10 f\u00f6r verktygsrader. Tryck ALT-0 f\u00f6r hj\u00e4lp.",
 })

@@ -41,7 +41,7 @@ export default class Header extends React.Component {
     this.state = {
       mobileMenuIsActive: false,
       mobileSearchIsActive: false,
-      cartIsActive: false
+      cartIsActive: false,
     }
   }
 
@@ -57,14 +57,14 @@ export default class Header extends React.Component {
   menuToggle = () => {
     this.setState({
       mobileMenuIsActive: !this.state.mobileMenuIsActive,
-      cartIsActive: false
+      cartIsActive: false,
     })
     document.body.classList.toggle("noscroll")
   }
 
   searchToggle = () => {
     this.setState({
-      mobileSearchIsActive: !this.state.mobileSearchIsActive
+      mobileSearchIsActive: !this.state.mobileSearchIsActive,
     })
     document.body.classList.toggle("search-active")
   }
@@ -77,7 +77,7 @@ export default class Header extends React.Component {
   closeAll = () => {
     this.setState({
       cartIsActive: false,
-      mobileMenuIsActive: false
+      mobileMenuIsActive: false,
     })
     document.body.classList.remove("noscroll")
   }
@@ -85,7 +85,7 @@ export default class Header extends React.Component {
   cartToggle = () => {
     this.setState({
       cartIsActive: !this.state.cartIsActive,
-      mobileMenuIsActive: false
+      mobileMenuIsActive: false,
     })
 
     if (
@@ -94,7 +94,7 @@ export default class Header extends React.Component {
       this.props.state.cart.items.length > 0
     ) {
       this.props.cartLayerInitialized({
-        cartlayerBtnInitialized: true
+        cartlayerBtnInitialized: true,
       })
     }
     document.body.classList.toggle("noscroll")
@@ -103,7 +103,7 @@ export default class Header extends React.Component {
   showCart = () => {
     this.setState({
       cartIsActive: true,
-      mobileMenuIsActive: false
+      mobileMenuIsActive: false,
     })
     document.body.classList.add("noscroll")
   }
@@ -112,12 +112,12 @@ export default class Header extends React.Component {
     Lscache.flushExpired()
     if (Lscache.get("auth_data") === null) {
       this.props.loggedinUserTimeUp({
-        authenticated: false
+        authenticated: false,
       })
       this.props.setLocation("/login")
     } else {
       this.props.customerData({
-        token: Lscache.get("auth_data")
+        token: Lscache.get("auth_data"),
       })
       this.props.setLocation("/customer-account")
     }
@@ -146,7 +146,7 @@ export default class Header extends React.Component {
       currentPage,
       location,
       productFilter,
-      cartlayerBtnInitialized
+      cartlayerBtnInitialized,
     } = this.props.state
 
     const classToggle = this.state.mobileMenuIsActive

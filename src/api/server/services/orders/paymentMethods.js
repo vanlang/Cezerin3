@@ -35,26 +35,26 @@ class PaymentMethodsService {
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.subtotal_min": 0
+                  "conditions.subtotal_min": 0,
                 },
                 {
                   "conditions.subtotal_min": {
-                    $lte: order.subtotal
-                  }
-                }
-              ]
+                    $lte: order.subtotal,
+                  },
+                },
+              ],
             })
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.subtotal_max": 0
+                  "conditions.subtotal_max": 0,
                 },
                 {
                   "conditions.subtotal_max": {
-                    $gte: order.subtotal
-                  }
-                }
-              ]
+                    $gte: order.subtotal,
+                  },
+                },
+              ],
             })
 
             if (
@@ -65,13 +65,13 @@ class PaymentMethodsService {
                 $or: [
                   {
                     "conditions.countries": {
-                      $size: 0
-                    }
+                      $size: 0,
+                    },
                   },
                   {
-                    "conditions.countries": order.shipping_address.country
-                  }
-                ]
+                    "conditions.countries": order.shipping_address.country,
+                  },
+                ],
               })
             }
 
@@ -80,13 +80,13 @@ class PaymentMethodsService {
                 $or: [
                   {
                     "conditions.shipping_method_ids": {
-                      $size: 0
-                    }
+                      $size: 0,
+                    },
                   },
                   {
-                    "conditions.shipping_method_ids": shippingMethodObjectID
-                  }
-                ]
+                    "conditions.shipping_method_ids": shippingMethodObjectID,
+                  },
+                ],
               })
             }
           }
@@ -132,7 +132,7 @@ class PaymentMethodsService {
       .collection("paymentMethods")
       .updateOne(
         {
-          _id: methodObjectID
+          _id: methodObjectID,
         },
         { $set: method }
       )
@@ -180,13 +180,13 @@ class PaymentMethodsService {
           countries: parse.getArrayIfValid(conditions.countries) || [],
           shipping_method_ids: methodObjects,
           subtotal_min: parse.getNumberIfPositive(conditions.subtotal_min) || 0,
-          subtotal_max: parse.getNumberIfPositive(conditions.subtotal_max) || 0
+          subtotal_max: parse.getNumberIfPositive(conditions.subtotal_max) || 0,
         }
       : {
           countries: [],
           shipping_method_ids: [],
           subtotal_min: 0,
-          subtotal_max: 0
+          subtotal_max: 0,
         }
   }
 

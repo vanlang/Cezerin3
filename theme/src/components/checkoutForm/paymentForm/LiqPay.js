@@ -31,17 +31,17 @@ export default class PayPalButton extends React.Component {
       signature: formSettings.signature,
       language: formSettings.language,
       embedTo: "#liqpay_checkout",
-      mode: "embed"
+      mode: "embed",
     })
-      .on("liqpay.callback", function(data) {
+      .on("liqpay.callback", function (data) {
         if (data.status === "success") {
           onPayment()
         }
       })
-      .on("liqpay.ready", function(data) {
+      .on("liqpay.ready", function (data) {
         // ready
       })
-      .on("liqpay.close", function(data) {
+      .on("liqpay.close", function (data) {
         // close
       })
   }

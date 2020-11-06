@@ -34,7 +34,7 @@ export const getProductFilterForCategory = (locationSearch, sortBy) => {
     priceTo: parseInt(queryFilter.price_to || 0),
     attributes: attributes,
     search: null,
-    sort: sortBy
+    sort: sortBy,
   }
 }
 
@@ -46,7 +46,7 @@ export const getProductFilterForSearch = locationSearch => {
     priceFrom: parseInt(queryFilter.price_from || 0),
     priceTo: parseInt(queryFilter.price_to || 0),
     search: queryFilter.search,
-    sort: "search"
+    sort: "search",
   }
 }
 
@@ -62,7 +62,7 @@ export const getParsedProductFilter = productFilter => {
       sort: productFilter["sort"],
       fields: productFilter["fields"],
       limit: productFilter["limit"],
-      offset: 0
+      offset: 0,
     },
     productFilter.attributes
   )
@@ -100,7 +100,7 @@ const requestMoreProducts = () => ({ type: t.MORE_PRODUCTS_REQUEST })
 
 const receiveMoreProducts = products => ({
   type: t.MORE_PRODUCTS_RECEIVE,
-  products
+  products,
 })
 
 const requestPage = () => ({ type: t.PAGE_REQUEST })
@@ -127,7 +127,7 @@ export const addCartItem = item => async (dispatch, getState) => {
   dispatch(receiveCart(cart))
   analytics.addCartItem({
     item: item,
-    cart: cart
+    cart: cart,
   })
 }
 
@@ -139,14 +139,14 @@ export const updateCartItemQuantiry = (item_id, quantity) => async (
 ) => {
   dispatch(requestUpdateCartItemQuantiry())
   const response = await api.ajax.cart.updateItem(item_id, {
-    quantity: quantity
+    quantity: quantity,
   })
   dispatch(receiveCart(response.json))
   dispatch(fetchShippingMethods())
 }
 
 const requestUpdateCartItemQuantiry = () => ({
-  type: t.CART_ITEM_UPDATE_REQUEST
+  type: t.CART_ITEM_UPDATE_REQUEST,
 })
 
 export const deleteCartItem = item_id => async (dispatch, getState) => {
@@ -157,7 +157,7 @@ export const deleteCartItem = item_id => async (dispatch, getState) => {
   dispatch(fetchShippingMethods())
   analytics.deleteCartItem({
     itemId: item_id,
-    cart: app.cart
+    cart: app.cart,
   })
 }
 
@@ -173,7 +173,7 @@ const requestPaymentMethods = () => ({ type: t.PAYMENT_METHODS_REQUEST })
 
 const receivePaymentMethods = methods => ({
   type: t.PAYMENT_METHODS_RECEIVE,
-  methods
+  methods,
 })
 
 export const fetchShippingMethods = () => async (dispatch, getState) => {
@@ -186,7 +186,7 @@ const requestShippingMethods = () => ({ type: t.SHIPPING_METHODS_REQUEST })
 
 const receiveShippingMethods = methods => ({
   type: t.SHIPPING_METHODS_RECEIVE,
-  methods
+  methods,
 })
 
 export const checkout = (cart, history) => async (dispatch, getState) => {
@@ -203,7 +203,7 @@ export const checkout = (cart, history) => async (dispatch, getState) => {
       password: cart.password,
       payment_method_id: cart.payment_method_id,
       shipping_method_id: cart.shipping_method_id,
-      comments: cart.comments
+      comments: cart.comments,
     })
   }
 
@@ -231,30 +231,30 @@ const receiveCheckout = order => ({ type: t.CHECKOUT_RECEIVE, order })
 
 const handleRegisterProperties = data => ({
   type: t.REGISTER_PROPERTIES,
-  data
+  data,
 })
 const handleAccountProperties = data => ({ type: t.ACCOUNT_RECEIVE, data })
 const handleCartLayerInitialized = data => ({
   type: t.CART_LAYER_INITIALIZED,
-  data
+  data,
 })
 const handleForgotPassword = data => ({
   type: t.FORGOT_PASSWORD_PROPERTIES,
-  data
+  data,
 })
 const handleResetPassword = data => ({
   type: t.RESET_PASSWORD_PROPERTIES,
-  data
+  data,
 })
 
 export const receiveSitemap = currentPage => ({
   type: t.SITEMAP_RECEIVE,
-  currentPage
+  currentPage,
 })
 
 export const setCurrentLocation = location => ({
   type: t.LOCATION_CHANGED,
-  location
+  location,
 })
 
 export const setCategory = categoryId => (dispatch, getState) => {
@@ -269,7 +269,7 @@ export const setCategory = categoryId => (dispatch, getState) => {
 
 const setCurrentCategory = category => ({
   type: t.SET_CURRENT_CATEGORY,
-  category
+  category,
 })
 
 export const setSort = sort => (dispatch, getState) => {
@@ -279,14 +279,14 @@ export const setSort = sort => (dispatch, getState) => {
 
 const setProductsFilter = filter => ({
   type: t.SET_PRODUCTS_FILTER,
-  filter: filter
+  filter: filter,
 })
 
 export const analyticsSetShippingMethod = method_id => (dispatch, getState) => {
   const { app } = getState()
   analytics.setShippingMethod({
     methodId: method_id,
-    allMethods: app.shippingMethods
+    allMethods: app.shippingMethods,
   })
 }
 
@@ -294,7 +294,7 @@ export const analyticsSetPaymentMethod = method_id => (dispatch, getState) => {
   const { app } = getState()
   analytics.setPaymentMethod({
     methodId: method_id,
-    allMethods: app.paymentMethods
+    allMethods: app.paymentMethods,
   })
 }
 
@@ -328,7 +328,7 @@ export const loggedinUserTimeUp = (data, callback) => async (
     token: "",
     authenticated: false,
     customer_settings: null,
-    order_statuses: null
+    order_statuses: null,
   }
   dispatch(handleAccountProperties(customerProps))
 }
@@ -399,7 +399,7 @@ export const setCurrentPage = location => async (dispatch, getState) => {
         hasHistory: true,
         pathname: locationPathname,
         search: locationSearch,
-        hash: locationHash
+        hash: locationHash,
       })
     )
 
@@ -408,20 +408,20 @@ export const setCurrentPage = location => async (dispatch, getState) => {
       const newCurrentPage = {
         type: "product-category",
         path: category.path,
-        resource: category.id
+        resource: category.id,
       }
       dispatch(receiveSitemap(newCurrentPage)) // remove .data
       dispatch(fetchDataOnCurrentPageChange(newCurrentPage))
     } else {
       const sitemapResponse = await api.ajax.sitemap.retrieve({
-        path: locationPathname
+        path: locationPathname,
       })
       if (sitemapResponse.status === 404) {
         dispatch(
           receiveSitemap({
             type: 404,
             path: locationPathname,
-            resource: null
+            resource: null,
           })
         )
       } else {
@@ -442,7 +442,7 @@ const fetchDataOnCurrentPageChange = currentPage => (dispatch, getState) => {
 
   analytics.pageView({
     path: currentPage.path,
-    title: "-"
+    title: "-",
   })
 
   switch (currentPage.type) {

@@ -14,7 +14,7 @@ import { SelectField } from "redux-form-material-ui"
 
 const radioButtonStyle = {
   marginTop: 14,
-  marginBottom: 14
+  marginBottom: 14,
 }
 
 const validate = values => {
@@ -24,7 +24,7 @@ const validate = values => {
     "lastName",
     "email",
     "favoriteColor",
-    "notes"
+    "notes",
   ]
   requiredFields.forEach(field => {
     if (!values[field]) {
@@ -52,7 +52,7 @@ class CommerceForm extends React.Component {
       isSelectField: false,
       isTextField: false,
       isServiceOptions: false,
-      isServiceOptionsCalled: false
+      isServiceOptionsCalled: false,
     }
   }
 
@@ -60,13 +60,13 @@ class CommerceForm extends React.Component {
     //this.props.initialize({ name: 'serviceOptions' });
 
     selectFieldValuesFirst = {
-      1: messages.service_delivery
+      1: messages.service_delivery,
     }
     selectFieldValuesSecond = {
-      2: messages.service_togo
+      2: messages.service_togo,
     }
     selectFieldValuesThird = {
-      3: messages.service_delivery_togo
+      3: messages.service_delivery_togo,
     }
   }
 
@@ -90,7 +90,7 @@ class CommerceForm extends React.Component {
       this.setState({
         isServiceOptions,
         isServiceOptionsCalled: true,
-        isTextField
+        isTextField,
       })
     }
   }
@@ -117,7 +117,7 @@ class CommerceForm extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Paper className="paper-box" zDepth={1}>
@@ -212,6 +212,6 @@ export default reduxForm({
 		serviceOptions: 'defaultValue'
 	},*/
   //keepDirtyOnReinitialize: true,
-  enableReinitialize: true
+  enableReinitialize: true,
   //updateUnregisteredFields: true
 })(CommerceForm)

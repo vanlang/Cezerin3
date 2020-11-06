@@ -28,7 +28,7 @@ export default class ProductCategoryMultiSelect extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
   }
 
@@ -60,7 +60,7 @@ export default class ProductCategoryMultiSelect extends React.Component {
     const {
       categories,
       fields,
-      meta: { touched, error, submitFailed }
+      meta: { touched, error, submitFailed },
     } = this.props
     const { open } = this.state
     const selectedIds = fields.getAll()
@@ -76,7 +76,7 @@ export default class ProductCategoryMultiSelect extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.close}
-      />
+      />,
     ]
 
     return (

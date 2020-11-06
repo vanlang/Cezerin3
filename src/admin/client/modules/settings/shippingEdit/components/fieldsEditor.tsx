@@ -31,7 +31,7 @@ const FieldsEditor = ({ fields, meta: { touched, error, submitFailed } }) => {
             style={{
               padding: "0px 20px",
               margin: "10px 0px",
-              backgroundColor: "#f7f7f7"
+              backgroundColor: "#f7f7f7",
             }}
           >
             <div className="row middle-xs center-xs">

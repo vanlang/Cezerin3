@@ -70,13 +70,13 @@ const SummaryItem = ({ settings, item, updateCartItemQuantiry }) => {
 SummaryItem.propTypes = {
   settings: PropTypes.shape({}).isRequired,
   item: PropTypes.shape({}).isRequired,
-  updateCartItemQuantiry: PropTypes.func.isRequired
+  updateCartItemQuantiry: PropTypes.func.isRequired,
 }
 
 const OrderSummary = props => {
   const {
     updateCartItemQuantiry,
-    state: { cart, settings }
+    state: { cart, settings },
   } = props
 
   if (cart && cart.items && cart.items.length > 0) {
@@ -134,8 +134,8 @@ OrderSummary.propTypes = {
   updateCartItemQuantiry: PropTypes.func.isRequired,
   state: PropTypes.shape({
     cart: PropTypes.shape({}),
-    settings: PropTypes.shape({}).isRequired
-  }).isRequired
+    settings: PropTypes.shape({}).isRequired,
+  }).isRequired,
 }
 
 export default OrderSummary

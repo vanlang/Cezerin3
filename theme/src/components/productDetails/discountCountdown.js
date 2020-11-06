@@ -7,14 +7,14 @@ export default class DiscountCountdown extends React.Component {
     super(props)
     this.state = {
       timer: null,
-      diff: null
+      diff: null,
     }
   }
 
   componentDidMount() {
     let timer = setInterval(this.tick, 1000)
     this.setState({
-      timer: timer
+      timer: timer,
     })
   }
 
@@ -30,7 +30,7 @@ export default class DiscountCountdown extends React.Component {
     )
 
     this.setState({
-      diff: diff
+      diff: diff,
     })
   }
 

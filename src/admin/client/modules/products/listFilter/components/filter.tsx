@@ -11,7 +11,7 @@ const Filter = ({
   setEnabled,
   setDiscontinued,
   setOnSale,
-  setStock
+  setStock,
 }) => {
   const { enabled, discontinued, onSale, stockStatus } = filter
 

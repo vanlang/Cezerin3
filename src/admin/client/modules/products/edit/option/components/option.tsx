@@ -46,7 +46,7 @@ class ProductOptionForm extends React.Component {
       optionValues,
       createOptionValue,
       updateOptionValue,
-      deleteOptionValue
+      deleteOptionValue,
     } = this.props
 
     return (
@@ -129,5 +129,5 @@ class ProductOptionForm extends React.Component {
 export default reduxForm({
   form: "ProductOptionForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ProductOptionForm)
