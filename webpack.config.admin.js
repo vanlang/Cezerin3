@@ -84,17 +84,6 @@ module.exports = {
             exclude: /node_modules/,
           },
           {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/env", "@babel/react"],
-                plugins: ["transform-class-properties"],
-              },
-            },
-          },
-          {
             test: /\.css$/,
             include: [path.resolve(__dirname, "public")],
             exclude: [path.resolve(__dirname, "src")],
@@ -124,6 +113,54 @@ module.exports = {
                 },
               },
               "postcss-loader",
+            ],
+          },
+          {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+              {
+                loader: "file-loader",
+              },
+            ],
+          },
+          {
+            test: /\.(png|jpg|gif|otf|eot|png|svg|ttf|woff|woff2)$/i,
+            use: [
+              {
+                loader: "url-loader",
+                options: {
+                  limit: 8192,
+                },
+              },
+            ],
+          },
+          {
+            test: /\.svg$/,
+            loader: "svg-inline-loader",
+          },
+          {
+            test: /\.s[ac]ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "postcss-loader",
+              "sass-loader",
+            ],
+          },
+          {
+            test: /\.module\.s[ac]ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: "css-loader",
+                options: {
+                  modules: true,
+                  sourceMap: true,
+                  minimize: true,
+                },
+              },
+              "postcss-loader",
+              "sass-loader",
             ],
           },
         ],
