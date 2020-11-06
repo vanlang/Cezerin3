@@ -266,5 +266,5 @@ tinymce.addI18n("nl", {
   Tools: "Gereedschap",
   "Powered by {0}": "Gemaakt door {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Rich Text Area. Druk ALT-F9 voor het menu. Druk ALT-F10 voor de toolbar. Druk ALT-0 voor help."
+    "Rich Text Area. Druk ALT-F9 voor het menu. Druk ALT-F10 voor de toolbar. Druk ALT-0 voor help.",
 })

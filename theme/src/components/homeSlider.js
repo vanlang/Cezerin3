@@ -26,7 +26,7 @@ const HomeSlider = ({ images }) => {
       title: item.title,
       description: item.description,
       path: item.path || "",
-      button: item.button
+      button: item.button,
     }))
 
     return (
@@ -54,11 +54,11 @@ const HomeSlider = ({ images }) => {
 }
 
 HomeSlider.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({}))
+  images: PropTypes.arrayOf(PropTypes.shape({})),
 }
 
 HomeSlider.defaultProps = {
-  images: null
+  images: null,
 }
 
 export default HomeSlider

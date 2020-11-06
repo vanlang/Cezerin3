@@ -28,7 +28,7 @@ class CheckoutStepContacts extends React.Component {
       loggedin: false,
       reinitialized: false,
       emailValues: "",
-      comparePassword: ""
+      comparePassword: "",
     }
 
     this.setInitialValues = this.setInitialValues.bind(this)
@@ -137,7 +137,7 @@ class CheckoutStepContacts extends React.Component {
               .country !== null
               ? this.props.customerProperties.customer_settings.addresses[0]
                   .country
-              : ""
+              : "",
         },
         shipping_address: {
           address1:
@@ -223,14 +223,14 @@ class CheckoutStepContacts extends React.Component {
               .country !== null
               ? this.props.customerProperties.customer_settings.addresses[0]
                   .country
-              : ""
-        }
+              : "",
+        },
       })
     }
 
     this.setState({ reinitialized: true })
     this.setState({
-      emailValues: this.props.customerProperties.customer_settings.email
+      emailValues: this.props.customerProperties.customer_settings.email,
     })
     // this.props.change("input", {disabled: true});
   }
@@ -376,7 +376,7 @@ class CheckoutStepContacts extends React.Component {
       editButtonClassName,
       onEdit,
       isReadOnly,
-      title
+      title,
     } = this.props
 
     if (
@@ -759,5 +759,5 @@ class CheckoutStepContacts extends React.Component {
 export default reduxForm({
   form: "CheckoutStepContacts",
   enableReinitialize: true,
-  keepDirtyOnReinitialize: true
+  keepDirtyOnReinitialize: true,
 })(CheckoutStepContacts)

@@ -7,7 +7,7 @@ import Footer from "../components/footer"
 const SharedContainer = props => {
   const {
     children,
-    state: { currentPage, settings }
+    state: { currentPage, settings },
   } = props
   const hideFooter =
     (currentPage.path === "/checkout-success" ||
@@ -28,8 +28,8 @@ SharedContainer.propTypes = {
   children: PropTypes.element.isRequired,
   state: PropTypes.shape({
     currentPage: PropTypes.shape({}),
-    settings: PropTypes.shape({})
-  }).isRequired
+    settings: PropTypes.shape({}),
+  }).isRequired,
 }
 
 export default SharedContainer

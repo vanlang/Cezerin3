@@ -264,5 +264,5 @@ tinymce.addI18n("tr_TR", {
   Table: "Tablo",
   Tools: "Ara\u00e7lar",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Zengin Metin Alan\u0131. Men\u00fc i\u00e7in ALT-F9 k\u0131sayolunu kullan\u0131n. Ara\u00e7 \u00e7ubu\u011fu i\u00e7in ALT-F10 k\u0131sayolunu kullan\u0131n. Yard\u0131m i\u00e7in ALT-0 k\u0131sayolunu kullan\u0131n."
+    "Zengin Metin Alan\u0131. Men\u00fc i\u00e7in ALT-F9 k\u0131sayolunu kullan\u0131n. Ara\u00e7 \u00e7ubu\u011fu i\u00e7in ALT-F10 k\u0131sayolunu kullan\u0131n. Yard\u0131m i\u00e7in ALT-0 k\u0131sayolunu kullan\u0131n.",
 })

@@ -6,7 +6,7 @@ import {
   deleteOption,
   createOptionValue,
   updateOptionValue,
-  deleteOptionValue
+  deleteOptionValue,
 } from "../../actions"
 import ProductOptionForm from "./components/option"
 
@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     initialValues: option,
     optionValues:
-      option && option.values && option.values.length > 0 ? option.values : []
+      option && option.values && option.values.length > 0 ? option.values : [],
   }
 }
 
@@ -52,7 +52,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     deleteOptionValue: valueId => {
       const { productId, optionId } = ownProps.match.params
       dispatch(deleteOptionValue(productId, optionId, valueId))
-    }
+    },
   }
 }
 

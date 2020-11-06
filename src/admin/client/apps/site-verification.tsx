@@ -15,7 +15,7 @@ export const Description = {
     <li><a target="_blank" href="https://www.bing.com/webmaster/" rel="external noopener noreferrer">Bing Webmaster Center</a></li>
     <li><a target="_blank" href="https://pinterest.com/website/verify/" rel="external noopener noreferrer">Pinterest Site Verification</a></li>
     <li><a target="_blank" href="https://webmaster.yandex.com/sites/" rel="external noopener noreferrer">Yandex.Webmaster</a></li>
-  </ol>`
+  </ol>`,
 }
 
 const GOOGLE_EXAMPLE = '<meta name="google-site-verification" content="1234" />'
@@ -30,31 +30,31 @@ export class App extends React.Component {
       google: "",
       bing: "",
       pinterest: "",
-      yandex: ""
+      yandex: "",
     }
   }
 
   handleGoogleChange = event => {
     this.setState({
-      google: event.target.value
+      google: event.target.value,
     })
   }
 
   handleBingChange = event => {
     this.setState({
-      bing: event.target.value
+      bing: event.target.value,
     })
   }
 
   handlePinterestChange = event => {
     this.setState({
-      pinterest: event.target.value
+      pinterest: event.target.value,
     })
   }
 
   handleYandexChange = event => {
     this.setState({
-      yandex: event.target.value
+      yandex: event.target.value,
     })
   }
 
@@ -68,7 +68,7 @@ export class App extends React.Component {
             google: appSettings.google,
             bing: appSettings.bing,
             pinterest: appSettings.pinterest,
-            yandex: appSettings.yandex
+            yandex: appSettings.yandex,
           })
         }
       })
@@ -88,12 +88,12 @@ export class App extends React.Component {
       google: google,
       bing: bing,
       pinterest: pinterest,
-      yandex: yandex
+      yandex: yandex,
     })
 
     api.theme.placeholders.update("site-verification", {
       place: "head_start",
-      value: metaTags
+      value: metaTags,
     })
   }
 

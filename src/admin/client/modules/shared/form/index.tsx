@@ -9,7 +9,7 @@ export const CustomToggle = ({
   label,
   className = "",
   disabled = false,
-  style
+  style,
 }) => {
   return (
     <Toggle
@@ -30,7 +30,7 @@ export const NumberField = ({
   label,
   className = "",
   disabled = false,
-  style
+  style,
 }) => (
   <TextField
     floatingLabelText={label}
@@ -55,7 +55,7 @@ export class MultiSelect extends React.Component {
     super(props)
     const values = Array.isArray(props.input.value) ? props.input.value : []
     this.state = {
-      selectedItems: values
+      selectedItems: values,
     }
   }
 
@@ -65,7 +65,7 @@ export class MultiSelect extends React.Component {
       : []
     if (values !== this.state.selectedItems) {
       this.setState({
-        selectedItems: values
+        selectedItems: values,
       })
     }
   }

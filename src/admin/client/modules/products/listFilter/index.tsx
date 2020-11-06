@@ -4,7 +4,7 @@ import Filter from "./components/filter"
 
 const mapStateToProps = state => {
   return {
-    filter: state.products.filter
+    filter: state.products.filter,
   }
 }
 
@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     setStock: value => {
       dispatch(setFilter({ stockStatus: value }))
       dispatch(fetchProducts())
-    }
+    },
   }
 }
 

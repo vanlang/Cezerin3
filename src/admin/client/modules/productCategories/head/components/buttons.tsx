@@ -17,7 +17,7 @@ export default class Buttons extends React.Component {
     this.state = {
       categoryIdMoveTo: "root",
       openMoveTo: false,
-      openDelete: false
+      openDelete: false,
     }
   }
 
@@ -69,7 +69,7 @@ export default class Buttons extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.saveMoveTo}
-      />
+      />,
     ]
 
     return (

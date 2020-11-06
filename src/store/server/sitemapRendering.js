@@ -11,13 +11,13 @@ const SITEMAP_EXCLUDE_PATH = [
   "/login",
   "/logout",
   "/register",
-  "/customer-account"
+  "/customer-account",
 ]
 
 const sitemapRendering = (req, res) => {
   Promise.all([
     api.sitemap.list({ enabled: true }),
-    api.settings.retrieve()
+    api.settings.retrieve(),
   ]).then(([sitemapResponse, settingsResponse]) => {
     const sitemapArray = sitemapResponse.json
     const settings = settingsResponse.json

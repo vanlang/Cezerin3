@@ -10,13 +10,13 @@ export default class ProductFilter extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      sidebarIsActive: false
+      sidebarIsActive: false,
     }
   }
 
   sidebarToggle = () => {
     this.setState({
-      sidebarIsActive: !this.state.sidebarIsActive
+      sidebarIsActive: !this.state.sidebarIsActive,
     })
     document.body.classList.toggle("noscroll")
   }
@@ -35,7 +35,7 @@ export default class ProductFilter extends React.Component {
       productFilter,
       productsMinPrice,
       productsMaxPrice,
-      productsAttributes
+      productsAttributes,
     } = this.props.state
 
     return (

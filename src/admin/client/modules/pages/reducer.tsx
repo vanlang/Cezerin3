@@ -2,7 +2,7 @@ import * as t from "./actionTypes"
 
 const initialState = {
   pages: [],
-  pageEdit: null
+  pageEdit: null,
 }
 
 export default (state = initialState, action) => {

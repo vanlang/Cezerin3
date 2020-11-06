@@ -6,7 +6,7 @@ const AddToCartButton = ({
   product,
   variant,
   addCartItem,
-  isAllOptionsSelected
+  isAllOptionsSelected,
 }) => {
   let buttonStyle = {}
   if (

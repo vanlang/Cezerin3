@@ -4,7 +4,7 @@ import List from "../components/list"
 
 const mapStateToProps = state => {
   return {
-    items: state.customerGroups.items
+    items: state.customerGroups.items,
   }
 }
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoad: () => {
       dispatch(fetchGroupsIfNeeded())
-    }
+    },
   }
 }
 

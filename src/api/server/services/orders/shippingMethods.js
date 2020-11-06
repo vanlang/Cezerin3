@@ -31,51 +31,51 @@ class ShippingMethodsService {
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.weight_total_min": 0
+                  "conditions.weight_total_min": 0,
                 },
                 {
                   "conditions.weight_total_min": {
-                    $lte: order.weight_total
-                  }
-                }
-              ]
+                    $lte: order.weight_total,
+                  },
+                },
+              ],
             })
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.weight_total_max": 0
+                  "conditions.weight_total_max": 0,
                 },
                 {
                   "conditions.weight_total_max": {
-                    $gte: order.weight_total
-                  }
-                }
-              ]
+                    $gte: order.weight_total,
+                  },
+                },
+              ],
             })
 
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.subtotal_min": 0
+                  "conditions.subtotal_min": 0,
                 },
                 {
                   "conditions.subtotal_min": {
-                    $lte: order.subtotal
-                  }
-                }
-              ]
+                    $lte: order.subtotal,
+                  },
+                },
+              ],
             })
             filter["$and"].push({
               $or: [
                 {
-                  "conditions.subtotal_max": 0
+                  "conditions.subtotal_max": 0,
                 },
                 {
                   "conditions.subtotal_max": {
-                    $gte: order.subtotal
-                  }
-                }
-              ]
+                    $gte: order.subtotal,
+                  },
+                },
+              ],
             })
 
             if (
@@ -86,13 +86,13 @@ class ShippingMethodsService {
                 $or: [
                   {
                     "conditions.countries": {
-                      $size: 0
-                    }
+                      $size: 0,
+                    },
                   },
                   {
-                    "conditions.countries": order.shipping_address.country
-                  }
-                ]
+                    "conditions.countries": order.shipping_address.country,
+                  },
+                ],
               })
             }
 
@@ -104,13 +104,13 @@ class ShippingMethodsService {
                 $or: [
                   {
                     "conditions.states": {
-                      $size: 0
-                    }
+                      $size: 0,
+                    },
                   },
                   {
-                    "conditions.states": order.shipping_address.state
-                  }
-                ]
+                    "conditions.states": order.shipping_address.state,
+                  },
+                ],
               })
             }
 
@@ -122,13 +122,13 @@ class ShippingMethodsService {
                 $or: [
                   {
                     "conditions.cities": {
-                      $size: 0
-                    }
+                      $size: 0,
+                    },
                   },
                   {
-                    "conditions.cities": order.shipping_address.city
-                  }
-                ]
+                    "conditions.cities": order.shipping_address.city,
+                  },
+                ],
               })
             }
           }
@@ -174,7 +174,7 @@ class ShippingMethodsService {
       .collection("shippingMethods")
       .updateOne(
         {
-          _id: methodObjectID
+          _id: methodObjectID,
         },
         { $set: method }
       )
@@ -205,7 +205,7 @@ class ShippingMethodsService {
           weight_total_min:
             parse.getNumberIfPositive(conditions.weight_total_min) || 0,
           weight_total_max:
-            parse.getNumberIfPositive(conditions.weight_total_max) || 0
+            parse.getNumberIfPositive(conditions.weight_total_max) || 0,
         }
       : {
           countries: [],
@@ -214,7 +214,7 @@ class ShippingMethodsService {
           subtotal_min: 0,
           subtotal_max: 0,
           weight_total_min: 0,
-          weight_total_max: 0
+          weight_total_max: 0,
         }
   }
 
@@ -223,7 +223,7 @@ class ShippingMethodsService {
       return fields.map(field => ({
         key: parse.getString(field.key),
         label: parse.getString(field.label),
-        required: parse.getBooleanIfValid(field.required, false)
+        required: parse.getBooleanIfValid(field.required, false),
       }))
     } else {
       return []

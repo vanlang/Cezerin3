@@ -269,5 +269,5 @@ tinymce.addI18n("zh_TW", {
   Tools: "\u5de5\u5177",
   "Powered by {0}": "Powered by {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "\u8c50\u5bcc\u7684\u6587\u672c\u5340\u57df\u3002\u6309ALT-F9\u524d\u5f80\u4e3b\u9078\u55ae\u3002\u6309ALT-F10\u547c\u53eb\u5de5\u5177\u6b04\u3002\u6309ALT-0\u5c0b\u6c42\u5e6b\u52a9"
+    "\u8c50\u5bcc\u7684\u6587\u672c\u5340\u57df\u3002\u6309ALT-F9\u524d\u5f80\u4e3b\u9078\u55ae\u3002\u6309ALT-F10\u547c\u53eb\u5de5\u5177\u6b04\u3002\u6309ALT-0\u5c0b\u6c42\u5e6b\u52a9",
 })

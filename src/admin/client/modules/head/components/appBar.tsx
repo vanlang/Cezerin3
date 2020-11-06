@@ -49,7 +49,7 @@ export default class AppBarTop extends React.Component {
       customerGroupName,
       ordersSelectedCount,
       orderStatusName,
-      orderNumber
+      orderNumber,
     } = this.props
     const { pathname } = location
 

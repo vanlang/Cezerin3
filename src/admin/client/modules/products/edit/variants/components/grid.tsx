@@ -15,7 +15,7 @@ class VariantInput extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: props.value
+      value: props.value,
     }
     this.onChange = this.onChange.bind(this)
     this.onBlur = this.onBlur.bind(this)
@@ -55,7 +55,7 @@ const VariantRow = ({
   onStockChange,
   onWeightChange,
   onOptionChange,
-  onDeleteVariant
+  onDeleteVariant,
 }) => {
   let cols = options.map((option, index) => {
     const variantOption = variant.options.find(i => i.option_id === option.id)
@@ -154,7 +154,7 @@ const ProductVariantsGrid = ({
   onPriceChange,
   onStockChange,
   onWeightChange,
-  onOptionChange
+  onOptionChange,
 }) => {
   const hasOptions = options && options.length > 0
   const hasVariants = variants && variants.length > 0

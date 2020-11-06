@@ -3,14 +3,14 @@ import {
   exportRequest,
   exportReceive,
   installRequest,
-  installReceive
+  installReceive,
 } from "../actions"
 import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
     exportInProcess: state.settings.exportInProcess,
-    installInProcess: state.settings.installInProcess
+    installInProcess: state.settings.installInProcess,
   }
 }
 
@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => {
     },
     installReceive: () => {
       dispatch(installReceive())
-    }
+    },
   }
 }
 

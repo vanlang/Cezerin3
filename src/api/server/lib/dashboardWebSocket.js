@@ -10,7 +10,7 @@ const listen = server => {
     maxPayload: 1024, //The maximum allowed message size
     backlog: 100, //The maximum length of the queue of pending connections.
     verifyClient: verifyClient, //An hook to reject connections
-    server //A pre-created HTTP/S server to use
+    server, //A pre-created HTTP/S server to use
   })
 
   wss.on("connection", onConnection)
@@ -63,11 +63,11 @@ const send = ({ event, payload }) => {
 
 const events = {
   ORDER_CREATED: "order.created",
-  THEME_INSTALLED: "theme.installed"
+  THEME_INSTALLED: "theme.installed",
 }
 
 export default {
   listen: listen,
   send: send,
-  events: events
+  events: events,
 }

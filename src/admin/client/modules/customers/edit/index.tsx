@@ -7,14 +7,14 @@ import {
   updateAddress,
   deleteAddress,
   setDefaultBillingAddress,
-  setDefaultShippingAddress
+  setDefaultShippingAddress,
 } from "../actions"
 import CustomerDetails from "./components/details"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     settings: state.settings.settings,
-    customer: state.customers.editCustomer
+    customer: state.customers.editCustomer,
   }
 }
 
@@ -51,10 +51,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           full_name: customer.full_name,
           group_id: customer.group_id,
           email: customer.email,
-          mobile: customer.mobile
+          mobile: customer.mobile,
         })
       )
-    }
+    },
   }
 }
 

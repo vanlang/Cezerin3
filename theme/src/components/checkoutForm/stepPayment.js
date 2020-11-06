@@ -13,7 +13,7 @@ const CheckoutStepPayment = props => {
     shippingMethod,
     show,
     title,
-    onCreateToken
+    onCreateToken,
   } = props
 
   const { payment_method_gateway, grand_total } = cart

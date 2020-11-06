@@ -259,5 +259,5 @@ tinymce.addI18n("hr", {
   Table: "Tablica",
   Tools: "Alati",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Pritisni ALT-F9 za izbornik. Pritisni ALT-F10 za alatnu traku. Pritisni ALT-0 za pomo\u0107"
+    "Pritisni ALT-F9 za izbornik. Pritisni ALT-F10 za alatnu traku. Pritisni ALT-0 za pomo\u0107",
 })

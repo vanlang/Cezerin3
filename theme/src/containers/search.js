@@ -8,7 +8,7 @@ const SearchContainer = props => {
   const {
     addCartItem,
     loadMoreProducts,
-    state: { products, settings, productFilter, productsHasMore }
+    state: { products, settings, productFilter, productsHasMore },
   } = props
   const searchNotEmpty = productFilter.search && productFilter.search !== ""
   const searchDescription = searchNotEmpty
@@ -52,8 +52,8 @@ SearchContainer.propTypes = {
     settings: PropTypes.shape({}),
     products: PropTypes.arrayOf(PropTypes.shape({})),
     productFilter: PropTypes.shape({}),
-    productsHasMore: PropTypes.bool
-  }).isRequired
+    productsHasMore: PropTypes.bool,
+  }).isRequired,
 }
 
 export default SearchContainer

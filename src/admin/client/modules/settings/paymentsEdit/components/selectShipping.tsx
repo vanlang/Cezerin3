@@ -8,7 +8,7 @@ export default class SelectShippingMethodsField extends React.Component {
     super(props)
     const ids = Array.isArray(props.input.value) ? props.input.value : []
     this.state = {
-      selectedIds: ids
+      selectedIds: ids,
     }
   }
 
@@ -18,7 +18,7 @@ export default class SelectShippingMethodsField extends React.Component {
       : []
     if (newIds !== this.state.selectedIds) {
       this.setState({
-        selectedIds: newIds
+        selectedIds: newIds,
       })
     }
   }

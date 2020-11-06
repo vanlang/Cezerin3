@@ -5,7 +5,7 @@ import * as webstoreAuth from "lib/webstoreAuth"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    account: state.apps.account
+    account: state.apps.account,
   }
 }
 
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onDeveloperSubmit: values => {
       dispatch(updateDeveloperAccount(values))
-    }
+    },
   }
 }
 

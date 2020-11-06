@@ -8,11 +8,11 @@ export default class ViewedProducts extends React.Component {
     limit: PropTypes.number.isRequired,
     settings: PropTypes.shape({}).isRequired,
     addCartItem: PropTypes.func.isRequired,
-    product: PropTypes.shape({}).isRequired
+    product: PropTypes.shape({}).isRequired,
   }
 
   state = {
-    viewedProducts: []
+    viewedProducts: [],
   }
 
   componentDidMount() {

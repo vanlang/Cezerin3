@@ -40,7 +40,7 @@ class ProductOptionValuesService {
       .updateOne(
         {
           _id: productObjectID,
-          "options.id": optionObjectID
+          "options.id": optionObjectID,
         },
         { $push: { "options.$.values": optionValueData } }
       )
@@ -134,7 +134,7 @@ class ProductOptionValuesService {
   getValidDocumentForInsert(data) {
     let optionValue = {
       id: new ObjectID(),
-      name: parse.getString(data.name)
+      name: parse.getString(data.name),
     }
 
     return optionValue

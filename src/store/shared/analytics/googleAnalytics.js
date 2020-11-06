@@ -6,7 +6,7 @@ const event = {
   ADD_TO_CART: "add_to_cart",
   REMOVE_FROM_CART: "remove_from_cart",
   SET_CHECKOUT_OPTION: "set_checkout_option",
-  PURCHASE: "purchase"
+  PURCHASE: "purchase",
 }
 
 export const pageView = ({ path, title }) => {
@@ -14,8 +14,8 @@ export const pageView = ({ path, title }) => {
     eventName: event.PAGE_VIEW,
     eventParameters: {
       page_path: path,
-      page_title: title
-    }
+      page_title: title,
+    },
   })
 }
 
@@ -24,14 +24,14 @@ export const viewItem = ({ product }) => {
     id: product.sku && product.sku.length > 0 ? product.sku : product.id,
     name: product.name,
     category: product.category_name,
-    price: product.price.toString()
+    price: product.price.toString(),
   }
 
   logEvent({
     eventName: event.VIEW_ITEM,
     eventParameters: {
-      items: [productData]
-    }
+      items: [productData],
+    },
   })
 }
 
@@ -55,14 +55,14 @@ export const addToCart = ({ item, cart }) => {
     name: cartItem.name,
     price: cartItem.price.toString(),
     variant: cartItem.variant_name,
-    quantity: item.quantity
+    quantity: item.quantity,
   }
 
   logEvent({
     eventName: event.ADD_TO_CART,
     eventParameters: {
-      items: [gaItem]
-    }
+      items: [gaItem],
+    },
   })
 }
 
@@ -83,14 +83,14 @@ export const removeFromCart = ({ itemId, cart }) => {
     name: cartItem.name,
     price: cartItem.price.toString(),
     variant: cartItem.variant_name,
-    quantity: cartItem.quantity
+    quantity: cartItem.quantity,
   }
 
   logEvent({
     eventName: event.REMOVE_FROM_CART,
     eventParameters: {
-      items: [gaItem]
-    }
+      items: [gaItem],
+    },
   })
 }
 
@@ -100,8 +100,8 @@ export const setCheckoutOption = ({ step, option, value }) => {
     eventParameters: {
       checkout_step: step,
       checkout_option: option,
-      value: value
-    }
+      value: value,
+    },
   })
 }
 
@@ -109,8 +109,8 @@ export const search = ({ searchText }) => {
   logEvent({
     eventName: event.SEARCH,
     eventParameters: {
-      search_term: searchText
-    }
+      search_term: searchText,
+    },
   })
 }
 
@@ -120,18 +120,18 @@ export const beginCheckout = ({ order }) => {
     name: item.name,
     price: item.price.toString(),
     variant: item.variant_name,
-    quantity: item.quantity
+    quantity: item.quantity,
   }))
 
   const gaPurchase = {
     transaction_id: order.number,
     value: order.grand_total,
-    items: gaItems
+    items: gaItems,
   }
 
   logEvent({
     eventName: event.BEGIN_CHECKOUT,
-    eventParameters: gaPurchase
+    eventParameters: gaPurchase,
   })
 }
 
@@ -141,7 +141,7 @@ export const purchase = ({ order }) => {
     name: item.name,
     price: item.price.toString(),
     variant: item.variant_name,
-    quantity: item.quantity
+    quantity: item.quantity,
   }))
 
   const gaPurchase = {
@@ -149,12 +149,12 @@ export const purchase = ({ order }) => {
     value: order.grand_total,
     tax: order.tax_total.toString(),
     shipping: order.shipping_price.toString(),
-    items: gaItems
+    items: gaItems,
   }
 
   logEvent({
     eventName: event.PURCHASE,
-    eventParameters: gaPurchase
+    eventParameters: gaPurchase,
   })
 }
 

@@ -32,7 +32,7 @@ export default class OrderDetails extends React.Component {
       onShippingAddressUpdate,
       onOrderSummaryUpdate,
       onCheckout,
-      processingCheckout
+      processingCheckout,
     } = this.props
     if (!order) return null
 

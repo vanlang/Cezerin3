@@ -77,7 +77,7 @@ export default class Cart extends React.PureComponent {
             to={{
               pathname:
                 Lscache.get("auth_data") !== null ? "/checkout" : "/login",
-              state: { cartLayer: true }
+              state: { cartLayer: true },
             }}
             onClick={cartToggle}
           >

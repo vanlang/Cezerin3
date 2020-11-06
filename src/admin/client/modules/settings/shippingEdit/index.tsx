@@ -3,7 +3,7 @@ import {
   fetchShippingMethod,
   updateShippingMethod,
   createShippingMethod,
-  receiveShippingMethod
+  receiveShippingMethod,
 } from "../actions"
 import Form from "./components/form"
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     methodId: methodId,
     settings: state.settings.settings,
-    initialValues: state.settings.shippingMethodEdit
+    initialValues: state.settings.shippingMethodEdit,
   }
 }
 
@@ -30,29 +30,29 @@ const mapDispatchToProps = (dispatch, ownProps) => {
               {
                 key: "full_name",
                 label: "",
-                required: true
+                required: true,
               },
               {
                 key: "address1",
                 label: "",
-                required: true
+                required: true,
               },
               {
                 key: "address2",
                 label: "",
-                required: false
+                required: false,
               },
               {
                 key: "postal_code",
                 label: "",
-                required: false
+                required: false,
               },
               {
                 key: "phone",
                 label: "",
-                required: false
-              }
-            ]
+                required: false,
+              },
+            ],
           })
         )
       }
@@ -97,7 +97,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(createShippingMethod(method))
         ownProps.history.push("/admin/settings/shipping")
       }
-    }
+    },
   }
 }
 

@@ -28,7 +28,7 @@ export default class CustomerDetails extends React.Component {
       onUpdateAddress,
       onDeleteAddress,
       onSetDefaultBillingAddress,
-      onSetDefaultShippingAddress
+      onSetDefaultShippingAddress,
     } = this.props
     if (!customer) return <br />
 

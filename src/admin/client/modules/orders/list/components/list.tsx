@@ -26,7 +26,7 @@ export default class OrdersList extends React.Component {
       onSelect,
       onSelectAll,
       loadMore,
-      settings
+      settings,
     } = this.props
     const rows = items.map((item, index) => (
       <OrdersListItem

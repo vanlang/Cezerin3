@@ -48,7 +48,7 @@ class OrderStatusesService {
       .collection("orderStatuses")
       .updateOne(
         {
-          _id: statusObjectID
+          _id: statusObjectID,
         },
         { $set: status }
       )

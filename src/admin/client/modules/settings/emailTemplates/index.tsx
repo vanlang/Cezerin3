@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    initialValues: state.settings.emailTemplate
+    initialValues: state.settings.emailTemplate,
   }
 }
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onSubmit: values => {
       dispatch(updateEmailTemplate(values))
-    }
+    },
   }
 }
 

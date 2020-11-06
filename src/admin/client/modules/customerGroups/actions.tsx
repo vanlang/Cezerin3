@@ -4,65 +4,65 @@ import messages from "lib/text"
 
 function requestGroups() {
   return {
-    type: t.GROUPS_REQUEST
+    type: t.GROUPS_REQUEST,
   }
 }
 
 function receiveGroups(items) {
   return {
     type: t.GROUPS_RECEIVE,
-    items
+    items,
   }
 }
 
 function receiveErrorGroups(error) {
   return {
     type: t.GROUPS_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectGroup(id) {
   return {
     type: t.GROUPS_SELECT,
-    selectedId: id
+    selectedId: id,
   }
 }
 
 export function deselectGroup() {
   return {
-    type: t.GROUPS_DESELECT
+    type: t.GROUPS_DESELECT,
   }
 }
 
 function requestUpdateGroup(id) {
   return {
-    type: t.GROUP_UPDATE_REQUEST
+    type: t.GROUP_UPDATE_REQUEST,
   }
 }
 
 function receiveUpdateGroup() {
   return {
-    type: t.GROUP_UPDATE_SUCCESS
+    type: t.GROUP_UPDATE_SUCCESS,
   }
 }
 
 function errorUpdateGroup(error) {
   return {
     type: t.GROUP_UPDATE_FAILURE,
-    error
+    error,
   }
 }
 
 function successCreateGroup(id) {
   return {
-    type: t.GROUP_CREATE_SUCCESS
+    type: t.GROUP_CREATE_SUCCESS,
   }
 }
 
 function successDeleteGroup(id) {
   return {
-    type: t.GROUP_DELETE_SUCCESS
+    type: t.GROUP_DELETE_SUCCESS,
   }
 }
 

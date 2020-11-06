@@ -6,7 +6,7 @@ class CommerceSettingsService {
     this.defaultSettings = {
       status: "",
       serviceOptions: "",
-      deliveryRadius: ""
+      deliveryRadius: "",
     }
   }
 
@@ -27,7 +27,7 @@ class CommerceSettingsService {
         .updateOne(
           {},
           {
-            $set: settings
+            $set: settings,
           },
           { upsert: true }
         )

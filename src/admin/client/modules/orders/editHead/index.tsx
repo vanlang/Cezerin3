@@ -6,14 +6,14 @@ import {
   updateOrder,
   deleteCurrentOrder,
   closeOrder,
-  cancelOrder
+  cancelOrder,
 } from "../actions"
 import Buttons from "./components/buttons"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     settings: state.settings.settings,
-    order: state.orders.editOrder
+    order: state.orders.editOrder,
   }
 }
 
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     addItem: (orderId, productId) => {
       dispatch(addOrderItem(orderId, productId))
-    }
+    },
   }
 }
 

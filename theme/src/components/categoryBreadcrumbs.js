@@ -25,7 +25,7 @@ const CategoryBreadcrumbs = ({ currentCategory, categories }) => {
 
 CategoryBreadcrumbs.propTypes = {
   currentCategory: PropTypes.shape({}).isRequired,
-  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 }
 
 export default CategoryBreadcrumbs

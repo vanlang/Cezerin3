@@ -5,10 +5,7 @@ class ThemePlaceholdersService {
   constructor() {}
 
   getPlaceholders() {
-    return db
-      .collection("themePlaceholders")
-      .find({}, { _id: 0 })
-      .toArray()
+    return db.collection("themePlaceholders").find({}, { _id: 0 }).toArray()
   }
 
   getSinglePlaceholder(placeholderKey) {
@@ -42,7 +39,7 @@ class ThemePlaceholdersService {
       .updateOne(
         { key: placeholderKey },
         {
-          $set: field
+          $set: field,
         },
         { upsert: true }
       )

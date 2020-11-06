@@ -5,14 +5,14 @@ const push = () => {}
 
 function requestCustomer() {
   return {
-    type: t.CUSTOMERS_DETAIL_REQUEST
+    type: t.CUSTOMERS_DETAIL_REQUEST,
   }
 }
 
 function receiveCustomer(item) {
   return {
     type: t.CUSTOMERS_DETAIL_RECEIVE,
-    item
+    item,
   }
 }
 
@@ -22,13 +22,13 @@ export function clearCustomerDetails() {
 
 function requestCustomers() {
   return {
-    type: t.CUSTOMERS_REQUEST
+    type: t.CUSTOMERS_REQUEST,
   }
 }
 
 function requestMoreCustomers() {
   return {
-    type: t.CUSTOMERS_MORE_REQUEST
+    type: t.CUSTOMERS_MORE_REQUEST,
   }
 }
 
@@ -37,7 +37,7 @@ function receiveCustomersMore({ has_more, total_count, data }) {
     type: t.CUSTOMERS_MORE_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
@@ -46,66 +46,66 @@ function receiveCustomers({ has_more, total_count, data }) {
     type: t.CUSTOMERS_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
 function receiveCustomersError(error) {
   return {
     type: t.CUSTOMERS_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectCustomer(id) {
   return {
     type: t.CUSTOMERS_SELECT,
-    customerId: id
+    customerId: id,
   }
 }
 
 export function deselectCustomer(id) {
   return {
     type: t.CUSTOMERS_DESELECT,
-    customerId: id
+    customerId: id,
   }
 }
 
 export function deselectAllCustomer() {
   return {
-    type: t.CUSTOMERS_DESELECT_ALL
+    type: t.CUSTOMERS_DESELECT_ALL,
   }
 }
 
 export function selectAllCustomer() {
   return {
-    type: t.CUSTOMERS_SELECT_ALL
+    type: t.CUSTOMERS_SELECT_ALL,
   }
 }
 
 export function setFilterSearch(value) {
   return {
     type: t.CUSTOMERS_FILTER_SET_SEARCH,
-    search: value
+    search: value,
   }
 }
 
 function deleteCustomersSuccess() {
   return {
-    type: t.CUSTOMER_DELETE_SUCCESS
+    type: t.CUSTOMER_DELETE_SUCCESS,
   }
 }
 
 function setGroupSuccess() {
   return {
-    type: t.CUSTOMER_SET_GROUP_SUCCESS
+    type: t.CUSTOMER_SET_GROUP_SUCCESS,
   }
 }
 
 const getFilter = (state, offset = 0) => {
   let filter = {
     limit: 50,
-    offset: offset
+    offset: offset,
   }
 
   if (state.customers.search && state.customers.search !== "") {

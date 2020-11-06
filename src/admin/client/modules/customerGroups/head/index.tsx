@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     selected: state.customerGroups.items.find(
       item => item.id === state.customerGroups.selectedId
-    )
+    ),
   }
 }
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     },
     onCreate: () => {
       dispatch(deselectGroup())
-    }
+    },
   }
 }
 

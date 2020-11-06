@@ -5,19 +5,19 @@ import messages from "lib/text"
 function receiveFiles(files) {
   return {
     type: t.FILES_RECEIVE,
-    files
+    files,
   }
 }
 
 function filesUploadStart() {
   return {
-    type: t.FILES_UPLOAD_START
+    type: t.FILES_UPLOAD_START,
   }
 }
 
 function filesUploadEnd() {
   return {
-    type: t.FILES_UPLOAD_END
+    type: t.FILES_UPLOAD_END,
   }
 }
 

@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
-    pages: state.pages.pages
+    pages: state.pages.pages,
   }
 }
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoad: () => {
       dispatch(fetchPages())
-    }
+    },
   }
 }
 

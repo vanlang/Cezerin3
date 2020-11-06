@@ -6,7 +6,7 @@ class ImportSettingsService {
     this.defaultSettings = {
       apikey: "",
       sheetid: "",
-      range: ""
+      range: "",
     }
   }
 
@@ -27,7 +27,7 @@ class ImportSettingsService {
         .updateOne(
           {},
           {
-            $set: settings
+            $set: settings,
           },
           { upsert: true }
         )

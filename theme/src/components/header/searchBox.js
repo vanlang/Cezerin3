@@ -7,7 +7,7 @@ export default class SearchBox extends React.Component {
     super(props)
     this.state = {
       value: props.value,
-      hasFocus: false
+      hasFocus: false,
     }
   }
 

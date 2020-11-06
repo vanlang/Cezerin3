@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = state => {
   return {
-    importSettings: state.settings.importSettings
+    importSettings: state.settings.importSettings,
   }
 }
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoad: () => {
       dispatch(fetchImportSettings())
-    }
+    },
   }
 }
 

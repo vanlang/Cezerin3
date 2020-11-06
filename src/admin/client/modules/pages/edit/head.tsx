@@ -5,7 +5,7 @@ import Buttons from "./components/headButtons"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    page: state.pages.pageEdit
+    page: state.pages.pageEdit,
   }
 }
 
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onDelete: id => {
       dispatch(deletePage(id))
       ownProps.history.push("/admin/pages")
-    }
+    },
   }
 }
 

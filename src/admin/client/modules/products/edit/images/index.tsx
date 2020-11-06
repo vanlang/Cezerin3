@@ -5,7 +5,7 @@ import {
   updateImages,
   updateImage,
   fetchImages,
-  uploadImages
+  uploadImages,
 } from "../../actions"
 import ProductImages from "./components/images"
 
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     images: state.products.editProductImages || oldImages,
     uploadingImages: state.products.uploadingImages,
-    productId: productId
+    productId: productId,
   }
 }
 
@@ -35,14 +35,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(
         updateImage(productId, {
           id: image.id,
-          alt: image.alt
+          alt: image.alt,
         })
       )
     },
     onImageUpload: form => {
       const { productId } = ownProps.match.params
       dispatch(uploadImages(productId, form))
-    }
+    },
   }
 }
 

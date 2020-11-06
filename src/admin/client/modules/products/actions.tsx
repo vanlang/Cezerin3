@@ -5,60 +5,60 @@ import moment from "moment"
 
 function requestProduct() {
   return {
-    type: t.PRODUCT_DETAIL_REQUEST
+    type: t.PRODUCT_DETAIL_REQUEST,
   }
 }
 
 function receiveProduct(item) {
   return {
     type: t.PRODUCT_DETAIL_RECEIVE,
-    item
+    item,
   }
 }
 
 function receiveProductError(error) {
   return {
     type: t.PRODUCT_DETAIL_FAILURE,
-    error
+    error,
   }
 }
 
 function receiveImages(images) {
   return {
     type: t.PRODUCT_IMAGES_RECEIVE,
-    images
+    images,
   }
 }
 
 function receiveVariants(variants) {
   return {
     type: t.PRODUCT_VARIANTS_RECEIVE,
-    variants
+    variants,
   }
 }
 
 function receiveOptions(options) {
   return {
     type: t.PRODUCT_OPTIONS_RECEIVE,
-    options
+    options,
   }
 }
 
 export function cancelProductEdit() {
   return {
-    type: t.PRODUCT_DETAIL_ERASE
+    type: t.PRODUCT_DETAIL_ERASE,
   }
 }
 
 function requestProducts() {
   return {
-    type: t.PRODUCTS_REQUEST
+    type: t.PRODUCTS_REQUEST,
   }
 }
 
 function requestMoreProducts() {
   return {
-    type: t.PRODUCTS_MORE_REQUEST
+    type: t.PRODUCTS_MORE_REQUEST,
   }
 }
 
@@ -67,7 +67,7 @@ function receiveProductsMore({ has_more, total_count, data }) {
     type: t.PRODUCTS_MORE_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
@@ -76,97 +76,97 @@ function receiveProducts({ has_more, total_count, data }) {
     type: t.PRODUCTS_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
 function receiveProductsError(error) {
   return {
     type: t.PRODUCTS_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectProduct(id) {
   return {
     type: t.PRODUCTS_SELECT,
-    productId: id
+    productId: id,
   }
 }
 
 export function deselectProduct(id) {
   return {
     type: t.PRODUCTS_DESELECT,
-    productId: id
+    productId: id,
   }
 }
 
 export function deselectAllProduct() {
   return {
-    type: t.PRODUCTS_DESELECT_ALL
+    type: t.PRODUCTS_DESELECT_ALL,
   }
 }
 
 export function selectAllProduct() {
   return {
-    type: t.PRODUCTS_SELECT_ALL
+    type: t.PRODUCTS_SELECT_ALL,
   }
 }
 
 export function setFilter(filter) {
   return {
     type: t.PRODUCTS_SET_FILTER,
-    filter: filter
+    filter: filter,
   }
 }
 
 function deleteProductsSuccess() {
   return {
-    type: t.PRODUCT_DELETE_SUCCESS
+    type: t.PRODUCT_DELETE_SUCCESS,
   }
 }
 
 function setCategorySuccess() {
   return {
-    type: t.PRODUCT_SET_CATEGORY_SUCCESS
+    type: t.PRODUCT_SET_CATEGORY_SUCCESS,
   }
 }
 
 function requestUpdateProduct() {
   return {
-    type: t.PRODUCT_UPDATE_REQUEST
+    type: t.PRODUCT_UPDATE_REQUEST,
   }
 }
 
 function receiveUpdateProduct(item) {
   return {
     type: t.PRODUCT_UPDATE_SUCCESS,
-    item
+    item,
   }
 }
 
 function errorUpdateProduct(error) {
   return {
     type: t.PRODUCT_UPDATE_FAILURE,
-    error
+    error,
   }
 }
 
 function successCreateProduct(id) {
   return {
-    type: t.PRODUCT_CREATE_SUCCESS
+    type: t.PRODUCT_CREATE_SUCCESS,
   }
 }
 
 function imagesUploadStart() {
   return {
-    type: t.PRODUCT_IMAGES_UPLOAD_START
+    type: t.PRODUCT_IMAGES_UPLOAD_START,
   }
 }
 
 function imagesUploadEnd() {
   return {
-    type: t.PRODUCT_IMAGES_UPLOAD_END
+    type: t.PRODUCT_IMAGES_UPLOAD_END,
   }
 }
 
@@ -182,7 +182,7 @@ const getFilter = (state, offset = 0) => {
       "id,name,category_id,category_ids,category_name,sku,images,enabled,discontinued,stock_status,stock_quantity,price,on_sale,regular_price,url",
     search: searchTerm,
     offset: offset,
-    sort: sortOrder
+    sort: sortOrder,
   }
 
   if (
@@ -332,7 +332,7 @@ export function createProduct(history) {
 
     const productDraft = {
       enabled: false,
-      category_id: state.productCategories.selectedId
+      category_id: state.productCategories.selectedId,
     }
 
     console.log(state.productCategories.selectedId)
@@ -417,7 +417,7 @@ export function createVariant(productId) {
     const variant = {
       price: regular_price,
       stock_quantity: stock_quantity,
-      weight: weight
+      weight: weight,
     }
 
     return api.products.variants

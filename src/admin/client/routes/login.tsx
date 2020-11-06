@@ -16,13 +16,13 @@ export default class LoginForm extends React.Component {
       isFetching: false,
       isAuthorized: false,
       emailIsSent: false,
-      error: null
+      error: null,
     }
   }
 
   handleChange = event => {
     this.setState({
-      email: event.target.value
+      email: event.target.value,
     })
   }
 
@@ -37,7 +37,7 @@ export default class LoginForm extends React.Component {
       isFetching: true,
       isAuthorized: false,
       emailIsSent: false,
-      error: null
+      error: null,
     })
 
     CezerinClient.authorize(settings.apiBaseUrl, this.state.email)
@@ -46,7 +46,7 @@ export default class LoginForm extends React.Component {
           isFetching: false,
           isAuthorized: false,
           emailIsSent: authorizeResponse.json.sent,
-          error: authorizeResponse.json.error
+          error: authorizeResponse.json.error,
         })
       })
       .catch(error => {
@@ -54,7 +54,7 @@ export default class LoginForm extends React.Component {
           isFetching: false,
           isAuthorized: false,
           emailIsSent: false,
-          error: error
+          error: error,
         })
       })
   }

@@ -267,5 +267,5 @@ tinymce.addI18n("uz", {
   Tools: "Vositalar",
   "Powered by {0}": "{0} bilan ishlaydi",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Murakkab matn maydoni. Menyu uchun ALT-F9 tugmalarini bosing. Vositalar paneli uchun ALT-F10 tugmasini bosing. Yordamni chaqirish uchun ALT-0-ni bosing"
+    "Murakkab matn maydoni. Menyu uchun ALT-F9 tugmalarini bosing. Vositalar paneli uchun ALT-F10 tugmasini bosing. Yordamni chaqirish uchun ALT-0-ni bosing",
 })

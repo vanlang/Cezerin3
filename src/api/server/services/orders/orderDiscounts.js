@@ -17,12 +17,12 @@ class OrdertDiscountsService {
 
     return db.collection("orders").updateOne(
       {
-        _id: orderObjectID
+        _id: orderObjectID,
       },
       {
         $push: {
-          discounts: discount
-        }
+          discounts: discount,
+        },
       }
     )
   }
@@ -40,7 +40,7 @@ class OrdertDiscountsService {
       .updateOne(
         {
           _id: orderObjectID,
-          "discounts.id": discountObjectID
+          "discounts.id": discountObjectID,
         },
         { $set: discount }
       )
@@ -58,14 +58,14 @@ class OrdertDiscountsService {
       .collection("orders")
       .updateOne(
         {
-          _id: orderObjectID
+          _id: orderObjectID,
         },
         {
           $pull: {
             discounts: {
-              id: discountObjectID
-            }
-          }
+              id: discountObjectID,
+            },
+          },
         }
       )
       .then(res => OrdersService.getSingleOrder(order_id))
@@ -75,7 +75,7 @@ class OrdertDiscountsService {
     return {
       id: new ObjectID(),
       name: parse.getString(data.name),
-      amount: parse.getNumberIfPositive(data.amount)
+      amount: parse.getNumberIfPositive(data.amount),
     }
   }
 

@@ -31,7 +31,7 @@ class SummaryForm extends React.Component {
     this.state = {
       shippingMethods: [],
       paymentMethods: [],
-      orderStatuses: []
+      orderStatuses: [],
     }
   }
 
@@ -41,7 +41,7 @@ class SummaryForm extends React.Component {
 
   fetchData = orderId => {
     const filter = {
-      order_id: orderId
+      order_id: orderId,
     }
 
     api.orderStatuses.list().then(({ status, json }) => {
@@ -63,7 +63,7 @@ class SummaryForm extends React.Component {
       pristine,
       submitting,
       initialValues,
-      onCancel
+      onCancel,
     } = this.props
 
     const statusItems = this.state.orderStatuses.map((item, index) => (
@@ -85,7 +85,7 @@ class SummaryForm extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <div>
@@ -179,5 +179,5 @@ class SummaryForm extends React.Component {
 export default reduxForm({
   form: "SummaryForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(SummaryForm)

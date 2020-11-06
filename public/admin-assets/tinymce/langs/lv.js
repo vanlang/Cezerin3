@@ -270,5 +270,5 @@ tinymce.addI18n("lv", {
   Tools: "R\u012bki",
   "Powered by {0}": "Darb\u012bbu nodro\u0161ina {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Satura redaktors. Nospiediet ALT-F9 lai par\u0101d\u012btu izv\u0113lni, ALT-F10 - r\u012bkjoslu vai ALT-0 - pal\u012bdz\u012bbu."
+    "Satura redaktors. Nospiediet ALT-F9 lai par\u0101d\u012btu izv\u0113lni, ALT-F10 - r\u012bkjoslu vai ALT-0 - pal\u012bdz\u012bbu.",
 })

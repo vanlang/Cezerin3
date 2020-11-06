@@ -17,7 +17,7 @@ export default ({ value, setSearch }) => {
         color: "#fff",
         backgroundColor: "rgba(255,255,255,0.2)",
         borderRadius: "4px",
-        textIndent: "16px"
+        textIndent: "16px",
       }}
     />
   )

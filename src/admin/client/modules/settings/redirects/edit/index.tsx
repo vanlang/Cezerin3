@@ -3,7 +3,7 @@ import {
   fetchRedirect,
   updateRedirect,
   createRedirect,
-  receiveRedirect
+  receiveRedirect,
 } from "../../actions"
 import Form from "./components/form"
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   const { redirectId } = ownProps.match.params
   return {
     redirectId,
-    initialValues: state.settings.redirectEdit
+    initialValues: state.settings.redirectEdit,
   }
 }
 
@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       dispatch(createRedirect(redirect))
       ownProps.history.push("/admin/settings/redirects")
     }
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form)

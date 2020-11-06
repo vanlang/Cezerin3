@@ -14,13 +14,13 @@ export default class LoginForm extends React.Component {
       email: localStorage.getItem("webstore_email") || "",
       isFetching: false,
       emailIsSent: false,
-      error: null
+      error: null,
     }
   }
 
   handleChange = event => {
     this.setState({
-      email: event.target.value
+      email: event.target.value,
     })
   }
 
@@ -34,7 +34,7 @@ export default class LoginForm extends React.Component {
     this.setState({
       isFetching: true,
       emailIsSent: false,
-      error: null
+      error: null,
     })
 
     CezerinClient.authorizeInWebStore(
@@ -44,7 +44,7 @@ export default class LoginForm extends React.Component {
       this.setState({
         isFetching: false,
         emailIsSent: status === 200,
-        error: status !== 200 && json ? json.message : null
+        error: status !== 200 && json ? json.message : null,
       })
     })
   }

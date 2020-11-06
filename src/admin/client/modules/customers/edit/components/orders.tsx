@@ -43,7 +43,7 @@ const getOrderStates = order => {
     return [
       <span key="cancelled" className={style.cancelledState}>
         {messages.orders_cancelled}
-      </span>
+      </span>,
     ]
   }
 
@@ -51,7 +51,7 @@ const getOrderStates = order => {
     return [
       <span key="closed" className={style.closedState}>
         {messages.orders_closed}
-      </span>
+      </span>,
     ]
   }
 
@@ -104,7 +104,7 @@ export default class CustomerOrders extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      orders: []
+      orders: [],
     }
   }
 

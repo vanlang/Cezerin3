@@ -44,18 +44,18 @@ const getBrowser = browser => {
   return browser
     ? {
         ip: getString(browser.ip),
-        user_agent: getString(browser.user_agent)
+        user_agent: getString(browser.user_agent),
       }
     : {
         ip: "",
-        user_agent: ""
+        user_agent: "",
       }
 }
 
 const getCustomerAddress = address => {
   let coordinates = {
     latitude: "",
-    longitude: ""
+    longitude: "",
   }
 
   if (address && address.coordinates) {
@@ -79,7 +79,7 @@ const getCustomerAddress = address => {
         coordinates: coordinates,
         details: address.details,
         default_billing: false,
-        default_shipping: false
+        default_shipping: false,
       }
     : {}
 }
@@ -87,7 +87,7 @@ const getCustomerAddress = address => {
 const getOrderAddress = address => {
   let coordinates = {
     latitude: "",
-    longitude: ""
+    longitude: "",
   }
 
   if (address && address.coordinates) {
@@ -107,7 +107,7 @@ const getOrderAddress = address => {
     company: "",
     tax_number: "",
     coordinates: coordinates,
-    details: null
+    details: null,
   }
 
   return address
@@ -125,7 +125,7 @@ const getOrderAddress = address => {
           company: getString(address.company),
           tax_number: getString(address.tax_number),
           coordinates: coordinates,
-          details: address.details
+          details: address.details,
         },
         address
       )
@@ -143,5 +143,5 @@ export default {
   getBooleanIfValid: getBooleanIfValid,
   getBrowser: getBrowser,
   getCustomerAddress: getCustomerAddress,
-  getOrderAddress: getOrderAddress
+  getOrderAddress: getOrderAddress,
 }

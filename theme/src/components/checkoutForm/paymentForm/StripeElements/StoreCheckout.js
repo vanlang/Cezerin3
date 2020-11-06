@@ -6,7 +6,7 @@ const StoreCheckout = ({
   formSettings,
   shopSettings,
   onPayment,
-  onCreateToken
+  onCreateToken,
 }) => (
   <Elements>
     <InjectedCheckoutForm

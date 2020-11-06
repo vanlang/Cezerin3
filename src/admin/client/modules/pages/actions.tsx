@@ -5,14 +5,14 @@ import messages from "lib/text"
 function receivePages(pages) {
   return {
     type: t.PAGES_RECEIVE,
-    pages
+    pages,
   }
 }
 
 export function receivePage(pageEdit) {
   return {
     type: t.PAGE_RECEIVE,
-    pageEdit
+    pageEdit,
   }
 }
 

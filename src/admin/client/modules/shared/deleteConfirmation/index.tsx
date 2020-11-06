@@ -7,14 +7,14 @@ export default class ConfirmationDialog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: props.open
+      open: props.open,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.state.open !== nextProps.open) {
       this.setState({
-        open: nextProps.open
+        open: nextProps.open,
       })
     }
   }
@@ -59,7 +59,7 @@ export default class ConfirmationDialog extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.handleDelete}
-      />
+      />,
     ]
 
     return (

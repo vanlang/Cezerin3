@@ -275,5 +275,5 @@ tinymce.addI18n("hu_HU", {
   Tools: "Eszk\u00f6z\u00f6k",
   "Powered by {0}": "\u00dczemelteti: {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Rich Text ter\u00fclet. Nyomj ALT-F9-et a men\u00fch\u00f6z. Nyomj ALT-F10-et az eszk\u00f6zt\u00e1rhoz. Nyomj ALT-0-t a s\u00fag\u00f3hoz"
+    "Rich Text ter\u00fclet. Nyomj ALT-F9-et a men\u00fch\u00f6z. Nyomj ALT-F10-et az eszk\u00f6zt\u00e1rhoz. Nyomj ALT-0-t a s\u00fag\u00f3hoz",
 })

@@ -8,7 +8,7 @@ import HomeSlider from "../components/homeSlider"
 const IndexContainer = props => {
   const {
     addCartItem,
-    state: { pageDetails, settings }
+    state: { pageDetails, settings },
   } = props
 
   return (
@@ -29,7 +29,7 @@ const IndexContainer = props => {
             <div className="content">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: pageDetails.content
+                  __html: pageDetails.content,
                 }}
               />
             </div>
@@ -59,8 +59,8 @@ IndexContainer.propTypes = {
   addCartItem: PropTypes.func.isRequired,
   state: PropTypes.shape({
     settings: PropTypes.shape({}),
-    pageDetails: PropTypes.shape({})
-  }).isRequired
+    pageDetails: PropTypes.shape({}),
+  }).isRequired,
 }
 
 export default IndexContainer

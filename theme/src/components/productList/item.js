@@ -13,7 +13,7 @@ const Item = ({
   columnCountOnTablet = 3,
   columnCountOnDesktop = 4,
   columnCountOnWidescreen = 4,
-  columnCountOnFullhd = 4
+  columnCountOnFullhd = 4,
 }) => {
   const columnCount = 12
 

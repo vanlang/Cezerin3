@@ -17,19 +17,19 @@ class OrdertTansactionsService {
 
     await db.collection("orders").updateOne(
       {
-        _id: orderObjectID
+        _id: orderObjectID,
       },
       {
         $push: {
-          transactions: transaction
-        }
+          transactions: transaction,
+        },
       }
     )
 
     const order = await OrdersService.getSingleOrder(order_id)
     await webhooks.trigger({
       event: webhooks.events.TRANSACTION_CREATED,
-      payload: order
+      payload: order,
     })
     return order
   }
@@ -45,17 +45,17 @@ class OrdertTansactionsService {
     await db.collection("orders").updateOne(
       {
         _id: orderObjectID,
-        "transactions.id": transactionObjectID
+        "transactions.id": transactionObjectID,
       },
       {
-        $set: transaction
+        $set: transaction,
       }
     )
 
     const order = await OrdersService.getSingleOrder(order_id)
     await webhooks.trigger({
       event: webhooks.events.TRANSACTION_UPDATED,
-      payload: order
+      payload: order,
     })
     return order
   }
@@ -69,21 +69,21 @@ class OrdertTansactionsService {
 
     await db.collection("orders").updateOne(
       {
-        _id: orderObjectID
+        _id: orderObjectID,
       },
       {
         $pull: {
           transactions: {
-            id: transactionObjectID
-          }
-        }
+            id: transactionObjectID,
+          },
+        },
       }
     )
 
     const order = await OrdersService.getSingleOrder(order_id)
     await webhooks.trigger({
       event: webhooks.events.TRANSACTION_DELETED,
-      payload: order
+      payload: order,
     })
     return order
   }
@@ -96,7 +96,7 @@ class OrdertTansactionsService {
       currency: parse.getString(data.currency),
       status: parse.getString(data.status),
       details: parse.getString(data.details),
-      success: parse.getBooleanIfValid(data.success)
+      success: parse.getBooleanIfValid(data.success),
     }
   }
 

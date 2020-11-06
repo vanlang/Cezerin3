@@ -7,14 +7,14 @@ import Checkbox from "material-ui/Checkbox"
 
 const styles = {
   selectedItem: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)"
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
   },
   innerItem: {
-    paddingLeft: 55
+    paddingLeft: 55,
   },
   nestedListStyle: {
-    padding: "0 0 0 15px"
-  }
+    padding: "0 0 0 15px",
+  },
 }
 
 const FolderIcon = <FontIcon className="material-icons">folder</FontIcon>

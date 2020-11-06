@@ -14,7 +14,7 @@ const getPaymentFormSettings = options => {
     order_id: order.id,
     public_key: gatewaySettings.public_key,
     language: gatewaySettings.language,
-    server_url: gatewaySettings.server_url
+    server_url: gatewaySettings.server_url,
   }
 
   const form = getForm(params, gatewaySettings.private_key)
@@ -22,7 +22,7 @@ const getPaymentFormSettings = options => {
   const formSettings = {
     data: form.data,
     signature: form.signature,
-    language: gatewaySettings.language
+    language: gatewaySettings.language,
   }
 
   return Promise.resolve(formSettings)
@@ -46,7 +46,7 @@ const paymentNotification = options => {
   if (signatureValid && paymentSuccess) {
     OrdersService.updateOrder(orderId, {
       paid: true,
-      date_paid: new Date()
+      date_paid: new Date(),
     }).then(() => {
       OrdertTansactionsService.addTransaction(orderId, {
         transaction_id: data.transaction_id,
@@ -54,7 +54,7 @@ const paymentNotification = options => {
         currency: data.currency,
         status: data.status,
         details: `${data.paytype}, ${data.sender_card_mask2}`,
-        success: true
+        success: true,
       })
     })
   } else {
@@ -69,7 +69,7 @@ const getForm = (params, private_key) => {
 
   return {
     data: data,
-    signature: signature
+    signature: signature,
   }
 }
 
@@ -90,5 +90,5 @@ const getHashFromString = str => {
 
 export default {
   getPaymentFormSettings: getPaymentFormSettings,
-  paymentNotification: paymentNotification
+  paymentNotification: paymentNotification,
 }

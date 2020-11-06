@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    initialValues: state.settings.checkoutField
+    initialValues: state.settings.checkoutField,
   }
 }
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onSubmit: values => {
       dispatch(updateCheckoutField(values))
       ownProps.history.push("/admin/settings/checkout")
-    }
+    },
   }
 }
 

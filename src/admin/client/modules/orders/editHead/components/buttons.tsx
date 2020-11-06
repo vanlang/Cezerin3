@@ -18,7 +18,7 @@ export default class Buttons extends React.Component {
       showClose: false,
       showCancel: false,
       openDelete: false,
-      showAddItem: false
+      showAddItem: false,
     }
   }
 

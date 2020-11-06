@@ -21,11 +21,11 @@ const appReducer = (state = initialState, action) => {
           productsHasMore: action.products.has_more,
           productsAttributes: action.products.attributes,
           productsMinPrice: action.products.price.min || 0,
-          productsMaxPrice: action.products.price.max || 0
+          productsMaxPrice: action.products.price.max || 0,
         })
       } else {
         return Object.assign({}, state, {
-          products: []
+          products: [],
         })
       }
 
@@ -37,7 +37,7 @@ const appReducer = (state = initialState, action) => {
         loadingMoreProducts: false,
         products: [...state.products, ...action.products.data],
         productsTotalCount: action.products.total_count,
-        productsHasMore: action.products.has_more
+        productsHasMore: action.products.has_more,
       })
 
     case t.PAGE_RECEIVE:
@@ -70,7 +70,7 @@ const appReducer = (state = initialState, action) => {
     case t.SHIPPING_METHODS_RECEIVE:
       return Object.assign({}, state, {
         shippingMethods: action.methods,
-        loadingShippingMethods: false
+        loadingShippingMethods: false,
       })
 
     case t.PAYMENT_METHODS_REQUEST:
@@ -79,7 +79,7 @@ const appReducer = (state = initialState, action) => {
     case t.PAYMENT_METHODS_RECEIVE:
       return Object.assign({}, state, {
         paymentMethods: action.methods,
-        loadingPaymentMethods: false
+        loadingPaymentMethods: false,
       })
 
     case t.CHECKOUT_REQUEST:
@@ -89,7 +89,7 @@ const appReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         cart: null,
         order: action.order,
-        processingCheckout: false
+        processingCheckout: false,
       })
 
     case t.SITEMAP_RECEIVE:
@@ -100,7 +100,7 @@ const appReducer = (state = initialState, action) => {
 
     case t.SET_PRODUCTS_FILTER:
       return Object.assign({}, state, {
-        productFilter: Object.assign({}, state.productFilter, action.filter)
+        productFilter: Object.assign({}, state.productFilter, action.filter),
       })
 
     case t.LOCATION_CHANGED:

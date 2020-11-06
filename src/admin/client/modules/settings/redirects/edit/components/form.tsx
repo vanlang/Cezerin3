@@ -72,5 +72,5 @@ class EditRedirectForm extends React.Component {
 export default reduxForm({
   form: "EditRedirectForm",
   validate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(EditRedirectForm)

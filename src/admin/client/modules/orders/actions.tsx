@@ -4,14 +4,14 @@ import messages from "lib/text"
 
 function requestOrder() {
   return {
-    type: t.ORDER_DETAIL_REQUEST
+    type: t.ORDER_DETAIL_REQUEST,
   }
 }
 
 function receiveOrder(item) {
   return {
     type: t.ORDER_DETAIL_RECEIVE,
-    item
+    item,
   }
 }
 
@@ -21,13 +21,13 @@ export function clearOrderDetails() {
 
 function requestOrders() {
   return {
-    type: t.ORDERS_REQUEST
+    type: t.ORDERS_REQUEST,
   }
 }
 
 function requestMoreOrders() {
   return {
-    type: t.ORDERS_MORE_REQUEST
+    type: t.ORDERS_MORE_REQUEST,
   }
 }
 
@@ -36,7 +36,7 @@ function receiveOrdersMore({ has_more, total_count, data }) {
     type: t.ORDERS_MORE_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
@@ -45,115 +45,115 @@ function receiveOrders({ has_more, total_count, data }) {
     type: t.ORDERS_RECEIVE,
     has_more,
     total_count,
-    data
+    data,
   }
 }
 
 function receiveOrdersError(error) {
   return {
     type: t.ORDERS_FAILURE,
-    error
+    error,
   }
 }
 
 function requestOrderCheckout() {
   return {
-    type: t.ORDER_CHECKOUT_REQUEST
+    type: t.ORDER_CHECKOUT_REQUEST,
   }
 }
 
 function receiveOrderCheckout() {
   return {
-    type: t.ORDER_CHECKOUT_RECEIVE
+    type: t.ORDER_CHECKOUT_RECEIVE,
   }
 }
 
 function failOrderCheckout(error) {
   return {
     type: t.ORDER_CHECKOUT_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectOrder(id) {
   return {
     type: t.ORDERS_SELECT,
-    orderId: id
+    orderId: id,
   }
 }
 
 export function deselectOrder(id) {
   return {
     type: t.ORDERS_DESELECT,
-    orderId: id
+    orderId: id,
   }
 }
 
 export function deselectAllOrder() {
   return {
-    type: t.ORDERS_DESELECT_ALL
+    type: t.ORDERS_DESELECT_ALL,
   }
 }
 
 export function selectAllOrder() {
   return {
-    type: t.ORDERS_SELECT_ALL
+    type: t.ORDERS_SELECT_ALL,
   }
 }
 
 export function setFilter(filter) {
   return {
     type: t.ORDERS_SET_FILTER,
-    filter: filter
+    filter: filter,
   }
 }
 
 function requestBulkUpdate() {
   return {
-    type: t.ORDERS_BULK_UPDATE_REQUEST
+    type: t.ORDERS_BULK_UPDATE_REQUEST,
   }
 }
 
 function receiveBulkUpdate() {
   return {
-    type: t.ORDERS_BULK_UPDATE_SUCCESS
+    type: t.ORDERS_BULK_UPDATE_SUCCESS,
   }
 }
 
 function errorBilkUpdate() {
   return {
-    type: t.ORDERS_BULK_UPDATE_FAILURE
+    type: t.ORDERS_BULK_UPDATE_FAILURE,
   }
 }
 
 function deleteOrdersSuccess() {
   return {
-    type: t.ORDER_DELETE_SUCCESS
+    type: t.ORDER_DELETE_SUCCESS,
   }
 }
 
 function createOrdersSuccess() {
   return {
-    type: t.ORDER_CREATE_SUCCESS
+    type: t.ORDER_CREATE_SUCCESS,
   }
 }
 
 function requestOrderUpdate() {
   return {
-    type: t.ORDER_UPDATE_REQUEST
+    type: t.ORDER_UPDATE_REQUEST,
   }
 }
 
 function receiveOrderUpdate() {
   return {
-    type: t.ORDER_UPDATE_SUCCESS
+    type: t.ORDER_UPDATE_SUCCESS,
   }
 }
 
 function failOrderUpdate(error) {
   return {
     type: t.ORDER_UPDATE_FAILURE,
-    error
+    error,
   }
 }
 
@@ -161,7 +161,7 @@ const getFilter = (state, offset = 0) => {
   const filterState = state.orders.filter
   let filter = {
     limit: 50,
-    offset: offset
+    offset: offset,
   }
 
   if (filterState.search !== null && filterState.search !== "") {
@@ -302,7 +302,7 @@ const fetchOrderAdditionalData = order => {
       : []
   const productFilter = {
     ids: productIds,
-    fields: "images,enabled,stock_quantity,variants,options"
+    fields: "images,enabled,stock_quantity,variants,options",
   }
 
   return Promise.all([
@@ -310,7 +310,7 @@ const fetchOrderAdditionalData = order => {
     hasCustomer ? api.customers.retrieve(order.customer_id) : null,
     hasShippingMethod
       ? api.shippingMethods.retrieve(order.shipping_method_id)
-      : null
+      : null,
   ])
     .then(([productsResponse, customerResponse, methodResponse]) => {
       if (productsResponse) {
@@ -369,7 +369,7 @@ export function addOrderItem(orderId, productId) {
       .create(orderId, {
         product_id: productId,
         variant_id: null,
-        quantity: 1
+        quantity: 1,
       })
       .then(orderResponse => orderResponse.json)
       .then(fetchOrderAdditionalData)
@@ -387,7 +387,7 @@ export function updateOrderItem(orderId, orderItemId, quantity, variantId) {
     api.orders.items
       .update(orderId, orderItemId, {
         quantity: quantity,
-        variant_id: variantId
+        variant_id: variantId,
       })
       .then(orderResponse => orderResponse.json)
       .then(fetchOrderAdditionalData)

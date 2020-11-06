@@ -17,7 +17,7 @@ import {
   registerUser,
   cartLayerInitialized,
   forgotPassword,
-  resetPassword
+  resetPassword,
 } from "./actions"
 
 const setQuery = (history, query) => {
@@ -30,7 +30,7 @@ const setQuery = (history, query) => {
 
 export const mapStateToProps = (state, ownProps) => {
   return {
-    state: state.app
+    state: state.app,
   }
 }
 
@@ -149,6 +149,6 @@ export const mapDispatchToProps = (dispatch, ownProps) => {
     },
     getJSONLD: state => {
       return getJSONLD(state)
-    }
+    },
   }
 }

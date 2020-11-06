@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     selected: state.orderStatuses.items.find(
       item => item.id === state.orderStatuses.selectedId
-    )
+    ),
   }
 }
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     },
     onCreate: () => {
       dispatch(deselectStatus())
-    }
+    },
   }
 }
 

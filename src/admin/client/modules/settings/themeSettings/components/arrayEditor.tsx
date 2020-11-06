@@ -13,7 +13,7 @@ const ArrayEditor = ({
   label,
   properties,
   fields,
-  meta: { touched, error, submitFailed }
+  meta: { touched, error, submitFailed },
 }) => {
   return (
     <div>

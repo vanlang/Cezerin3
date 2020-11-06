@@ -45,7 +45,7 @@ class CustomerGroupsService {
       .collection("customerGroups")
       .updateOne(
         {
-          _id: groupObjectID
+          _id: groupObjectID,
         },
         { $set: group }
       )
@@ -67,7 +67,7 @@ class CustomerGroupsService {
 
   getValidDocumentForInsert(data) {
     let group = {
-      date_created: new Date()
+      date_created: new Date(),
     }
 
     group.name = parse.getString(data.name)
@@ -82,7 +82,7 @@ class CustomerGroupsService {
     }
 
     let group = {
-      date_updated: new Date()
+      date_updated: new Date(),
     }
 
     if (data.name !== undefined) {

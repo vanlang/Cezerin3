@@ -238,5 +238,5 @@ tinymce.addI18n("vi_VN", {
   Tools: "C\u00f4ng c\u1ee5",
   View: "Xem",
   Table: "B\u1ea3ng",
-  Format: "\u0110\u1ecbnh d\u1ea1ng"
+  Format: "\u0110\u1ecbnh d\u1ea1ng",
 })

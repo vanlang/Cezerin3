@@ -46,7 +46,7 @@ const CustomersListItem = ({ customer, onSelect, selected, settings }) => {
                     style={{
                       color: "rgba(0, 0, 0, 0.4)",
                       fontSize: 16,
-                      marginRight: 6
+                      marginRight: 6,
                     }}
                     className="material-icons"
                   >

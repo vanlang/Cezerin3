@@ -17,7 +17,7 @@ const ProductList = ({
   columnCountOnTablet,
   columnCountOnDesktop,
   columnCountOnWidescreen,
-  columnCountOnFullhd
+  columnCountOnFullhd,
 }) => {
   const items = products
     ? products.map(product => (

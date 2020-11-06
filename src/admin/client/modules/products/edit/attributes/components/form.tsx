@@ -84,7 +84,7 @@ const ProductAttributesForm = ({
   pristine,
   reset,
   submitting,
-  initialValues
+  initialValues,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -117,5 +117,5 @@ const ProductAttributesForm = ({
 
 export default reduxForm({
   form: "ProductAttributesForm",
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ProductAttributesForm)

@@ -156,7 +156,7 @@ class ProductCategoriesService {
     let category = {
       date_created: new Date(),
       date_updated: null,
-      image: ""
+      image: "",
     }
 
     category.name = parse.getString(data.name)
@@ -189,7 +189,7 @@ class ProductCategoriesService {
       }
 
       let category = {
-        date_updated: new Date()
+        date_updated: new Date(),
       }
 
       if (data.name !== undefined) {
@@ -294,7 +294,7 @@ class ProductCategoriesService {
         file.name = utils.getCorrectFileName(file.name)
         file.path = dir + "/" + file.name
       })
-      .on("file", function(field, file) {
+      .on("file", function (field, file) {
         // every time a file has been uploaded successfully,
         file_name = file.name
         file_size = file.size

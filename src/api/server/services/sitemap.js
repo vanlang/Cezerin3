@@ -12,7 +12,7 @@ class SitemapService {
       this.getSlugArrayFromReserved(),
       this.getSlugArrayFromProductCategories(slug, onlyEnabled),
       this.getSlugArrayFromProducts(slug, onlyEnabled),
-      this.getSlugArrayFromPages(slug, onlyEnabled)
+      this.getSlugArrayFromPages(slug, onlyEnabled),
     ]).then(([reserved, productCategories, products, pages]) => {
       let paths = [...reserved, ...productCategories, ...products, ...pages]
       return paths
@@ -23,7 +23,7 @@ class SitemapService {
     return Promise.all([
       this.getSlugArrayFromReserved(),
       this.getSlugArrayFromProductCategories(slug, onlyEnabled),
-      this.getSlugArrayFromPages(slug, onlyEnabled)
+      this.getSlugArrayFromPages(slug, onlyEnabled),
     ]).then(([reserved, productCategories, pages]) => {
       let paths = [...reserved, ...productCategories, ...pages]
       return paths
@@ -33,7 +33,7 @@ class SitemapService {
   getPathsWithSlash(slug, onlyEnabled) {
     return Promise.all([
       this.getSlugArrayFromProducts(slug, onlyEnabled),
-      this.getSlugArrayFromPages(slug, onlyEnabled)
+      this.getSlugArrayFromPages(slug, onlyEnabled),
     ]).then(([products, pages]) => {
       let paths = [...products, ...pages]
       return paths
@@ -96,7 +96,7 @@ class SitemapService {
         .collection("products")
         .find(productFilter)
         .project({ slug: 1, category_id: 1 })
-        .toArray()
+        .toArray(),
     ]).then(([categories, products]) => {
       return products.map(product => {
         const category = categories.find(
@@ -106,7 +106,7 @@ class SitemapService {
         return {
           path: `/${categorySlug}/${product.slug}`,
           type: "product",
-          resource: product._id
+          resource: product._id,
         }
       })
     })
@@ -127,7 +127,7 @@ class SitemapService {
         items.map(item => ({
           path: `/${item.slug}`,
           type: "page",
-          resource: item._id
+          resource: item._id,
         }))
       )
   }
@@ -147,7 +147,7 @@ class SitemapService {
         items.map(item => ({
           path: `/${item.slug}`,
           type: "product-category",
-          resource: item._id
+          resource: item._id,
         }))
       )
   }

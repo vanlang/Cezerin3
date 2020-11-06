@@ -267,5 +267,5 @@ tinymce.addI18n("pl", {
   Tools: "Narz\u0119dzia",
   "Powered by {0}": "Powered by {0}",
   "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":
-    "Obszar Edycji. ALT-F9 - menu. ALT-F10 - pasek narz\u0119dzi. ALT-0 - pomoc"
+    "Obszar Edycji. ALT-F9 - menu. ALT-F10 - pasek narz\u0119dzi. ALT-0 - pomoc",
 })

@@ -5,7 +5,7 @@ const LoadMore = ({
   loadMoreProducts,
   hasMore,
   loading,
-  className = "button is-fullwidth is-dark"
+  className = "button is-fullwidth is-dark",
 }) => {
   if (hasMore) {
     const buttonStyle = {}

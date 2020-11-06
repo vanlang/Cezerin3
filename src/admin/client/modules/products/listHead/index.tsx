@@ -7,14 +7,14 @@ import {
   setCategory,
   setFilter,
   createProduct,
-  importProducts
+  importProducts,
 } from "../actions"
 import Buttons from "./components/buttons"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     search: state.products.filter.search,
-    selectedCount: state.products.selected.length
+    selectedCount: state.products.selected.length,
   }
 }
 
@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onImportProducts: () => {
       dispatch(importProducts(ownProps.history))
-    }
+    },
   }
 }
 

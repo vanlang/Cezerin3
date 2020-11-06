@@ -4,7 +4,7 @@ import Form from "./components/form"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    initialValues: state.settings.commerceSettings
+    initialValues: state.settings.commerceSettings,
   }
 }
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onSubmit: values => {
       dispatch(updateCommerceSettings(values))
       ownProps.history.push("/admin/settings/general/commerceform")
-    }
+    },
   }
 }
 

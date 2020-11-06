@@ -22,7 +22,7 @@ class AppSettingsService {
       .updateOne(
         { key: appKey },
         {
-          $set: data
+          $set: data,
         },
         { upsert: true }
       )

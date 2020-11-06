@@ -5,7 +5,7 @@ import Buttons from "./components/headButtons"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    shippingMethod: state.settings.shippingMethodEdit
+    shippingMethod: state.settings.shippingMethodEdit,
   }
 }
 
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onDelete: id => {
       dispatch(deleteShippingMethod(id))
       ownProps.history.push("/admin/settings/shipping")
-    }
+    },
   }
 }
 

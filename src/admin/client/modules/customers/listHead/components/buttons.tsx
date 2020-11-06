@@ -19,7 +19,7 @@ export default class Buttons extends React.Component {
     this.state = {
       groupId: null,
       openSetGroup: false,
-      openDelete: false
+      openDelete: false,
     }
   }
 
@@ -67,7 +67,7 @@ export default class Buttons extends React.Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.saveSetGroup}
-      />
+      />,
     ]
 
     return (

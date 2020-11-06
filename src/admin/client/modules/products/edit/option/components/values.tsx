@@ -12,7 +12,7 @@ class OptionValueEdit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: props.value.name
+      value: props.value.name,
     }
     this.onChange = this.onChange.bind(this)
     this.onBlur = this.onBlur.bind(this)
@@ -65,7 +65,7 @@ class OptionValueAdd extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: ""
+      value: "",
     }
     this.onChange = this.onChange.bind(this)
     this.onCreate = this.onCreate.bind(this)
@@ -124,7 +124,7 @@ const OptionValues = ({
   optionValues,
   createOptionValue,
   updateOptionValue,
-  deleteOptionValue
+  deleteOptionValue,
 }) => {
   const valueRows = optionValues.map((value, index) => (
     <OptionValueEdit

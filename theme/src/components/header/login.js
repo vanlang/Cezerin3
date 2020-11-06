@@ -14,7 +14,7 @@ const LoginIcon = () => {
         minWidth: 32 + "px",
         minHeight: 29 + "px",
         maxWidth: 44 + "px",
-        maxHeight: 28 + "px"
+        maxHeight: 28 + "px",
       }}
     />
   )

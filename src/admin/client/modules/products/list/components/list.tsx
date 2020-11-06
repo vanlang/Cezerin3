@@ -28,7 +28,7 @@ export default class ProductsList extends React.Component {
       loadMore,
       settings,
       hasMore,
-      totalCount
+      totalCount,
     } = this.props
 
     const rows = items.map((item, index) => {

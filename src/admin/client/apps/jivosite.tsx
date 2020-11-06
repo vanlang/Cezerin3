@@ -8,20 +8,20 @@ export const Description = {
   key: "jivosite",
   name: "JivoSite онлайн-консультант",
   coverUrl: "/admin-assets/images/apps/jivosite.png",
-  description: `JivoSite – чат для сайта и инструмент для общения с клиентами в социальных сетях, мессенджерах и мобильных приложениях. Зарабатывайте больше, не упуская ни одного обращения.`
+  description: `JivoSite – чат для сайта и инструмент для общения с клиентами в социальных сетях, мессенджерах и мобильных приложениях. Зарабатывайте больше, не упуская ни одного обращения.`,
 }
 
 export class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      code: ""
+      code: "",
     }
   }
 
   handleChange = event => {
     this.setState({
-      code: event.target.value
+      code: event.target.value,
     })
   }
 
@@ -45,7 +45,7 @@ export class App extends React.Component {
     api.apps.settings.update("jivosite", { code: code })
     api.theme.placeholders.update("jivosite", {
       place: "body_end",
-      value: code
+      value: code,
     })
   }
 

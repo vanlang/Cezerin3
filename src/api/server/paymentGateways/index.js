@@ -8,7 +8,7 @@ import StripeElements from "./StripeElements"
 const getOptions = orderId => {
   return Promise.all([
     OrdersService.getSingleOrder(orderId),
-    SettingsService.getSettings()
+    SettingsService.getSettings(),
   ]).then(([order, settings]) => {
     if (order && order.payment_method_id) {
       return PaymentGatewaysService.getGateway(
@@ -19,7 +19,7 @@ const getOptions = orderId => {
           gatewaySettings: gatewaySettings,
           order: order,
           amount: order.grand_total,
-          currency: settings.currency_code
+          currency: settings.currency_code,
         }
 
         return options
@@ -49,7 +49,7 @@ const paymentNotification = (req, res, gateway) => {
       gateway: gateway,
       gatewaySettings: gatewaySettings,
       req: req,
-      res: res
+      res: res,
     }
 
     switch (gateway) {
@@ -78,7 +78,7 @@ const processOrderPayment = async order => {
       return StripeElements.processOrderPayment({
         order,
         gatewaySettings,
-        settings
+        settings,
       })
     default:
       return Promise.reject("Invalid gateway")
@@ -88,5 +88,5 @@ const processOrderPayment = async order => {
 export default {
   getPaymentFormSettings: getPaymentFormSettings,
   paymentNotification: paymentNotification,
-  processOrderPayment: processOrderPayment
+  processOrderPayment: processOrderPayment,
 }

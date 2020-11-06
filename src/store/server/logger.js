@@ -9,15 +9,15 @@ winston.configure({
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.simple()
-      )
+      ),
     }),
     new winston.transports.File({
       level: "info",
       handleExceptions: true,
       format: winston.format.json(),
-      filename: LOGS_FILE
-    })
-  ]
+      filename: LOGS_FILE,
+    }),
+  ],
 })
 
 export default {}

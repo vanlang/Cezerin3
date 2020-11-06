@@ -28,14 +28,14 @@ class ProductVariantsService {
       .collection("products")
       .updateOne(
         {
-          _id: productObjectID
+          _id: productObjectID,
         },
         {
           $pull: {
             variants: {
-              id: variantObjectID
-            }
-          }
+              id: variantObjectID,
+            },
+          },
         }
       )
       .then(res => this.getVariants(productId))
@@ -69,7 +69,7 @@ class ProductVariantsService {
       .updateOne(
         {
           _id: productObjectID,
-          "variants.id": variantObjectID
+          "variants.id": variantObjectID,
         },
         { $set: variantData }
       )
@@ -83,7 +83,7 @@ class ProductVariantsService {
       price: parse.getNumberIfPositive(data.price) || 0,
       stock_quantity: parse.getNumberIfPositive(data.stock_quantity) || 0,
       weight: parse.getNumberIfPositive(data.weight) || 0,
-      options: []
+      options: [],
     }
 
     return variant
@@ -144,7 +144,7 @@ class ProductVariantsService {
           // if option not exists => add new option
           options.push({
             option_id: new ObjectID(optionId),
-            value_id: new ObjectID(valueId)
+            value_id: new ObjectID(valueId),
           })
         } else {
           // if option exists => set new valueId
@@ -167,7 +167,7 @@ class ProductVariantsService {
         options = []
         options.push({
           option_id: new ObjectID(optionId),
-          value_id: new ObjectID(valueId)
+          value_id: new ObjectID(valueId),
         })
       }
 

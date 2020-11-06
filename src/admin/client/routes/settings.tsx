@@ -31,11 +31,11 @@ const styles = {
     color: "inherit",
     textDecoration: "none",
     fontWeight: "inherit",
-    display: "block"
+    display: "block",
   },
   linkActive: {
-    backgroundColor: "rgba(0,0,0,0.1)"
-  }
+    backgroundColor: "rgba(0,0,0,0.1)",
+  },
 }
 
 const SettingsMenu = () => (

@@ -56,7 +56,7 @@ const ProductGeneralForm = ({
   pristine,
   reset,
   submitting,
-  initialValues
+  initialValues,
 }) => {
   if (initialValues) {
     return (
@@ -126,5 +126,5 @@ export default reduxForm({
   validate,
   asyncValidate,
   asyncBlurFields: ["slug"],
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ProductGeneralForm)

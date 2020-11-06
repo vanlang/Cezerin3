@@ -11,7 +11,7 @@ import Divider from "material-ui/Divider"
 
 const styles = {
   button: {
-    margin: 12
+    margin: 12,
   },
   exampleImageInput: {
     cursor: "pointer",
@@ -21,8 +21,8 @@ const styles = {
     right: 0,
     left: 0,
     width: "100%",
-    opacity: 0
-  }
+    opacity: 0,
+  },
 }
 
 export default class Theme extends React.Component {
@@ -81,7 +81,7 @@ export default class Theme extends React.Component {
                 marginTop: 30,
                 marginBottom: 30,
                 marginLeft: -30,
-                marginRight: -30
+                marginRight: -30,
               }}
             />
 

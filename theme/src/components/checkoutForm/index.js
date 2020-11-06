@@ -9,7 +9,7 @@ export default class CheckoutForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      step: 1
+      step: 1,
     }
   }
 
@@ -17,11 +17,11 @@ export default class CheckoutForm extends React.Component {
     this.props.loadShippingMethods()
     this.props.loadPaymentMethods()
     this.props.customerData({
-      token: Lscache.get("auth_data")
+      token: Lscache.get("auth_data"),
     })
 
     this.props.cartLayerInitialized({
-      cartlayerBtnInitialized: false
+      cartlayerBtnInitialized: false,
     })
   }
 
@@ -59,7 +59,7 @@ export default class CheckoutForm extends React.Component {
         shipping_address,
         billing_address,
         payment_method_id: null,
-        shipping_method_id: null
+        shipping_method_id: null,
       },
       cart => {
         this.props.loadShippingMethods()
@@ -74,7 +74,7 @@ export default class CheckoutForm extends React.Component {
     this.props.updateCart(
       {
         payment_method_id: null,
-        shipping_method_id: shippingMethodId
+        shipping_method_id: shippingMethodId,
       },
       cart => {
         this.props.loadPaymentMethods()
@@ -84,7 +84,7 @@ export default class CheckoutForm extends React.Component {
 
   handlePaymentMethodSave = paymentMethodId => {
     this.props.updateCart({
-      payment_method_id: paymentMethodId
+      payment_method_id: paymentMethodId,
     })
   }
 
@@ -103,7 +103,7 @@ export default class CheckoutForm extends React.Component {
       this.props.updateCart({
         shipping_address,
         billing_address,
-        comments
+        comments,
       })
       this.handleShippingSave()
     } else {
@@ -118,7 +118,7 @@ export default class CheckoutForm extends React.Component {
   handleCheckoutWithToken = tokenId => {
     this.props.updateCart(
       {
-        payment_token: tokenId
+        payment_token: tokenId,
       },
       cart => {
         this.props.checkout(null)
@@ -140,13 +140,13 @@ export default class CheckoutForm extends React.Component {
       loadingPaymentMethods,
       checkoutFields,
       processingCheckout,
-      cartlayerBtnInitialized
+      cartlayerBtnInitialized,
     } = this.props.state
 
     const {
       checkoutInputClass = "checkout-field",
       checkoutButtonClass = "checkout-button",
-      checkoutEditButtonClass = "checkout-button-edit"
+      checkoutEditButtonClass = "checkout-button-edit",
     } = themeSettings
 
     if (cart && cart.items.length > 0) {

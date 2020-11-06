@@ -8,14 +8,14 @@ export default class ResetPasswordForm extends React.Component {
     super(props)
 
     this.state = {
-      verifiedToken: false
+      verifiedToken: false,
     }
   }
 
   verifyToken() {
     this.setState({ verifiedToken: true })
     this.props.resetPassword({
-      token: this.props.location.search.split("=")[1]
+      token: this.props.location.search.split("=")[1],
     })
   }
 
@@ -24,7 +24,7 @@ export default class ResetPasswordForm extends React.Component {
     this.props.resetPassword({
       id: userId,
       password: values.password,
-      history: this.props.history
+      history: this.props.history,
     })
   }
 
@@ -34,7 +34,7 @@ export default class ResetPasswordForm extends React.Component {
     const {
       settings,
       forgotPasswordProperties,
-      resetPasswordProperties
+      resetPasswordProperties,
     } = this.props.state
 
     if (
@@ -45,7 +45,7 @@ export default class ResetPasswordForm extends React.Component {
       return (
         <Redirect
           to={{
-            pathname: "/"
+            pathname: "/",
           }}
         />
       )
@@ -53,7 +53,7 @@ export default class ResetPasswordForm extends React.Component {
 
     const {
       checkoutInputClass = "checkout-field",
-      checkoutButtonClass = "checkout-button"
+      checkoutButtonClass = "checkout-button",
     } = themeSettings
 
     return (

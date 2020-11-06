@@ -35,7 +35,7 @@ class ResetPassword extends React.Component {
     super(props)
 
     this.state = {
-      comparePassword: ""
+      comparePassword: "",
     }
   }
 
@@ -121,7 +121,7 @@ class ResetPassword extends React.Component {
     const {
       handleSubmit,
       forgotPasswordProperties,
-      resetPasswordProperties
+      resetPasswordProperties,
     } = this.props
 
     const inputClassName = "login-input-field"
@@ -198,5 +198,5 @@ class ResetPassword extends React.Component {
   }
 }
 export default reduxForm({
-  form: "ResetPassword"
+  form: "ResetPassword",
 })(ResetPassword)

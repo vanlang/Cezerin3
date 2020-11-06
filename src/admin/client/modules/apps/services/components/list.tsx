@@ -41,7 +41,7 @@ export default class ServicesList extends React.Component {
             style={{
               width: "100%",
               marginTop: 30,
-              color: "rgba(0, 0, 0, 0.52)"
+              color: "rgba(0, 0, 0, 0.52)",
             }}
           >
             {messages.loadFromWebstore}&nbsp;&nbsp;

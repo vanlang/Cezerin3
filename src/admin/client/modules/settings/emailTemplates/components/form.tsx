@@ -21,7 +21,7 @@ class EmailTemplate extends React.Component {
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Paper className="paper-box" zDepth={1}>

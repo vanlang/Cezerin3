@@ -26,7 +26,7 @@ export default class CustomersList extends React.Component {
       onSelect,
       onSelectAll,
       loadMore,
-      settings
+      settings,
     } = this.props
     const rows = items.map((item, index) => (
       <CustomersListItem

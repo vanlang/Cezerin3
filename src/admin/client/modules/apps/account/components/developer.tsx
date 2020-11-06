@@ -17,7 +17,7 @@ const DeveloperForm = ({
   handleSubmit,
   pristine,
   submitting,
-  initialValues
+  initialValues,
 }) => {
   return (
     <div style={{ maxWidth: 720, width: "100%" }}>
@@ -28,7 +28,7 @@ const DeveloperForm = ({
         onSubmit={handleSubmit}
         style={{
           display: "initial",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Paper style={{ margin: "0px 20px" }} zDepth={1}>
@@ -88,5 +88,5 @@ const DeveloperForm = ({
 
 export default reduxForm({
   form: "WebStoreDeveloperForm",
-  enableReinitialize: true
+  enableReinitialize: true,
 })(DeveloperForm)

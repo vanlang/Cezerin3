@@ -10,7 +10,7 @@ export default class OrdersBar extends React.Component {
     super(props)
     this.state = {
       ordersData: null,
-      salesData: null
+      salesData: null,
     }
   }
 
@@ -27,7 +27,7 @@ export default class OrdersBar extends React.Component {
         .hour(0)
         .minute(0)
         .second(0)
-        .toISOString()
+        .toISOString(),
     }
 
     api.orders

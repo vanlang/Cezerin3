@@ -20,7 +20,7 @@ class EmailTemplatesService {
       .updateOne(
         { name: name },
         {
-          $set: template
+          $set: template,
         },
         { upsert: true }
       )
@@ -52,7 +52,7 @@ class EmailTemplatesService {
     } else {
       return {
         subject: "",
-        body: ""
+        body: "",
       }
     }
 

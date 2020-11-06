@@ -4,90 +4,90 @@ import messages from "lib/text"
 
 function requestCategories() {
   return {
-    type: t.CATEGORIES_REQUEST
+    type: t.CATEGORIES_REQUEST,
   }
 }
 
 function receiveCategories(items) {
   return {
     type: t.CATEGORIES_RECEIVE,
-    items
+    items,
   }
 }
 
 function receiveErrorCategories(error) {
   return {
     type: t.CATEGORIES_FAILURE,
-    error
+    error,
   }
 }
 
 export function selectCategory(id) {
   return {
     type: t.CATEGORIES_SELECT,
-    selectedId: id
+    selectedId: id,
   }
 }
 
 export function deselectCategory() {
   return {
-    type: t.CATEGORIES_DESELECT
+    type: t.CATEGORIES_DESELECT,
   }
 }
 
 function requestUpdateCategory(id) {
   return {
-    type: t.CATEGORY_UPDATE_REQUEST
+    type: t.CATEGORY_UPDATE_REQUEST,
   }
 }
 
 function receiveUpdateCategory() {
   return {
-    type: t.CATEGORY_UPDATE_SUCCESS
+    type: t.CATEGORY_UPDATE_SUCCESS,
   }
 }
 
 function errorUpdateCategory(error) {
   return {
     type: t.CATEGORY_UPDATE_FAILURE,
-    error
+    error,
   }
 }
 
 function successCreateCategory(id) {
   return {
-    type: t.CATEGORY_CREATE_SUCCESS
+    type: t.CATEGORY_CREATE_SUCCESS,
   }
 }
 
 function successDeleteCategory(id) {
   return {
-    type: t.CATEGORY_DELETE_SUCCESS
+    type: t.CATEGORY_DELETE_SUCCESS,
   }
 }
 
 function successMoveUpDownCategory(newPosition) {
   return {
     type: t.CATEGORY_MOVE_UPDOWN_SUCCESS,
-    position: newPosition
+    position: newPosition,
   }
 }
 
 function successReplaceCategory(newParentId) {
   return {
-    type: t.CATEGORY_REPLACE_SUCCESS
+    type: t.CATEGORY_REPLACE_SUCCESS,
   }
 }
 
 function imageUploadStart() {
   return {
-    type: t.CATEGORY_IMAGE_UPLOAD_START
+    type: t.CATEGORY_IMAGE_UPLOAD_START,
   }
 }
 
 function imageUploadEnd() {
   return {
-    type: t.CATEGORY_IMAGE_UPLOAD_END
+    type: t.CATEGORY_IMAGE_UPLOAD_END,
   }
 }
 
