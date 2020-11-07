@@ -25,9 +25,11 @@ export const App = () => {
   const [minimized, setMinimized] = useState("false")
 
   const fetchSettings = async () => {
-    const { json } = await api.apps.settings.retrieve("facebook-customer-chat")
-    const appSettings = json
     try {
+      const { json } = await api.apps.settings.retrieve(
+        "facebook-customer-chat"
+      )
+      const appSettings = json
       if (appSettings) {
         setPageID(appSettings.pageID)
         setMinimized(appSettings.minimized)
