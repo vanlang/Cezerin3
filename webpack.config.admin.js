@@ -171,9 +171,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
-        "public/admin-assets/js/app-*.js",
-        "public/admin-assets/js/vendor-*.js",
-        "public/admin-assets/css/bundle-*.css",
+        path.resolve("public/admin-assets/js/app-*.js"),
+        path.resolve("public/admin-assets/js/vendor-*.js"),
+        path.resolve("public/admin-assets/css/bundle-*.css"),
       ],
     }),
     new webpack.DefinePlugin({
