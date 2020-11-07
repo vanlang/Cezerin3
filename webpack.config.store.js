@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { GenerateSW } = require("workbox-webpack-plugin")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -109,13 +110,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
-        "theme/assets/js/app-*.js",
-        "theme/assets/js/theme-*.js",
-        "theme/assets/css/bundle-*.css",
-        "theme/assets/sw.js",
-        "theme/assets/precache-manifest.*.js",
+        path.resolve("theme/assets/js/*-*.js"),
+        // path.resolve("theme/dist/*"),
+        path.resolve("theme/assets/sw.js"),
+        path.resolve("theme/assets/workbox-*.js"),
       ],
     }),
+    // new ForkTsCheckerWebpackPlugin({ async: true }),
     new MiniCssExtractPlugin({
       filename: "assets/css/bundle-[contenthash].css",
       chunkFilename: "assets/css/bundle-[contenthash].css",
@@ -127,7 +128,6 @@ module.exports = {
     }),
     new GenerateSW({
       swDest: "assets/sw.js",
-      // precacheManifestFilename: "assets/precache-manifest.[manifestHash].js",
       clientsClaim: true,
       skipWaiting: true,
       exclude: [/\.html$/],
