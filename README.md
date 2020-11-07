@@ -73,7 +73,8 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 ![Cezerin Dashboard](https://cezerin.org/assets/images/cezerin-dashboard-products.png)
 
-## Docs
+## Documentation
+[Documentation](https://cezerin3.web.app/docs)
 
 - Getting Started
 
@@ -116,12 +117,9 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 ### Requirements
 
-- Node.js
+- Node.js v12/lts
+- Yarnpkg
 - MongoDB
-
-## Documentation
-
-[Documentation](https://github.com/cezerin2/cezerin2/tree/master/docs)
 
 ## Application Structure
 
@@ -142,11 +140,12 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 │   │   └── client           # Client side code
 │   ├── api                  # REST API
 │   │   └── server           # Server side code
+│   |
 │   ├── store                # Store application
-│   |   ├── client             # Client side code
-│   |   ├── server             # Server side code
-│   |   └── shared             # Universal code
-│   └── index.js             # Server application start point
+│       ├── client             # Client side code
+│       ├── server             # Server side code
+│       └── shared             # Universal code
+│  
 ├── theme                    # Theme as a local package
 └── process.json             # pm2 process file
 ```
