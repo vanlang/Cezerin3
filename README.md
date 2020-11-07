@@ -78,11 +78,10 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 - Getting Started
 
-  - [Overview](./docs/overview.md)
-  - [Online Demo](./docs/online-demo.md)
-  - [Application Structure](./docs/application-structure.md)
-  - [API Client](https://github.com/cezerin2/cezerin2-client)
-  - [API Reference](https://github.com/Cezerin2/cezerin2/tree/master/docs/api)
+  - [Overview](https://cezerin3.web.app/docs/overview)
+  - [Quick Start](https://cezerin3.web.app/docs/quick-start)
+  - [Online Demo](https://cezerin3.web.app/docs/online-demo)
+  - [Application Structure](https://cezerin3.web.app/docs/application-structure)
 
 - Installation Guides
 
@@ -107,13 +106,13 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 - API
 
-  - [API Reference](./docs/api)
+  - [API Reference](https://cezerin3.web.app/docs/api)
   - [API Client](https://github.com/cezerin2/cezerin2-client)
 
 - Help
-  - [FAQ](./docs/faq.md)
-  - [HowTos](./docs/howtos.md)
-  - [Help and Support](./docs/help-and-support.md)
+  - [FAQ](https://cezerin3.web.app/docs/faq)
+  - [HowTos](https://cezerin3.web.app/docs/howtos)
+  - [Help and Support](https://cezerin3.web.app/docs/help-and-support)
 
 ### Requirements
 
@@ -140,22 +139,20 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 │   │   └── client           # Client side code
 │   ├── api                  # REST API
 │   │   └── server           # Server side code
-│   |
-│   ├── store                # Store application
+│   └── store                # Store application
 │       ├── client             # Client side code
 │       ├── server             # Server side code
 │       └── shared             # Universal code
-│  
+│
 ├── theme                    # Theme as a local package
 └── process.json             # pm2 process file
 ```
 
-## NPM Scripts
+## Yarn Scripts
 
-| `npm run <script>`   | Description                                                           |
+| `yarn <script>`      | Description                                                           |
 | -------------------- | --------------------------------------------------------------------- |
-| `clean:admin`        | Delete admin asset bundles.                                           |
-| `clean:store`        | Delete store asset bundles.                                           |
+| `clean`              | Delete store and admin asset bundles.                                 |
 | `compile:dev`        | Compiles the application to disk **and watch** (`~/dist` by default). |
 | `compile`            | Compiles the application to disk (`~/dist` by default).               |
 | `webpack:admin:dev`  | Assemble admin bundles **and watch**.                                 |
@@ -173,27 +170,29 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 ## Financial contributions
 
-We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/cezerin2).
+We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/cezerin3).
 Anyone can file an expense. If the expense makes sense for the development of the community, it will be "merged" in the ledger of our open collective by the core contributors and the person who filed the expense will be reimbursed.
 
 ## Credits
 
 ### Contributors
 
-Thank you to all the people who have already contributed to cezerin2!
-<a href="https://github.com/Cezerin2/cezerin2/graphs/contributors"><img src="https://opencollective.com/cezerin2/contributors.svg?width=890" /></a>
+Thank you to all the people who have already contributed to Cezerin/Cezerin2/Cezerin3!
+<a href="https://github.com/Cezerin3/Store/graphs/contributors"><img src="https://opencollective.com/cezerin3/contributors.svg?width=890" /></a>
 
 ### Backers
 
-Thank you to all our backers! [[Become a backer](https://opencollective.com/cezerin2#backer)]
+Thank you to all our backers! [[Become a backer](https://opencollective.com/cezerin3#backer)]
 
-<a href="https://opencollective.com/cezerin3#backers" target="_blank"><img src="https://opencollective.com/cezerin2/tiers/backer.svg?avatarHeight=36&width=600"></a>
+<a href="https://opencollective.com/cezerin3#backers" target="_blank"><img src="https://opencollective.com/cezerin3/tiers/backer.svg?avatarHeight=36&width=600"></a>
+<a href="https://opencollective.com/cezerin2#backers" target="_blank"><img src="https://opencollective.com/cezerin2/tiers/backer.svg?avatarHeight=36&width=600"></a>
+<a href="https://opencollective.com/cezerin#backers" target="_blank"></a>
 
 ### Sponsors
 
-Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/cezerin2#sponsor))
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/cezerin3#sponsor))
 https://www.paypal.com/paypalme/himadu1
-<a href="https://opencollective.com/cezerin2#sponsor" target="_blank"><img src="https://opencollective.com/cezerin2/tiers/sponsor.svg?avatarHeight=36&width=600"></a>
+<a href="https://opencollective.com/cezerin3#sponsor" target="_blank"><img src="https://opencollective.com/cezerin3/tiers/sponsor.svg?avatarHeight=36&width=600"></a>
 
 ## Contributing
 
