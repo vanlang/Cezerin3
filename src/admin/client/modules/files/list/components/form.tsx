@@ -1,18 +1,15 @@
-import React from "react"
-
-import moment from "moment"
-import messages from "lib/text"
+import { Paper } from "@material-ui/core"
 import * as helper from "lib/helper"
-import DeleteConfirmation from "modules/shared/deleteConfirmation"
-import style from "./style.css"
-import FileUploader from "./fileUploader"
-
-import Paper from "material-ui/Paper"
+import messages from "lib/text"
 import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
-const Fragment = React.Fragment
+import DeleteConfirmation from "modules/shared/deleteConfirmation"
+import moment from "moment"
+import React from "react"
+import FileUploader from "./fileUploader"
+import style from "./style.module.sass"
 
 const iconButtonElement = (
   <IconButton touch={true}>
@@ -81,7 +78,7 @@ class FileItem extends React.Component {
   }
 }
 
-export default class FileList extends React.Component {
+class FileList extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -102,18 +99,20 @@ export default class FileList extends React.Component {
     ))
 
     return (
-      <Fragment>
+      <>
         <div className={style.head + " row row--no-gutter"}>
           <div className="col-xs-5">{messages.fileName}</div>
           <div className="col-xs-3">{messages.fileModified}</div>
           <div className="col-xs-2">{messages.fileSize}</div>
           <div className="col-xs-2" />
         </div>
-        <Paper className="paper-box" zDepth={1}>
+        <Paper className="paper-box" elevation={4}>
           {listItems}
         </Paper>
         <FileUploader onUpload={onUpload} uploading={uploading} />
-      </Fragment>
+      </>
     )
   }
 }
+
+export default FileList
