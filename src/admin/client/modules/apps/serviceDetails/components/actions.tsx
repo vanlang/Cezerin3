@@ -67,7 +67,7 @@ const ServiceActions = ({ actions, serviceId, fetchServiceLogs }) => {
         {messages.serviceActions}
       </div>
       <Paper className="paper-box" elevation={4}>
-        <div>{buttons}</div>
+        {buttons}
       </Paper>
     </div>
   )

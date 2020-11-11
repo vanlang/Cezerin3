@@ -73,7 +73,6 @@ class EditTokenForm extends React.Component {
       handleSubmit,
       pristine,
       submitting,
-      initialValues,
       tokenId,
       newToken,
       onDelete,
@@ -82,7 +81,7 @@ class EditTokenForm extends React.Component {
     const isAdd = tokenId === null || tokenId === undefined
 
     return (
-      <div>
+      <>
         <form onSubmit={handleSubmit}>
           <Paper className="paper-box" elevation={4}>
             <div className={style.innerBox}>
@@ -152,7 +151,7 @@ class EditTokenForm extends React.Component {
           submitLabel={messages.settings_revokeAccess}
           cancelLabel={messages.cancel}
         />
-      </div>
+      </>
     )
   }
 }

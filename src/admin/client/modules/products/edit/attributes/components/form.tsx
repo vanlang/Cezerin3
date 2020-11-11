@@ -10,7 +10,7 @@ import style from "./style.module.sass"
 
 const AttributesGrid = ({ fields, meta: { touched, error, submitFailed } }) => {
   return (
-    <div>
+    <>
       <div className="row row--no-gutter middle-xs">
         <div className={"col-xs-5 col--no-gutter " + style.head}>
           {messages.attributeName}
@@ -72,7 +72,7 @@ const AttributesGrid = ({ fields, meta: { touched, error, submitFailed } }) => {
           onClick={() => fields.push({})}
         />
       </div>
-    </div>
+    </>
   )
 }
 

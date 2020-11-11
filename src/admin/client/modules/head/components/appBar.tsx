@@ -685,7 +685,7 @@ class AppBarTop extends React.Component {
     }
 
     return (
-      <div>
+      <>
         <AppBar
           className="appBar"
           titleStyle={{ fontSize: 18 }}
@@ -698,7 +698,7 @@ class AppBarTop extends React.Component {
           onClose={this.handleClose}
           currentUrl={pathname}
         />
-      </div>
+      </>
     )
   }
 }

@@ -16,7 +16,7 @@ interface props {
 const ArrayEditor = (props: props) => {
   const { label, properties, fields } = props
   return (
-    <div>
+    <>
       <div className={style.arrayTitle}>
         {label}
         <FloatingActionButton
@@ -77,7 +77,7 @@ const ArrayEditor = (props: props) => {
           </li>
         ))}
       </ol>
-    </div>
+    </>
   )
 }
 

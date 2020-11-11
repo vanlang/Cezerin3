@@ -144,15 +144,13 @@ class ConfirmationDialog extends React.Component {
         open={this.state.open}
         onRequestClose={this.handleCancel}
       >
-        <div>
-          <SearchBox text={this.state.search} onChange={this.handleSearch} />
-          <SearchResult
-            products={this.state.products}
-            selectedId={this.state.selectedId}
-            onSelect={this.handleRowSelection}
-            settings={settings}
-          />
-        </div>
+        <SearchBox text={this.state.search} onChange={this.handleSearch} />
+        <SearchResult
+          products={this.state.products}
+          selectedId={this.state.selectedId}
+          onSelect={this.handleRowSelection}
+          settings={settings}
+        />
       </Dialog>
     )
   }

@@ -34,7 +34,7 @@ const OrderTotals = ({ order, settings }) => {
   const paidTotal = helper.formatCurrency(transactionsTotal, settings)
 
   return (
-    <div>
+    <>
       <div className={style.total + " row"}>
         <div className="col-xs-7">
           <span>{messages.orderSubtotal}</span>
@@ -80,7 +80,7 @@ const OrderTotals = ({ order, settings }) => {
         </div>
         <div className="col-xs-5">{paidTotal}</div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -28,38 +28,32 @@ class EmailSettings extends React.Component {
       >
         <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="apikey"
-                hintText="..apiKey"
-                floatingLabelText={messages.settings_apikey}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="sheetid"
-                hintText="..sheet-id"
-                floatingLabelText={messages.settings_sheetid}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="range"
-                floatingLabelText={messages.settings_tablename}
-              />
-            </div>
+            <Field
+              component={TextField}
+              fullWidth
+              name="apikey"
+              hintText="..apiKey"
+              floatingLabelText={messages.settings_apikey}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="sheetid"
+              hintText="..sheet-id"
+              floatingLabelText={messages.settings_sheetid}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="range"
+              floatingLabelText={messages.settings_tablename}
+            />
           </div>
           <div className="buttons-box">
             <RaisedButton
               type="submit"
               label={messages.save}
-              primary={true}
+              primary
               className={style.button}
               disabled={pristine || submitting}
             />

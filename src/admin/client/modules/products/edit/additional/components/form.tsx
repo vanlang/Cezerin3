@@ -54,7 +54,7 @@ const ProductShort = ({
     <div className={style.relatedProductText}>
       <Link to={`/admin/product/${id}`}>{name}</Link>
       <br />
-      <div>{priceFormatted}</div>
+      <p>{priceFormatted}</p>
     </div>
     <div className={style.relatedProductActions}>{actions}</div>
   </div>

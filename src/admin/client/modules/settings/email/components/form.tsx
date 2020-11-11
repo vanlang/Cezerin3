@@ -18,7 +18,7 @@ class EmailSettings extends React.Component {
         : "none"
 
     return (
-      <div>
+      <>
         <Paper className="paper-box" elevation={4}>
           <div style={{ width: "100%" }}>
             <List style={{ padding: 0 }}>
@@ -126,7 +126,7 @@ class EmailSettings extends React.Component {
             </List>
           </div>
         </Paper>
-      </div>
+      </>
     )
   }
 }

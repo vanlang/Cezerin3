@@ -17,7 +17,7 @@ class MultiUploader extends React.Component {
   render() {
     const { uploading } = this.props
     return (
-      <div>
+      <>
         <Dropzone
           onDrop={this.onDrop}
           multiple={true}
@@ -43,7 +43,7 @@ class MultiUploader extends React.Component {
         </Dropzone>
 
         <Snackbar open={uploading} message={messages.messages_uploading} />
-      </div>
+      </>
     )
   }
 }

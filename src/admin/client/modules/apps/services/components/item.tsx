@@ -59,12 +59,12 @@ const Item: FC<props> = (props: props) => {
         <CardTitle
           title={title}
           subtitle={
-            <div>
+            <>
               {developer}
               {enabled && (
                 <CheckCircle style={{ color: "#FF9900", float: "right" }} />
               )}
-            </div>
+            </>
           }
           titleStyle={styles.title}
           subtitleStyle={styles.subtitle}

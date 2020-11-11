@@ -32,7 +32,6 @@ class ShippingAddressForm extends React.Component {
       handleSubmit,
       pristine,
       submitting,
-      initialValues,
       onCancel,
       shippingMethod,
     } = this.props
@@ -60,7 +59,7 @@ class ShippingAddressForm extends React.Component {
 
     return (
       <form onSubmit={handleSubmit}>
-        <div>
+        <>
           {shippingFields}
           <Field
             component={TextField}
@@ -92,7 +91,7 @@ class ShippingAddressForm extends React.Component {
             name="country"
             floatingLabelText={messages.country}
           />
-        </div>
+        </>
         <div className={style.shippingButtons}>
           <FlatButton label={messages.cancel} onClick={onCancel} />
           <FlatButton

@@ -56,15 +56,13 @@ class CustomerEditForm extends React.Component {
           width: "100%",
         }}
       >
-        <div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth
-              name="full_name"
-              floatingLabelText={messages.fullName}
-            />
-          </div>
+        <>
+          <Field
+            component={TextField}
+            fullWidth
+            name="full_name"
+            floatingLabelText={messages.fullName}
+          />
           <Field
             component={SelectField}
             fullWidth
@@ -73,32 +71,26 @@ class CustomerEditForm extends React.Component {
           >
             {groupItems}
           </Field>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth
-              name="email"
-              floatingLabelText={messages.email}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth
-              name="mobile"
-              floatingLabelText={messages.mobile}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth
-              name="note"
-              floatingLabelText={messages.note}
-              multiLine
-            />
-          </div>
-        </div>
+          <Field
+            component={TextField}
+            fullWidth
+            name="email"
+            floatingLabelText={messages.email}
+          />
+          <Field
+            component={TextField}
+            fullWidth
+            name="mobile"
+            floatingLabelText={messages.mobile}
+          />
+          <Field
+            component={TextField}
+            fullWidth
+            name="note"
+            floatingLabelText={messages.note}
+            multiLine
+          />
+        </>
         <div className={style.shippingButtons}>
           <FlatButton label={messages.cancel} onClick={onCancel} />
           <FlatButton

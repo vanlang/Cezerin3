@@ -70,7 +70,7 @@ const CustomerOrder = ({ order, settings }) => {
   const states = getOrderStates(order)
 
   return (
-    <div>
+    <>
       <Divider />
       <Link to={`/admin/order/${order.id}`} style={{ textDecoration: "none" }}>
         <ListItem
@@ -91,7 +91,7 @@ const CustomerOrder = ({ order, settings }) => {
           }
         />
       </Link>
-    </div>
+    </>
   )
 }
 

@@ -108,7 +108,7 @@ class CommerceForm extends React.Component {
   }
 
   render() {
-    let { handleSubmit, pristine, submitting, initialValues } = this.props
+    let { handleSubmit, pristine, submitting } = this.props
 
     //console.log(this.props);
 
@@ -122,9 +122,9 @@ class CommerceForm extends React.Component {
       >
         <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
-            <div>{messages.commerce_formInfo}</div>
+            <p>{messages.commerce_formInfo}</p>
             <div className="blue-title">{messages.commerce_forms}</div>
-            <div>
+            <>
               <Field
                 name="status"
                 component={RadioButtonGroup}
@@ -146,13 +146,13 @@ class CommerceForm extends React.Component {
                   style={radioButtonStyle}
                 />
               </Field>
-            </div>
-            <div>
+            </>
+            <>
               {(this.state.isSelectField || this.state.isServiceOptions) && (
                 <Field
                   name="serviceOptions"
                   component={SelectField}
-                  fullWidth={true}
+                  fullWidth
                   label={messages.service_options}
                   hintText={messages.service_options_initial_value}
                   floatingLabelText={messages.service_options_initial_value}
@@ -172,25 +172,25 @@ class CommerceForm extends React.Component {
                   />
                 </Field>
               )}
-            </div>
-            <div>
+            </>
+            <>
               {this.state.isTextField &&
                 (this.state.isSelectField || this.state.isServiceOptions) && (
                   <Field
                     component={TextField}
-                    fullWidth={true}
+                    fullWidth
                     name="deliveryRadius"
                     hintText={messages.delivery_radius}
                     floatingLabelText={messages.delivery_radius}
                   />
                 )}
-            </div>
+            </>
           </div>
           <div className="buttons-box">
             <RaisedButton
               type="submit"
               label={messages.save}
-              primary={true}
+              primary
               className={style.button}
               disabled={pristine || submitting}
             />

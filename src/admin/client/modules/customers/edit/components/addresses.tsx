@@ -15,17 +15,17 @@ let countRender = 0
 const Address = ({ address }) => {
   return (
     <div className={style.address}>
-      <div>{address.full_name}</div>
-      <div>{address.company}</div>
-      <div>{address.address1}</div>
-      <div>{address.address2}</div>
-      <div>
+      <p>{address.full_name}</p>
+      <p>{address.company}</p>
+      <p>{address.address1}</p>
+      <p>{address.address2}</p>
+      <p>
         {address.city},{" "}
         {address.state && address.state.length > 0 ? address.state + ", " : ""}
         {address.postal_code}
-      </div>
-      <div>{address.country}</div>
-      <div>{address.phone}</div>
+      </p>
+      <p>{address.country}</p>
+      <p>{address.phone}</p>
     </div>
   )
 }
@@ -172,7 +172,7 @@ const CustomerAddresses = ({
         onSetDefaultShippingAddress={onSetDefaultShippingAddress}
       />
     ))
-    return <div>{addresses}</div>
+    return <>{addresses}</>
   } else {
     return null
   }

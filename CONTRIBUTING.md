@@ -1,3 +1,8 @@
+All these rules are on place to keep all concise so anybody can understand them clearly,
+And these rules could be changed if there are better ways to do them
+(Make an issue for this and will be checked if it's acceptable by community),
+We are also embracers of new technology,
+
 - The .prettierrc can't be changed unless theirs much cleaner settings,
 - JavaScript must follow camel case,
 - W3 Standards at https://www.w3.org/standards/ should be followed,
@@ -16,6 +21,8 @@
 - export defaults should be at the end of the file as refractor,
 - Using !important in sass is discouraged,
 - Can't have empty divs and use <> when required,
+- Props in components is best put on the very top except above useState hooks,
+- Always use interface without types when defining typescript,
 - Components and functions needed to be preditable and easily understood,
   and best follow code quality checkers and hears my definition,
   (Programming languages were created to make it easier for humans not for computers,

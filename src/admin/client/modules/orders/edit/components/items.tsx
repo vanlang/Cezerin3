@@ -221,7 +221,7 @@ export class OrderItem extends React.Component {
     }
 
     return (
-      <div>
+      <>
         <div className={style.item + " row row--no-gutter middle-xs"}>
           <div className="col-xs-2">
             {thumbnailUrl && thumbnailUrl !== "" && (
@@ -230,10 +230,10 @@ export class OrderItem extends React.Component {
           </div>
           <div className={style.itemName + " col-xs-4"}>
             <Link to={`/admin/product/${item.product_id}`}>{item.name}</Link>
-            <div>{item.variant_name}</div>
-            <div>
+            <p>{item.variant_name}</p>
+            <p>
               {messages.products_sku}: {item.sku}
-            </div>
+            </p>
           </div>
           <div className="col-xs-2" style={{ textAlign: "right" }}>
             {price}
@@ -271,7 +271,7 @@ export class OrderItem extends React.Component {
           onRequestClose={this.hideEditForm}
           contentStyle={{ width: 400 }}
         >
-          <div>
+          <>
             <ProductOptions
               options={productOptions}
               onChange={this.onOptionChange}
@@ -285,9 +285,9 @@ export class OrderItem extends React.Component {
             >
               {quantityItems}
             </SelectField>
-          </div>
+          </>
         </Dialog>
-      </div>
+      </>
     )
   }
 }
@@ -304,7 +304,7 @@ const OrderItems = ({ order, settings, onItemDelete, onItemUpdate }) => {
       allowEdit={allowEdit}
     />
   ))
-  return <div>{items}</div>
+  return <p>{items}</p>
 }
 
 export default OrderItems
