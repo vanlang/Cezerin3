@@ -22,7 +22,7 @@ rm -rf theme/*
 unzip -q "public/content/$fileName" -d "theme"
 
 # 5. build theme
-npm run theme:build
+yarn theme:build
 chmod -R 755 theme/*
 
 # 6. reload apps
