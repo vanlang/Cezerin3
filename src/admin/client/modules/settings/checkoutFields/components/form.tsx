@@ -22,7 +22,7 @@ class CheckoutFieldForm extends React.Component {
   }
 
   render() {
-    let { handleSubmit, pristine, submitting, initialValues } = this.props
+    let { handleSubmit, pristine, submitting } = this.props
 
     return (
       <form
@@ -32,7 +32,7 @@ class CheckoutFieldForm extends React.Component {
           width: "100%",
         }}
       >
-        <Paper className="paper-box" zDepth={1}>
+        <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
             <div>
               <Field

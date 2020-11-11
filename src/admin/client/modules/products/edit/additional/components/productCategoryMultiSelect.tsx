@@ -1,6 +1,6 @@
+import { Add } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import React from "react"
 import { messages } from "../../../../../lib"
 import CategoryMultiselect from "../../../../productCategories/components/multiselectList"
@@ -111,11 +111,7 @@ class ProductCategoryMultiSelect extends React.Component {
           <FlatButton
             style={{ minWidth: 52 }}
             onClick={this.open}
-            icon={
-              <FontIcon color="#333" className="material-icons">
-                add
-              </FontIcon>
-            }
+            icon={<Add htmlColor="#333" />}
           />
         </span>
       </div>

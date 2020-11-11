@@ -1,6 +1,6 @@
 import { Paper } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -31,10 +31,8 @@ const Address = ({ address }) => {
 }
 
 const iconButtonElement = (
-  <IconButton touch={true}>
-    <FontIcon color="rgb(189, 189, 189)" className="material-icons">
-      more_vert
-    </FontIcon>
+  <IconButton touch>
+    <MoreVert htmlColor="rgb(189, 189, 189)" />
   </IconButton>
 )
 
@@ -99,7 +97,7 @@ class CustomerAddress extends React.Component {
     }
 
     return (
-      <Paper className="paper-box" zDepth={1}>
+      <Paper className="paper-box" elevation={4}>
         <div className={style.innerBox} style={{ paddingTop: 15 }}>
           <div className="row middle-xs">
             <div className="col-xs-10">{title}</div>

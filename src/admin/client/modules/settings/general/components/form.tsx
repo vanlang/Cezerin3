@@ -1,5 +1,5 @@
 import { Divider, Paper } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { KeyboardArrowRight } from "@material-ui/icons"
 import { List, ListItem } from "material-ui/List"
 import MenuItem from "material-ui/MenuItem"
 import RaisedButton from "material-ui/RaisedButton"
@@ -84,11 +84,7 @@ const GeneralSettings = (props: props) => {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem
-                  rightIcon={
-                    <FontIcon className="material-icons">
-                      keyboard_arrow_right
-                    </FontIcon>
-                  }
+                  rightIcon={<KeyboardArrowRight />}
                   primaryText={messages.logo}
                 />
               </Link>

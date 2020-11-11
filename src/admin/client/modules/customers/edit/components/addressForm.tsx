@@ -18,115 +18,85 @@ const validate = values => {
   return errors
 }
 
-class CustomerAddressForm extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+const CustomerAddressForm = props => {
+  const { handleSubmit, pristine, submitting, onCancel } = props
 
-  render() {
-    let {
-      handleSubmit,
-      pristine,
-      submitting,
-      initialValues,
-      onCancel,
-    } = this.props
-
-    return (
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "initial",
-          width: "100%",
-        }}
-      >
-        <div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="full_name"
-              floatingLabelText={messages.fullName}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="company"
-              floatingLabelText={messages.company}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="address1"
-              floatingLabelText={messages.address1}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="address2"
-              floatingLabelText={messages.address2}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="city"
-              floatingLabelText={messages.city}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="state"
-              floatingLabelText={messages.state}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="postal_code"
-              floatingLabelText={messages.postal_code}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="country"
-              floatingLabelText={messages.country}
-            />
-          </div>
-          <div>
-            <Field
-              component={TextField}
-              fullWidth={true}
-              name="phone"
-              floatingLabelText={messages.phone}
-            />
-          </div>
-        </div>
-        <div className={style.shippingButtons}>
-          <FlatButton label={messages.cancel} onClick={onCancel} />
-          <FlatButton
-            label={messages.save}
-            primary={true}
-            type="submit"
-            style={{ marginLeft: 12 }}
-            disabled={pristine || submitting}
-          />
-        </div>
-      </form>
-    )
-  }
+  return (
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "initial",
+        width: "100%",
+      }}
+    >
+      <>
+        <Field
+          component={TextField}
+          fullWidth
+          name="full_name"
+          floatingLabelText={messages.fullName}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="company"
+          floatingLabelText={messages.company}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="address1"
+          floatingLabelText={messages.address1}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="address2"
+          floatingLabelText={messages.address2}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="city"
+          floatingLabelText={messages.city}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="state"
+          floatingLabelText={messages.state}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="postal_code"
+          floatingLabelText={messages.postal_code}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="country"
+          floatingLabelText={messages.country}
+        />
+        <Field
+          component={TextField}
+          fullWidth
+          name="phone"
+          floatingLabelText={messages.phone}
+        />{" "}
+      </>
+      <div className={style.shippingButtons}>
+        <FlatButton label={messages.cancel} onClick={onCancel} />
+        <FlatButton
+          label={messages.save}
+          primary
+          type="submit"
+          style={{ marginLeft: 12 }}
+          disabled={pristine || submitting}
+        />
+      </div>
+    </form>
+  )
 }
 
 export default reduxForm({

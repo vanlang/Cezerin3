@@ -1,7 +1,13 @@
+import {
+  Add,
+  ArrowDownward,
+  ArrowUpward,
+  Delete,
+  Folder,
+} from "@material-ui/icons"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import CategorySelect from "../../../productCategories/select"
@@ -78,9 +84,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_moveUp}
               onClick={onMoveUp}
             >
-              <FontIcon color="#fff" className="material-icons">
-                arrow_upward
-              </FontIcon>
+              <ArrowUpward htmlColor="#fff" />
             </IconButton>
             <IconButton
               touch
@@ -88,9 +92,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_moveDown}
               onClick={onMoveDown}
             >
-              <FontIcon color="#fff" className="material-icons">
-                arrow_downward
-              </FontIcon>
+              <ArrowDownward htmlColor="#fff" />
             </IconButton>
             <IconButton
               touch
@@ -98,9 +100,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_delete}
               onClick={this.showDelete}
             >
-              <FontIcon color="#fff" className="material-icons">
-                delete
-              </FontIcon>
+              <Delete htmlColor="#fff" />
             </IconButton>
             <IconButton
               touch
@@ -108,9 +108,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_moveTo}
               onClick={this.showMoveTo}
             >
-              <FontIcon color="#fff" className="material-icons">
-                folder
-              </FontIcon>
+              <Folder htmlColor="#fff" />
             </IconButton>
             <Dialog
               title={messages.actions_moveTo}
@@ -143,9 +141,7 @@ class Buttons extends React.Component {
           tooltip={messages.productCategories_titleAdd}
           onClick={onCreate}
         >
-          <FontIcon color="#fff" className="material-icons">
-            add
-          </FontIcon>
+          <Add htmlColor="#fff" />
         </IconButton>
       </span>
     )

@@ -1,7 +1,7 @@
 import { Divider } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -12,10 +12,8 @@ import { helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const iconButtonElement = (
-  <IconButton touch={true}>
-    <FontIcon color="rgb(189, 189, 189)" className="material-icons">
-      more_vert
-    </FontIcon>
+  <IconButton touch>
+    <MoreVert htmlColor="rgb(189, 189, 189)" />
   </IconButton>
 )
 

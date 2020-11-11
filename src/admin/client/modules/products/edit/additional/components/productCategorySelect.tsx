@@ -1,6 +1,6 @@
+import { Create } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import React from "react"
 import { messages } from "../../../../../lib"
 import CategorySelect from "../../../../productCategories/select"
@@ -26,11 +26,7 @@ class ProductCategorySelect extends React.Component {
   }
 
   render() {
-    const {
-      categories,
-      input,
-      meta: { touched, error },
-    } = this.props
+    const { categories, input } = this.props
     const { open } = this.state
     const selectedCategoryId = input.value
     const category = categories.find(item => item.id === selectedCategoryId)
@@ -69,11 +65,7 @@ class ProductCategorySelect extends React.Component {
         <FlatButton
           label={categoryName}
           onClick={this.open}
-          icon={
-            <FontIcon color="#777" className="material-icons">
-              create
-            </FontIcon>
-          }
+          icon={<Create htmlColor="#777" />}
         />
       </>
     )

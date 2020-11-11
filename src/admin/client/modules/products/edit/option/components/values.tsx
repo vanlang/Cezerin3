@@ -1,5 +1,5 @@
 import { Paper } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { AddCircle, Delete } from "@material-ui/icons"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import { messages } from "../../../../../lib"
@@ -48,9 +48,7 @@ class OptionValueEdit extends React.Component {
             onClick={this.onDelete}
             tabIndex={-1}
           >
-            <FontIcon color="#a1a1a1" className="material-icons">
-              delete
-            </FontIcon>
+            <Delete htmlColor="#a1a1a1" />
           </IconButton>
         </div>
       </div>
@@ -107,9 +105,7 @@ class OptionValueAdd extends React.Component {
             onClick={this.onCreate}
             tabIndex={-1}
           >
-            <FontIcon color="#a1a1a1" className="material-icons">
-              add_circle
-            </FontIcon>
+            <AddCircle htmlColor="#a1a1a1" />
           </IconButton>
         </div>
       </div>
@@ -133,7 +129,7 @@ const OptionValues = ({
   ))
 
   return (
-    <Paper className="paper-box" zDepth={1}>
+    <Paper className="paper-box" elevation={4}>
       <div className="blue-title" style={{ padding: "20px 30px" }}>
         {messages.optionValues}
       </div>

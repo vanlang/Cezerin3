@@ -1,5 +1,5 @@
+import { Delete, OpenInNew } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import DeleteConfirmation from "../../../shared/deleteConfirmation"
@@ -40,9 +40,7 @@ class Buttons extends React.Component {
           tooltip={messages.deleteProduct}
           onClick={this.openDelete}
         >
-          <FontIcon color="#fff" className="material-icons">
-            delete
-          </FontIcon>
+          <Delete htmlColor="#fff" />
         </IconButton>
         {product && product.enabled && (
           <a href={product.url} target="_blank">
@@ -51,9 +49,7 @@ class Buttons extends React.Component {
               tooltipPosition="bottom-left"
               tooltip={messages.viewOnWebsite}
             >
-              <FontIcon color="#fff" className="material-icons">
-                open_in_new
-              </FontIcon>
+              <OpenInNew htmlColor="#fff" />
             </IconButton>
           </a>
         )}

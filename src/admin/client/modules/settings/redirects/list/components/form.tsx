@@ -1,6 +1,6 @@
 import { Divider, Paper } from "@material-ui/core"
+import { KeyboardArrowRight } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 import { Link } from "react-router-dom"
@@ -13,9 +13,7 @@ const RedirectItem = ({ redirect }) => (
       style={{ textDecoration: "none" }}
     >
       <ListItem
-        rightIcon={
-          <FontIcon className="material-icons">keyboard_arrow_right</FontIcon>
-        }
+        rightIcon={<KeyboardArrowRight />}
         primaryText={
           <div className="row">
             <div className="col-xs-4">{redirect.from}</div>

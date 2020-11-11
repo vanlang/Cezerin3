@@ -1,5 +1,5 @@
 import { Paper } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { MoreVert } from "@material-ui/icons"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -62,10 +62,8 @@ const FieldsEditor = ({ fields }) => {
                   targetOrigin={{ horizontal: "right", vertical: "top" }}
                   anchorOrigin={{ horizontal: "right", vertical: "top" }}
                   iconButtonElement={
-                    <IconButton touch={true}>
-                      <FontIcon color="#777" className="material-icons">
-                        more_vert
-                      </FontIcon>
+                    <IconButton touch>
+                      <MoreVert htmlColor="#777" />
                     </IconButton>
                   }
                 >

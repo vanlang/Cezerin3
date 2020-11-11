@@ -1,4 +1,4 @@
-import FontIcon from "material-ui/FontIcon"
+import { Delete } from "@material-ui/icons"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import { messages } from "../../../../lib"
@@ -35,14 +35,12 @@ class Buttons extends React.Component {
     return (
       <span>
         <IconButton
-          touch={true}
+          touch
           tooltipPosition="bottom-left"
           tooltip={messages.actions_delete}
           onClick={this.showDelete}
         >
-          <FontIcon color="#fff" className="material-icons">
-            delete
-          </FontIcon>
+          <Delete htmlColor="#fff" />
         </IconButton>
         <DeleteConfirmation
           open={this.state.openDelete}

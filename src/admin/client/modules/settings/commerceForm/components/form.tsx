@@ -120,7 +120,7 @@ class CommerceForm extends React.Component {
           width: "100%",
         }}
       >
-        <Paper className="paper-box" zDepth={1}>
+        <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
             <div>{messages.commerce_formInfo}</div>
             <div className="blue-title">{messages.commerce_forms}</div>

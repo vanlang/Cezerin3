@@ -1,7 +1,7 @@
+import { Delete, Folder } from "@material-ui/icons"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import GroupSelect from "../../../customerGroups/select"
@@ -59,8 +59,8 @@ class Buttons extends React.Component {
       />,
       <FlatButton
         label={messages.save}
-        primary={true}
-        keyboardFocused={true}
+        primary
+        keyboardFocused
         onClick={this.saveSetGroup}
       />,
     ]
@@ -71,24 +71,20 @@ class Buttons extends React.Component {
         {selectedCount > 0 && (
           <span>
             <IconButton
-              touch={true}
+              touch
               tooltipPosition="bottom-left"
               tooltip={messages.actions_delete}
               onClick={this.showDelete}
             >
-              <FontIcon color="#fff" className="material-icons">
-                delete
-              </FontIcon>
+              <Delete htmlColor="#fff" />
             </IconButton>
             <IconButton
-              touch={true}
+              touch
               tooltipPosition="bottom-left"
               tooltip={messages.customers_setGroup}
               onClick={this.showSetGroup}
             >
-              <FontIcon color="#fff" className="material-icons">
-                folder
-              </FontIcon>
+              <Folder htmlColor="#fff" />
             </IconButton>
             <DeleteConfirmation
               open={this.state.openDelete}
@@ -103,12 +99,12 @@ class Buttons extends React.Component {
               modal={false}
               open={this.state.openSetGroup}
               onRequestClose={this.closeSetGroup}
-              autoScrollBodyContent={true}
+              autoScrollBodyContent
             >
               <GroupSelect
                 onSelect={this.selectSetGroup}
                 selectedId={this.state.groupId}
-                showRoot={true}
+                showRoot
                 showAll={false}
               />
             </Dialog>

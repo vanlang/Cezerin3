@@ -1,5 +1,5 @@
+import { Add, Delete } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import DeleteConfirmation from "../../../shared/deleteConfirmation"
@@ -42,9 +42,7 @@ class Buttons extends React.Component {
               tooltipPosition="bottom-left"
               onClick={this.showDelete}
             >
-              <FontIcon color="#fff" className="material-icons">
-                delete
-              </FontIcon>
+              <Delete htmlColor="#fff" />
             </IconButton>
             <DeleteConfirmation
               open={this.state.openDelete}
@@ -62,9 +60,7 @@ class Buttons extends React.Component {
           tooltip={messages.addOrderStatus}
           onClick={onCreate}
         >
-          <FontIcon color="#fff" className="material-icons">
-            add
-          </FontIcon>
+          <Add htmlColor="#fff" />
         </IconButton>
       </span>
     )

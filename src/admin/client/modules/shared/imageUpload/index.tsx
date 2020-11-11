@@ -1,5 +1,5 @@
 import { Paper } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { CloudUpload, Delete, PhotoCamera } from "@material-ui/icons"
 import IconButton from "material-ui/IconButton"
 import Snackbar from "material-ui/Snackbar"
 import React from "react"
@@ -43,12 +43,7 @@ class ImageUpload extends React.Component {
 
     let htmlPreview = (
       <div className={style.noImage}>
-        <FontIcon
-          style={{ fontSize: 90, color: "#cccccc" }}
-          className="material-icons"
-        >
-          photo_camera
-        </FontIcon>
+        <PhotoCamera style={{ fontSize: 90, color: "#cccccc" }} />
         <div className={style.dropText}>{messages.help_dropHere}</div>
       </div>
     )
@@ -86,20 +81,16 @@ class ImageUpload extends React.Component {
             }}
             tooltipPosition="top-right"
           >
-            <FontIcon color="rgba(0,0,0,0.5)" className="material-icons">
-              file_upload
-            </FontIcon>
+            <CloudUpload htmlColor="rgba(0,0,0,0.5)" />
           </IconButton>
           {hasPreview && (
             <IconButton
-              touch={true}
+              touch
               tooltip={messages.actions_delete}
               onClick={this.onDelete}
               tooltipPosition="top-right"
             >
-              <FontIcon color="rgba(0,0,0,0.5)" className="material-icons">
-                delete
-              </FontIcon>
+              <Delete htmlColor="rgba(0,0,0,0.5)" />
             </IconButton>
           )}
         </div>

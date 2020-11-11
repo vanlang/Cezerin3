@@ -1,5 +1,5 @@
 import { Divider } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { Refresh } from "@material-ui/icons"
 import { List } from "material-ui/List"
 import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
@@ -56,7 +56,7 @@ class ProductsList extends React.Component {
               label={messages.actions_loadMore}
               labelPosition="before"
               primary={false}
-              icon={<FontIcon className="material-icons">refresh</FontIcon>}
+              icon={<Refresh />}
               onClick={loadMore}
             />
           </div>
