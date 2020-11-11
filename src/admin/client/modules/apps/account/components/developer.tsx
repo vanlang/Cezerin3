@@ -29,40 +29,32 @@ const DeveloperForm: FC<props> = (props: props) => {
       >
         <Paper style={{ margin: "0px 20px" }} elevation={4}>
           <div style={{ padding: "10px 30px 30px 30px" }}>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="name"
-                floatingLabelText={messages.full_name}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="description"
-                floatingLabelText={messages.description}
-                multiLine={true}
-                rows={1}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="website"
-                floatingLabelText={messages.website}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth={true}
-                name="email"
-                floatingLabelText={messages.email}
-              />
-            </div>
+            <Field
+              component={TextField}
+              fullWidth
+              name="name"
+              floatingLabelText={messages.fullName}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="description"
+              floatingLabelText={messages.description}
+              multiLine
+              rows={1}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="website"
+              floatingLabelText={messages.website}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="email"
+              floatingLabelText={messages.email}
+            />
           </div>
           <div
             className="buttons-box"
@@ -71,7 +63,7 @@ const DeveloperForm: FC<props> = (props: props) => {
             <RaisedButton
               type="submit"
               label={messages.save}
-              primary={true}
+              primary
               className={style.button}
               disabled={pristine || submitting}
             />

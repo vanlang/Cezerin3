@@ -1,6 +1,6 @@
 import { Divider } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -167,7 +167,7 @@ class Buttons extends React.Component {
 
           <DeleteConfirmation
             open={this.state.openDelete}
-            isSingle={true}
+            isSingle
             itemsCount={1}
             itemName={orderName}
             onCancel={this.closeDelete}
@@ -176,10 +176,8 @@ class Buttons extends React.Component {
 
           <IconMenu
             iconButtonElement={
-              <IconButton touch={true}>
-                <FontIcon color="#fff" className="material-icons">
-                  more_vert
-                </FontIcon>
+              <IconButton touch>
+                <MoreVert htmlColor="#fff" />
               </IconButton>
             }
             targetOrigin={{ horizontal: "right", vertical: "top" }}

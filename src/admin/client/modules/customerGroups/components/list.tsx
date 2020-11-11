@@ -1,5 +1,5 @@
+import { Clear, Folder, Settings } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 import { Link } from "react-router-dom"
@@ -13,7 +13,7 @@ const styles = {
   },
 }
 
-const FolderIcon = <FontIcon className="material-icons">folder</FontIcon>
+const FolderIcon = <Folder />
 
 class Groups extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Groups extends React.Component {
             primaryText={messages.customers_noGroup}
             style={"root" === selectedId ? styles.selectedItem : null}
             innerDivStyle={styles.innerItem}
-            leftIcon={<FontIcon className="material-icons">clear</FontIcon>}
+            leftIcon={<Clear />}
             onClick={() => {
               onSelect("root")
             }}
@@ -84,9 +84,7 @@ class Groups extends React.Component {
               className="treeItem"
               primaryText={messages.customerGroups_titleEditMany}
               innerDivStyle={styles.innerItem}
-              leftIcon={
-                <FontIcon className="material-icons">settings</FontIcon>
-              }
+              leftIcon={<Settings />}
             />
           </Link>
         )}

@@ -12,7 +12,7 @@ class EmailTemplate extends React.Component {
   }
 
   render() {
-    const { handleSubmit, pristine, submitting, initialValues } = this.props
+    const { handleSubmit, pristine, submitting } = this.props
 
     return (
       <form
@@ -24,23 +24,19 @@ class EmailTemplate extends React.Component {
       >
         <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth
-                name="subject"
-                floatingLabelText={messages.settings_emailSubject}
-              />
-            </div>
-            <div>
-              <Field
-                component={TextField}
-                fullWidth
-                name="body"
-                multiLine
-                floatingLabelText={messages.settings_emailBody}
-              />
-            </div>
+            <Field
+              component={TextField}
+              fullWidth
+              name="subject"
+              floatingLabelText={messages.settings_emailSubject}
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="body"
+              multiLine
+              floatingLabelText={messages.settings_emailBody}
+            />
           </div>
           <div className="buttons-box">
             <RaisedButton

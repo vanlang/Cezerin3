@@ -1,6 +1,6 @@
 import { Paper } from "@material-ui/core"
+import { Delete } from "@material-ui/icons"
 import DropDownMenu from "material-ui/DropDownMenu"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import MenuItem from "material-ui/MenuItem"
 import RaisedButton from "material-ui/RaisedButton"
@@ -131,29 +131,43 @@ const VariantRow = ({
           }}
           tabIndex={-1}
         >
-          <FontIcon color="#a1a1a1" className="material-icons">
-            delete
-          </FontIcon>
+          <Delete htmlColor="#a1a1a1" />
         </IconButton>
       </div>
     </div>
   )
 }
 
-const ProductVariantsGrid = ({
-  settings,
-  options,
-  variants,
-  createVariant,
-  deleteVariant,
-  createOption,
-  productId,
-  onSkuChange,
-  onPriceChange,
-  onStockChange,
-  onWeightChange,
-  onOptionChange,
-}) => {
+interface VariantGridProps {
+  settings
+  options
+  variants
+  createVariant
+  deleteVariant
+  createOption
+  productId
+  onSkuChange
+  onPriceChange
+  onStockChange
+  onWeightChange
+  onOptionChange
+}
+
+const ProductVariantsGrid = (props: VariantGridProps) => {
+  const {
+    settings,
+    options,
+    variants,
+    createVariant,
+    deleteVariant,
+    createOption,
+    productId,
+    onSkuChange,
+    onPriceChange,
+    onStockChange,
+    onWeightChange,
+    onOptionChange,
+  } = props
   const hasOptions = options && options.length > 0
   const hasVariants = variants && variants.length > 0
 
@@ -187,7 +201,7 @@ const ProductVariantsGrid = ({
     : null
 
   return (
-    <Paper className="paper-box" zDepth={1}>
+    <Paper className="paper-box" elevation={4}>
       <div className={style.grid}>
         <div className={style.gridHeadRow}>
           <div className={style.gridCol}>{messages.products_sku}</div>

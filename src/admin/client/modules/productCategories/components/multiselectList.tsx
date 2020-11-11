@@ -1,5 +1,5 @@
+import { Folder, VisibilityOff } from "@material-ui/icons"
 import Checkbox from "material-ui/Checkbox"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 
@@ -15,8 +15,8 @@ const styles = {
   },
 }
 
-const FolderIcon = <FontIcon className="material-icons">folder</FontIcon>
-const DraftIcon = <FontIcon className="material-icons">visibility_off</FontIcon>
+const FolderIcon = <Folder />
+const DraftIcon = <VisibilityOff />
 
 class Item extends React.PureComponent {
   constructor(props) {

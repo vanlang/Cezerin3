@@ -1,17 +1,22 @@
 import { Divider } from "@material-ui/core"
+import { Place } from "@material-ui/icons"
 import Checkbox from "material-ui/Checkbox"
-import FontIcon from "material-ui/FontIcon"
 import { ListItem } from "material-ui/List"
 import React from "react"
 import { Link } from "react-router-dom"
 import { helper } from "../../../../lib"
 import style from "./style.module.sass"
 
-interface props { customer, onSelect, selected, settings }
+interface props {
+  customer
+  onSelect
+  selected
+  settings
+}
 
-const CustomersListItem = (props:props) => {
-  const { customer, onSelect, selected, settings }=props
-  
+const CustomersListItem = (props: props) => {
+  const { customer, onSelect, selected, settings } = props
+
   const checked = selected.includes(customer.id)
   let totalSpentFormatted = helper.formatCurrency(
     customer.total_spent,
@@ -45,16 +50,10 @@ const CustomersListItem = (props:props) => {
             <div className={"col-xs-3 " + style.location}>
               {customer.shipping && customer.shipping.city && (
                 <span>
-                  <FontIcon
-                    style={{
-                      color: "rgba(0, 0, 0, 0.4)",
-                      fontSize: 16,
-                      marginRight: 6,
-                    }}
-                    className="material-icons"
-                  >
-                    place
-                  </FontIcon>
+                  <Place
+                    htmlColor="rgba(0, 0, 0, 0.4)"
+                    style={{ fontSize: "16", marginRight: "6" }}
+                  />
                   {customer.shipping.city}
                 </span>
               )}

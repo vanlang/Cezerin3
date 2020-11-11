@@ -35,14 +35,14 @@ class EditPaymentGatewayForm extends React.Component {
   }
 
   render() {
-    let { handleSubmit, pristine, submitting, initialValues } = this.props
+    let { handleSubmit, pristine, submitting } = this.props
     const gatewayDetails = availablePaymentGateways.find(
       item => item.key === this.props.gateway
     )
 
     if (this.props.gateway && this.props.gateway.length > 0) {
       return (
-        <div>
+        <>
           <RaisedButton
             onClick={this.handleOpen}
             label={messages.drawer_settings}
@@ -70,7 +70,7 @@ class EditPaymentGatewayForm extends React.Component {
                 />
                 <FlatButton
                   label={messages.save}
-                  primary={true}
+                  primary
                   type="submit"
                   onClick={this.handleClose}
                   style={{ marginLeft: 12 }}
@@ -79,7 +79,7 @@ class EditPaymentGatewayForm extends React.Component {
               </div>
             </form>
           </Dialog>
-        </div>
+        </>
       )
     } else {
       return null

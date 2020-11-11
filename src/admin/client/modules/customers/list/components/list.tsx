@@ -1,5 +1,5 @@
 import { Divider } from "@material-ui/core"
-import FontIcon from "material-ui/FontIcon"
+import { Refresh } from "@material-ui/icons"
 import { List } from "material-ui/List"
 import RaisedButton from "material-ui/RaisedButton"
 import React, { useEffect } from "react"
@@ -59,7 +59,7 @@ const CustomersList = (props: props) => {
             label={messages.actions_loadMore}
             labelPosition="before"
             primary={false}
-            icon={<FontIcon className="material-icons">refresh</FontIcon>}
+            icon={<Refresh />}
             onClick={loadMore}
           />
         </div>

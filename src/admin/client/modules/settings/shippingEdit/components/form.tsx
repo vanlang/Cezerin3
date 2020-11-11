@@ -38,166 +38,155 @@ const EditShippingMethodForm: FC = (props: any) => {
               <div className="blue-title">{messages.description}</div>
             </div>
             <div className="col-xs-12 col-sm-8">
-              <div>
-                <Field
-                  component={TextField}
-                  fullWidth={true}
-                  name="name"
-                  floatingLabelText={messages.settings_shippingMethodName}
-                />
-              </div>
-              <div>
-                <Field
-                  component={TextField}
-                  fullWidth={true}
-                  name="description"
-                  multiLine={true}
-                  floatingLabelText={messages.description}
-                />
-              </div>
+              <Field
+                component={TextField}
+                fullWidth
+                name="name"
+                floatingLabelText={messages.settings_shippingMethodName}
+              />
 
-              <div className="row">
-                <div className="col-xs-6">
-                  <Field
-                    component={TextField}
-                    name="price"
-                    type="number"
-                    fullWidth={true}
-                    floatingLabelText={
-                      messages.settings_shippingRate +
-                      ` (${settings.currency_symbol})`
-                    }
-                  />
-                </div>
-                <div className="col-xs-6">
-                  <Field
-                    component={CustomToggle}
-                    name="enabled"
-                    label={messages.enabled}
-                    style={{ paddingTop: 16, paddingBottom: 20 }}
-                  />
-                  <Divider />
-                </div>
+              <Field
+                component={TextField}
+                fullWidth
+                name="description"
+                multiLine
+                floatingLabelText={messages.description}
+              />
+            </div>
+
+            <div className="row">
+              <div className="col-xs-6">
+                <Field
+                  component={TextField}
+                  name="price"
+                  type="number"
+                  fullWidth
+                  floatingLabelText={
+                    messages.settings_shippingRate +
+                    ` (${settings.currency_symbol})`
+                  }
+                />
+              </div>
+              <div className="col-xs-6">
+                <Field
+                  component={CustomToggle}
+                  name="enabled"
+                  label={messages.enabled}
+                  style={{ paddingTop: 16, paddingBottom: 20 }}
+                />
+                <Divider />
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="row" style={{ marginTop: "40px" }}>
-            <div className="col-xs-12 col-sm-4">
-              <div className="blue-title">{messages.settings_conditions}</div>
+        <div className="row" style={{ marginTop: "40px" }}>
+          <div className="col-xs-12 col-sm-4">
+            <div className="blue-title">{messages.settings_conditions}</div>
+          </div>
+          <div className="col-xs-12 col-sm-8">
+            <Field
+              component={TextField}
+              fullWidth
+              name="conditions.countries"
+              floatingLabelText={messages.settings_countries}
+              hintText="US,UK,AU,SG"
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="conditions.states"
+              floatingLabelText={messages.settings_states}
+              hintText="California,Nevada,Oregon"
+            />
+            <Field
+              component={TextField}
+              fullWidth
+              name="conditions.cities"
+              floatingLabelText={messages.settings_cities}
+              hintText="Los Angeles,San Diego,San Jose"
+            />
+
+            <div className="row">
+              <div className="col-xs-6">
+                <Field
+                  component={TextField}
+                  name="conditions.weight_total_min"
+                  type="number"
+                  fullWidth
+                  floatingLabelText={
+                    messages.settings_minTotalWeight +
+                    ` (${settings.weight_unit})`
+                  }
+                />
+              </div>
+              <div className="col-xs-6">
+                <Field
+                  component={TextField}
+                  name="conditions.weight_total_max"
+                  type="number"
+                  fullWidth
+                  floatingLabelText={
+                    messages.settings_maxTotalWeight +
+                    ` (${settings.weight_unit})`
+                  }
+                />
+              </div>
             </div>
-            <div className="col-xs-12 col-sm-8">
-              <div>
-                <Field
-                  component={TextField}
-                  fullWidth={true}
-                  name="conditions.countries"
-                  floatingLabelText={messages.settings_countries}
-                  hintText="US,UK,AU,SG"
-                />
-              </div>
-              <div>
-                <Field
-                  component={TextField}
-                  fullWidth={true}
-                  name="conditions.states"
-                  floatingLabelText={messages.settings_states}
-                  hintText="California,Nevada,Oregon"
-                />
-              </div>
-              <div>
-                <Field
-                  component={TextField}
-                  fullWidth={true}
-                  name="conditions.cities"
-                  floatingLabelText={messages.settings_cities}
-                  hintText="Los Angeles,San Diego,San Jose"
-                />
-              </div>
 
-              <div className="row">
-                <div className="col-xs-6">
-                  <Field
-                    component={TextField}
-                    name="conditions.weight_total_min"
-                    type="number"
-                    fullWidth={true}
-                    floatingLabelText={
-                      messages.settings_minTotalWeight +
-                      ` (${settings.weight_unit})`
-                    }
-                  />
-                </div>
-                <div className="col-xs-6">
-                  <Field
-                    component={TextField}
-                    name="conditions.weight_total_max"
-                    type="number"
-                    fullWidth={true}
-                    floatingLabelText={
-                      messages.settings_maxTotalWeight +
-                      ` (${settings.weight_unit})`
-                    }
-                  />
-                </div>
+            <div className="row">
+              <div className="col-xs-6">
+                <Field
+                  component={TextField}
+                  name="conditions.subtotal_min"
+                  type="number"
+                  fullWidth
+                  floatingLabelText={
+                    messages.settings_minSubtotal +
+                    ` (${settings.currency_symbol})`
+                  }
+                />
               </div>
-
-              <div className="row">
-                <div className="col-xs-6">
-                  <Field
-                    component={TextField}
-                    name="conditions.subtotal_min"
-                    type="number"
-                    fullWidth={true}
-                    floatingLabelText={
-                      messages.settings_minSubtotal +
-                      ` (${settings.currency_symbol})`
-                    }
-                  />
-                </div>
-                <div className="col-xs-6">
-                  <Field
-                    component={TextField}
-                    name="conditions.subtotal_max"
-                    type="number"
-                    fullWidth={true}
-                    floatingLabelText={
-                      messages.settings_maxSubtotal +
-                      ` (${settings.currency_symbol})`
-                    }
-                  />
-                </div>
+              <div className="col-xs-6">
+                <Field
+                  component={TextField}
+                  name="conditions.subtotal_max"
+                  type="number"
+                  fullWidth
+                  floatingLabelText={
+                    messages.settings_maxSubtotal +
+                    ` (${settings.currency_symbol})`
+                  }
+                />
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="row" style={{ marginTop: "40px" }}>
-            <div className="col-xs-12 col-sm-4">
-              <div className="blue-title">
-                {messages.settings_checkoutFields}
-              </div>
-              <div className="field-hint">
-                Standard:
-                <ul>
-                  <li>full_name</li>
-                  <li>address1</li>
-                  <li>address2</li>
-                  <li>postal_code</li>
-                  <li>phone</li>
-                  <li>company</li>
-                </ul>
-              </div>
+        <div className="row" style={{ marginTop: "40px" }}>
+          <div className="col-xs-12 col-sm-4">
+            <div className="blue-title">{messages.settings_checkoutFields}</div>
+            <div className="field-hint">
+              Standard:
+              <ul>
+                <li>full_name</li>
+                <li>address1</li>
+                <li>address2</li>
+                <li>postal_code</li>
+                <li>phone</li>
+                <li>company</li>
+              </ul>
             </div>
-            <div className="col-xs-12 col-sm-8">
-              <FieldArray name="fields" component={FieldsEditor} />
-            </div>
+          </div>
+          <div className="col-xs-12 col-sm-8">
+            <FieldArray name="fields" component={FieldsEditor} />
           </div>
         </div>
         <div className="buttons-box">
           <RaisedButton
             type="submit"
             label={isAdd ? messages.add : messages.save}
-            primary={true}
+            primary
             className={style.button}
             disabled={pristine || submitting}
           />

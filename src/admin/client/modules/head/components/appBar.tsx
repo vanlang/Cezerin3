@@ -1,3 +1,4 @@
+import { Menu } from "@material-ui/icons"
 import messages from "lib/text"
 import AppBar from "material-ui/AppBar"
 import FontIcon from "material-ui/FontIcon"
@@ -69,7 +70,7 @@ class AppBarTop extends React.Component {
     let title = messages.dashboard
     let leftButton = (
       <IconButton onClick={this.handleToggle}>
-        <FontIcon className="material-icons">menu</FontIcon>
+        <Menu />
       </IconButton>
     )
     let rightElements = null
@@ -684,7 +685,7 @@ class AppBarTop extends React.Component {
     }
 
     return (
-      <div>
+      <>
         <AppBar
           className="appBar"
           titleStyle={{ fontSize: 18 }}
@@ -697,7 +698,7 @@ class AppBarTop extends React.Component {
           onClose={this.handleClose}
           currentUrl={pathname}
         />
-      </div>
+      </>
     )
   }
 }

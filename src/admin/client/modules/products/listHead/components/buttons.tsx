@@ -1,7 +1,7 @@
+import { Add, Delete, Folder } from "@material-ui/icons"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import CategorySelect from "../../../productCategories/select"
@@ -83,9 +83,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_delete}
               onClick={this.openDelete}
             >
-              <FontIcon color="#fff" className="material-icons">
-                delete
-              </FontIcon>
+              <Delete htmlColor="#fff" />
             </IconButton>
             <IconButton
               touch
@@ -93,9 +91,7 @@ class Buttons extends React.Component {
               tooltip={messages.actions_moveTo}
               onClick={this.showMoveTo}
             >
-              <FontIcon color="#fff" className="material-icons">
-                folder
-              </FontIcon>
+              <Folder htmlColor="#fff" />
             </IconButton>
             <DeleteConfirmation
               open={this.state.openDelete}
@@ -126,9 +122,7 @@ class Buttons extends React.Component {
           tooltip={messages.addProduct}
           onClick={onCreate}
         >
-          <FontIcon color="#fff" className="material-icons">
-            add
-          </FontIcon>
+          <Add htmlColor="#fff" />
         </IconButton>
       </>
     )

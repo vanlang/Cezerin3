@@ -1,8 +1,8 @@
 import { Divider, Paper } from "@material-ui/core"
+import { KeyboardArrowRight } from "@material-ui/icons"
 import api from "lib/api"
 import * as helper from "lib/helper"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import moment from "moment"
 import React from "react"
@@ -70,13 +70,11 @@ const CustomerOrder = ({ order, settings }) => {
   const states = getOrderStates(order)
 
   return (
-    <div>
+    <>
       <Divider />
       <Link to={`/admin/order/${order.id}`} style={{ textDecoration: "none" }}>
         <ListItem
-          rightIcon={
-            <FontIcon className="material-icons">keyboard_arrow_right</FontIcon>
-          }
+          rightIcon={<KeyboardArrowRight />}
           primaryText={
             <div className="row">
               <div className="col-xs-2">{order.number}</div>
@@ -93,7 +91,7 @@ const CustomerOrder = ({ order, settings }) => {
           }
         />
       </Link>
-    </div>
+    </>
   )
 }
 

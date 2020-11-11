@@ -81,21 +81,19 @@ class EditPaymentMethodForm extends React.Component {
                 <div className="blue-title">{messages.paymentGateway}</div>
               </div>
               <div className="col-xs-12 col-sm-8">
-                <div>
-                  <Field
-                    component={SelectField}
-                    autoWidth={true}
-                    fullWidth={true}
-                    name="gateway"
-                    floatingLabelFixed={true}
-                    floatingLabelText={messages.paymentGateway}
-                    onChange={(event, currentValue, prevValue) => {
-                      this.onGatewayChange(currentValue)
-                    }}
-                  >
-                    {paymentGateways}
-                  </Field>
-                </div>
+                <Field
+                  component={SelectField}
+                  autoWidth
+                  fullWidth
+                  name="gateway"
+                  floatingLabelFixed
+                  floatingLabelText={messages.paymentGateway}
+                  onChange={(event, currentValue, prevValue) => {
+                    this.onGatewayChange(currentValue)
+                  }}
+                >
+                  {paymentGateways}
+                </Field>
                 <PaymentGateway gateway={this.state.gateway} />
               </div>
             </div>
@@ -105,91 +103,83 @@ class EditPaymentMethodForm extends React.Component {
                 <div className="blue-title">{messages.description}</div>
               </div>
               <div className="col-xs-12 col-sm-8">
-                <div>
-                  <Field
-                    component={TextField}
-                    fullWidth={true}
-                    name="name"
-                    floatingLabelText={messages.settings_paymentMethodName}
-                  />
-                </div>
-                <div>
-                  <Field
-                    component={TextField}
-                    fullWidth={true}
-                    name="description"
-                    multiLine={true}
-                    floatingLabelText={messages.description}
-                  />
-                </div>
-                <div>
-                  <Field
-                    component={CustomToggle}
-                    name="enabled"
-                    label={messages.enabled}
-                    style={{ paddingTop: 16, paddingBottom: 20 }}
-                  />
-                </div>
-                <Divider />
-              </div>
-            </div>
-
-            <div className="row" style={{ marginTop: "40px" }}>
-              <div className="col-xs-12 col-sm-4">
-                <div className="blue-title">{messages.settings_conditions}</div>
-              </div>
-              <div className="col-xs-12 col-sm-8">
-                <div>
-                  <Field
-                    component={TextField}
-                    fullWidth={true}
-                    name="conditions.countries"
-                    floatingLabelText={messages.settings_countries}
-                    hintText="US,UK,AU,SG"
-                  />
-                </div>
-                <div className="row">
-                  <div className="col-xs-6">
-                    <Field
-                      component={TextField}
-                      name="conditions.subtotal_min"
-                      type="number"
-                      fullWidth={true}
-                      floatingLabelText={
-                        messages.settings_minSubtotal +
-                        ` (${settings.currency_symbol})`
-                      }
-                    />
-                  </div>
-                  <div className="col-xs-6">
-                    <Field
-                      component={TextField}
-                      name="conditions.subtotal_max"
-                      type="number"
-                      fullWidth={true}
-                      floatingLabelText={
-                        messages.settings_maxSubtotal +
-                        ` (${settings.currency_symbol})`
-                      }
-                    />
-                  </div>
-                </div>
-                <div className="gray-title" style={{ marginTop: "30px" }}>
-                  {messages.settings_onlyShippingMethods}
-                </div>
                 <Field
-                  name="conditions.shipping_method_ids"
-                  component={SelectShippingMethodsField}
-                  shippingMethods={shippingMethods}
+                  component={TextField}
+                  fullWidth
+                  name="name"
+                  floatingLabelText={messages.settings_paymentMethodName}
+                />
+                <Field
+                  component={TextField}
+                  fullWidth
+                  name="description"
+                  multiLine
+                  floatingLabelText={messages.description}
+                />
+                <Field
+                  component={CustomToggle}
+                  name="enabled"
+                  label={messages.enabled}
+                  style={{ paddingTop: 16, paddingBottom: 20 }}
                 />
               </div>
+              <Divider />
+            </div>
+          </div>
+
+          <div className="row" style={{ marginTop: "40px" }}>
+            <div className="col-xs-12 col-sm-4">
+              <div className="blue-title">{messages.settings_conditions}</div>
+            </div>
+            <div className="col-xs-12 col-sm-8">
+              <Field
+                component={TextField}
+                fullWidth
+                name="conditions.countries"
+                floatingLabelText={messages.settings_countries}
+                hintText="US,UK,AU,SG"
+              />
+              <div className="row">
+                <div className="col-xs-6">
+                  <Field
+                    component={TextField}
+                    name="conditions.subtotal_min"
+                    type="number"
+                    fullWidth
+                    floatingLabelText={
+                      messages.settings_minSubtotal +
+                      ` (${settings.currency_symbol})`
+                    }
+                  />
+                </div>
+                <div className="col-xs-6">
+                  <Field
+                    component={TextField}
+                    name="conditions.subtotal_max"
+                    type="number"
+                    fullWidth
+                    floatingLabelText={
+                      messages.settings_maxSubtotal +
+                      ` (${settings.currency_symbol})`
+                    }
+                  />
+                </div>
+              </div>
+              <div className="gray-title" style={{ marginTop: "30px" }}>
+                {messages.settings_onlyShippingMethods}
+              </div>
+              <Field
+                name="conditions.shipping_method_ids"
+                component={SelectShippingMethodsField}
+                shippingMethods={shippingMethods}
+              />
             </div>
           </div>
           <div className="buttons-box">
             <RaisedButton
               type="submit"
               label={isAdd ? messages.add : messages.save}
-              primary={true}
+              primary
               className={style.button}
               disabled={pristine || submitting}
             />

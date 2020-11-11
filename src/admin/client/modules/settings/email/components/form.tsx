@@ -1,6 +1,6 @@
 import { Paper } from "@material-ui/core"
+import { KeyboardArrowRight } from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 import { Link } from "react-router-dom"
@@ -18,7 +18,7 @@ class EmailSettings extends React.Component {
         : "none"
 
     return (
-      <div>
+      <>
         <Paper className="paper-box" elevation={4}>
           <div style={{ width: "100%" }}>
             <List style={{ padding: 0 }}>
@@ -27,11 +27,7 @@ class EmailSettings extends React.Component {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem
-                  rightIcon={
-                    <FontIcon className="material-icons">
-                      keyboard_arrow_right
-                    </FontIcon>
-                  }
+                  rightIcon={<KeyboardArrowRight />}
                   primaryText={
                     <div className="row">
                       <div className="col-xs-6">
@@ -53,7 +49,7 @@ class EmailSettings extends React.Component {
         <div style={{ margin: 20, color: "rgba(0, 0, 0, 0.52)" }}>
           {messages.settings_emailTemplates}
         </div>
-        <Paper className="paper-box" zDepth={1}>
+        <Paper className="paper-box" elevation={4}>
           <div style={{ width: "100%" }}>
             <List style={{ padding: 0 }}>
               <Link
@@ -61,11 +57,7 @@ class EmailSettings extends React.Component {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem
-                  rightIcon={
-                    <FontIcon className="material-icons">
-                      keyboard_arrow_right
-                    </FontIcon>
-                  }
+                  rightIcon={<KeyboardArrowRight />}
                   primaryText={messages.settings_orderConfirmation}
                 />
               </Link>
@@ -74,11 +66,7 @@ class EmailSettings extends React.Component {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem
-                  rightIcon={
-                    <FontIcon className="material-icons">
-                      keyboard_arrow_right
-                    </FontIcon>
-                  }
+                  rightIcon={<KeyboardArrowRight />}
                   primaryText={messages.settings_customerRegistration}
                 />
               </Link>
@@ -88,9 +76,7 @@ class EmailSettings extends React.Component {
 							>
 								<ListItem
 									rightIcon={
-										<FontIcon className="material-icons">
-											keyboard_arrow_right
-										</FontIcon>
+									<KeyboardArrowRight />
 									}
 									primaryText={messages.settings_customerRegistration}
 								/>
@@ -101,9 +87,7 @@ class EmailSettings extends React.Component {
 							>
 								<ListItem
 									rightIcon={
-										<FontIcon className="material-icons">
-											keyboard_arrow_right
-										</FontIcon>
+									<KeyboardArrowRight />
 									}
 									primaryText={messages.settings_customerRegistration}
 								/>
@@ -113,11 +97,7 @@ class EmailSettings extends React.Component {
                 style={{ textDecoration: "none" }}
               >
                 <ListItem
-                  rightIcon={
-                    <FontIcon className="material-icons">
-                      keyboard_arrow_right
-                    </FontIcon>
-                  }
+                  rightIcon={<KeyboardArrowRight />}
                   primaryText={messages.settings_customerRecovery}
                 />
               </Link>
@@ -127,9 +107,7 @@ class EmailSettings extends React.Component {
 							>
 								<ListItem
 									rightIcon={
-										<FontIcon className="material-icons">
-											keyboard_arrow_right
-										</FontIcon>
+								<KeyboardArrowRight />
 									}
 									primaryText={messages.settings_customerRecovery}
 								/>
@@ -140,9 +118,7 @@ class EmailSettings extends React.Component {
 							>
 								<ListItem
 									rightIcon={
-										<FontIcon className="material-icons">
-											keyboard_arrow_right
-										</FontIcon>
+										<KeyboardArrowRight />
 									}
 									primaryText={messages.settings_customerRecovery}
 								/>
@@ -150,7 +126,7 @@ class EmailSettings extends React.Component {
             </List>
           </div>
         </Paper>
-      </div>
+      </>
     )
   }
 }

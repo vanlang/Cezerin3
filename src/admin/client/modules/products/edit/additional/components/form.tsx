@@ -1,9 +1,9 @@
 import { Paper } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import api from "lib/api"
 import * as helper from "lib/helper"
 import messages from "lib/text"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -54,7 +54,7 @@ const ProductShort = ({
     <div className={style.relatedProductText}>
       <Link to={`/admin/product/${id}`}>{name}</Link>
       <br />
-      <div>{priceFormatted}</div>
+      <p>{priceFormatted}</p>
     </div>
     <div className={style.relatedProductActions}>{actions}</div>
   </div>
@@ -65,10 +65,8 @@ const RelatedProductActions = ({ fields, index }) => (
     targetOrigin={{ horizontal: "right", vertical: "top" }}
     anchorOrigin={{ horizontal: "right", vertical: "top" }}
     iconButtonElement={
-      <IconButton touch={true}>
-        <FontIcon color="#777" className="material-icons">
-          more_vert
-        </FontIcon>
+      <IconButton touch>
+        <MoreVert htmlColor="#777" />
       </IconButton>
     }
   >

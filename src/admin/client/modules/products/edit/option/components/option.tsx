@@ -47,7 +47,7 @@ class ProductOptionForm extends React.Component {
     } = this.props
 
     return (
-      <div>
+      <>
         <form onSubmit={handleSubmit}>
           <Paper className="paper-box" elevation={4}>
             <div className={style.innerBox}>
@@ -118,7 +118,7 @@ class ProductOptionForm extends React.Component {
           updateOptionValue={updateOptionValue}
           deleteOptionValue={deleteOptionValue}
         />
-      </div>
+      </>
     )
   }
 }

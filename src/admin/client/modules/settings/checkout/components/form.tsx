@@ -56,7 +56,7 @@ const EmailSettings: FC<EmailSettingsProps> = (props: EmailSettingsProps) => {
   }
 
   return (
-    <div>
+    <>
       <div style={{ margin: 20, color: "rgba(0, 0, 0, 0.52)" }}>
         {messages.settings_checkoutFields}
       </div>
@@ -131,7 +131,7 @@ const EmailSettings: FC<EmailSettingsProps> = (props: EmailSettingsProps) => {
           </List>
         </div>
       </Paper>
-    </div>
+    </>
   )
 }
 

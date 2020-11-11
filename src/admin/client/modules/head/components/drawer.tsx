@@ -1,7 +1,8 @@
 import { Divider } from "@material-ui/core"
+import { Menu as MenuIcon } from "@material-ui/icons"
+import { FontIcon } from "material-ui"
 import AppBar from "material-ui/AppBar"
 import Drawer from "material-ui/Drawer"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import Menu from "material-ui/Menu"
 import MenuItem from "material-ui/MenuItem"
@@ -140,9 +141,7 @@ const DrawerMenu = ({ open, onClose, currentUrl }) => {
         zDepth={0}
         iconElementLeft={
           <IconButton onClick={onClose}>
-            <FontIcon color="#9e9e9e" className="material-icons">
-              menu
-            </FontIcon>
+            <MenuIcon htmlColor="#9e9e9e" />
           </IconButton>
         }
       />

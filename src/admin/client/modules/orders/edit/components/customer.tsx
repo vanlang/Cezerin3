@@ -29,14 +29,14 @@ const ShippingFields = ({ order, shippingMethod }) => {
     })
   }
 
-  return <div>{rows}</div>
+  return <>{rows}</>
 }
 
 const ShippingFieldDiv = ({ label, value }) => (
-  <div>
+  <>
     <label>{label}: </label>
     {value}
-  </div>
+  </>
 )
 
 const ShippingAddress = ({ order, settings }) => {
@@ -47,19 +47,19 @@ const ShippingAddress = ({ order, settings }) => {
     <div className={style.address} style={{ marginBottom: 20 }}>
       <ShippingFields order={order} shippingMethod={shippingMethod} />
       <div className={style.address}>
-        <div>{address.full_name}</div>
-        <div>{address.company}</div>
-        <div>{address.address1}</div>
-        <div>{address.address2}</div>
-        <div>
+        <p>{address.full_name}</p>
+        <p>{address.company}</p>
+        <p>{address.address1}</p>
+        <p>{address.address2}</p>
+        <p>
           {address.city},{" "}
           {address.state && address.state.length > 0
             ? address.state + ", "
             : ""}
           {address.postal_code}
-        </div>
-        <div>{address.country}</div>
-        <div>{address.phone}</div>
+        </p>
+        <p>{address.country}</p>
+        <p>{address.phone}</p>
       </div>
     </div>
   )
@@ -82,7 +82,7 @@ const BillingAddress = ({ address, settings }) => {
     return null
   } else if (billinsAddressIsEmpty && !settings.hide_billing_address) {
     return (
-      <div>
+      <>
         <Divider
           style={{
             marginTop: 30,
@@ -97,11 +97,11 @@ const BillingAddress = ({ address, settings }) => {
         <div className={style.address}>
           <label>{messages.sameAsShipping}</label>
         </div>
-      </div>
+      </>
     )
   } else {
     return (
-      <div>
+      <>
         <Divider
           style={{
             marginTop: 30,
@@ -114,21 +114,21 @@ const BillingAddress = ({ address, settings }) => {
           {messages.billingAddress}
         </div>
         <div className={style.address}>
-          <div>{address.full_name}</div>
-          <div>{address.company}</div>
-          <div>{address.address1}</div>
-          <div>{address.address2}</div>
-          <div>
+          <p>{address.full_name}</p>
+          <p>{address.company}</p>
+          <p>{address.address1}</p>
+          <p>{address.address2}</p>
+          <p>
             {address.city},{" "}
             {address.state && address.state.length > 0
               ? address.state + ", "
               : ""}
             {address.postal_code}
-          </div>
-          <div>{address.country}</div>
-          <div>{address.phone}</div>
+          </p>
+          <p>{address.country}</p>
+          <p>{address.phone}</p>
         </div>
-      </div>
+      </>
     )
   }
 }
@@ -163,27 +163,23 @@ class OrderCustomer extends React.Component {
     const mapUrl = `https://www.google.com/maps/place/${mapAddress}`
 
     return (
-      <div>
+      <>
         <div style={{ margin: 20, color: "rgba(0, 0, 0, 0.52)" }}>
           {messages.customer}
         </div>
         <Paper className="paper-box" elevation={4}>
           <div className={style.innerBox}>
             <div className={style.address}>
-              <div>
-                <Link
-                  to={`/admin/customer/${order.customer_id}`}
-                  className={style.link}
-                >
-                  {order.customer && order.customer.full_name}
-                </Link>
-              </div>
-              <div>
-                <a href={"MailTo:" + order.email} className={style.link}>
-                  {order.email}
-                </a>
-              </div>
-              <div>{order.mobile}</div>
+              <Link
+                to={`/admin/customer/${order.customer_id}`}
+                className={style.link}
+              >
+                {order.customer && order.customer.full_name}
+              </Link>
+              <a href={"MailTo:" + order.email} className={style.link}>
+                {order.email}
+              </a>
+              <p>{order.mobile}</p>
             </div>
 
             <Divider
@@ -233,7 +229,7 @@ class OrderCustomer extends React.Component {
             </Dialog>
           </div>
         </Paper>
-      </div>
+      </>
     )
   }
 }

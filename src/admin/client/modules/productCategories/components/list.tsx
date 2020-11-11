@@ -1,5 +1,11 @@
+import {
+  Folder,
+  GetApp,
+  Home,
+  Settings,
+  VisibilityOff,
+} from "@material-ui/icons"
 import messages from "lib/text"
-import FontIcon from "material-ui/FontIcon"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 import { Link } from "react-router-dom"
@@ -16,8 +22,8 @@ const styles = {
   },
 }
 
-const FolderIcon = <FontIcon className="material-icons">folder</FontIcon>
-const DraftIcon = <FontIcon className="material-icons">visibility_off</FontIcon>
+const FolderIcon = <Folder />
+const DraftIcon = <VisibilityOff />
 
 class Item extends React.PureComponent {
   constructor(props) {
@@ -142,7 +148,7 @@ class Categories extends React.Component {
             primaryText={rootName}
             style={"root" === selectedId ? styles.selectedItem : null}
             innerDivStyle={styles.innerItem}
-            leftIcon={<FontIcon className="material-icons">home</FontIcon>}
+            leftIcon={<Home />}
             onClick={this.handleClickRoot}
           />
         )}
@@ -153,7 +159,7 @@ class Categories extends React.Component {
             primaryText={allName}
             style={"all" === selectedId ? styles.selectedItem : null}
             innerDivStyle={styles.innerItem}
-            leftIcon={<FontIcon className="material-icons">folder</FontIcon>}
+            leftIcon={<Folder />}
             onClick={this.handleClickAll}
           />
         )}
@@ -169,9 +175,7 @@ class Categories extends React.Component {
               className="treeItem"
               primaryText={messages.productCategories_titleEditMany}
               innerDivStyle={styles.innerItem}
-              leftIcon={
-                <FontIcon className="material-icons">settings</FontIcon>
-              }
+              leftIcon={<Settings />}
             />
           </Link>
         )}
@@ -182,7 +186,7 @@ class Categories extends React.Component {
               className="treeItem"
               primaryText={messages.drawer_importing}
               innerDivStyle={styles.innerItem}
-              leftIcon={<FontIcon className="material-icons">get_app</FontIcon>}
+              leftIcon={<GetApp />}
               onClick={this.handleClickImport}
             />
           </Link>

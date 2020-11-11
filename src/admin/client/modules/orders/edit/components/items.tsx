@@ -1,7 +1,7 @@
 import { Divider } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -12,10 +12,8 @@ import { helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const iconButtonElement = (
-  <IconButton touch={true}>
-    <FontIcon color="rgb(189, 189, 189)" className="material-icons">
-      more_vert
-    </FontIcon>
+  <IconButton touch>
+    <MoreVert htmlColor="rgb(189, 189, 189)" />
   </IconButton>
 )
 
@@ -223,7 +221,7 @@ export class OrderItem extends React.Component {
     }
 
     return (
-      <div>
+      <>
         <div className={style.item + " row row--no-gutter middle-xs"}>
           <div className="col-xs-2">
             {thumbnailUrl && thumbnailUrl !== "" && (
@@ -232,10 +230,10 @@ export class OrderItem extends React.Component {
           </div>
           <div className={style.itemName + " col-xs-4"}>
             <Link to={`/admin/product/${item.product_id}`}>{item.name}</Link>
-            <div>{item.variant_name}</div>
-            <div>
+            <p>{item.variant_name}</p>
+            <p>
               {messages.products_sku}: {item.sku}
-            </div>
+            </p>
           </div>
           <div className="col-xs-2" style={{ textAlign: "right" }}>
             {price}
@@ -273,7 +271,7 @@ export class OrderItem extends React.Component {
           onRequestClose={this.hideEditForm}
           contentStyle={{ width: 400 }}
         >
-          <div>
+          <>
             <ProductOptions
               options={productOptions}
               onChange={this.onOptionChange}
@@ -287,9 +285,9 @@ export class OrderItem extends React.Component {
             >
               {quantityItems}
             </SelectField>
-          </div>
+          </>
         </Dialog>
-      </div>
+      </>
     )
   }
 }
@@ -306,7 +304,7 @@ const OrderItems = ({ order, settings, onItemDelete, onItemUpdate }) => {
       allowEdit={allowEdit}
     />
   ))
-  return <div>{items}</div>
+  return <p>{items}</p>
 }
 
 export default OrderItems

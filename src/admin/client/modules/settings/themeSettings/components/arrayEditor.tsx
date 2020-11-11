@@ -1,7 +1,7 @@
 import { Paper } from "@material-ui/core"
+import { Add } from "@material-ui/icons"
 import FlatButton from "material-ui/FlatButton"
 import FloatingActionButton from "material-ui/FloatingActionButton"
-import FontIcon from "material-ui/FontIcon"
 import React from "react"
 import { messages } from "../../../../lib"
 import DynamicEditControl from "./dynamicEditControl"
@@ -16,7 +16,7 @@ interface props {
 const ArrayEditor = (props: props) => {
   const { label, properties, fields } = props
   return (
-    <div>
+    <>
       <div className={style.arrayTitle}>
         {label}
         <FloatingActionButton
@@ -25,7 +25,7 @@ const ArrayEditor = (props: props) => {
           onClick={() => fields.push({})}
           style={{ marginLeft: "20px" }}
         >
-          <FontIcon className="material-icons">add</FontIcon>
+          <Add />
         </FloatingActionButton>
       </div>
 
@@ -77,7 +77,7 @@ const ArrayEditor = (props: props) => {
           </li>
         ))}
       </ol>
-    </div>
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import { Paper } from "@material-ui/core"
+import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
-import FontIcon from "material-ui/FontIcon"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -15,26 +15,24 @@ let countRender = 0
 const Address = ({ address }) => {
   return (
     <div className={style.address}>
-      <div>{address.full_name}</div>
-      <div>{address.company}</div>
-      <div>{address.address1}</div>
-      <div>{address.address2}</div>
-      <div>
+      <p>{address.full_name}</p>
+      <p>{address.company}</p>
+      <p>{address.address1}</p>
+      <p>{address.address2}</p>
+      <p>
         {address.city},{" "}
         {address.state && address.state.length > 0 ? address.state + ", " : ""}
         {address.postal_code}
-      </div>
-      <div>{address.country}</div>
-      <div>{address.phone}</div>
+      </p>
+      <p>{address.country}</p>
+      <p>{address.phone}</p>
     </div>
   )
 }
 
 const iconButtonElement = (
-  <IconButton touch={true}>
-    <FontIcon color="rgb(189, 189, 189)" className="material-icons">
-      more_vert
-    </FontIcon>
+  <IconButton touch>
+    <MoreVert htmlColor="rgb(189, 189, 189)" />
   </IconButton>
 )
 
@@ -99,7 +97,7 @@ class CustomerAddress extends React.Component {
     }
 
     return (
-      <Paper className="paper-box" zDepth={1}>
+      <Paper className="paper-box" elevation={4}>
         <div className={style.innerBox} style={{ paddingTop: 15 }}>
           <div className="row middle-xs">
             <div className="col-xs-10">{title}</div>
@@ -174,7 +172,7 @@ const CustomerAddresses = ({
         onSetDefaultShippingAddress={onSetDefaultShippingAddress}
       />
     ))
-    return <div>{addresses}</div>
+    return <>{addresses}</>
   } else {
     return null
   }

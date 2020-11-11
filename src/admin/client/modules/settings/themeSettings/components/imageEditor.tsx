@@ -29,7 +29,7 @@ class ThemeImageUpload extends React.Component {
         : null
 
     return (
-      <div>
+      <>
         <p>{label}</p>
         <ImageUpload
           uploading={false}
@@ -37,7 +37,7 @@ class ThemeImageUpload extends React.Component {
           onDelete={this.onDelete}
           onUpload={this.onUpload}
         />
-      </div>
+      </>
     )
   }
 }
