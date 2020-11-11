@@ -10,7 +10,7 @@
       "watch_options": {
         "persistent": true,
         "ignoreInitial": false
-      }
+		}
     },
     {
       "name": "store",
