@@ -1,12 +1,11 @@
 import React from "react"
-import { Switch, Route, NavLink } from "react-router-dom"
-import * as auth from "lib/webstoreAuth"
-import NotFound from "routes/notFound"
-import Login from "routes/apps/login"
-import Account from "modules/apps/account"
-import Services from "modules/apps/services"
-import ServiceDetails from "modules/apps/serviceDetails"
-import AppDetails from "modules/apps/appDetails"
+import { Route, Switch } from "react-router-dom"
+import Account from "../../modules/apps/account"
+import AppDetails from "../../modules/apps/appDetails"
+import ServiceDetails from "../../modules/apps/serviceDetails"
+import Services from "../../modules/apps/services"
+import Login from "../apps/login"
+import NotFound from "../notFound"
 
 export default () => (
   <Switch>
