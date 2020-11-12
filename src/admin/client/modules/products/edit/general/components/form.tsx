@@ -1,7 +1,5 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import api from "lib/api"
-import FlatButton from "material-ui/FlatButton"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -99,19 +97,24 @@ const ProductGeneralForm = (props: props) => {
               (pristine ? "buttons-box-pristine" : "buttons-box-show")
             }
           >
-            <FlatButton
-              label={messages.cancel}
+            <Button
+              variant="contained"
+              color="primary"
               className={style.button}
               onClick={reset}
               disabled={pristine || submitting}
-            />
-            <RaisedButton
+            >
+              {messages.cancel}
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
               type="submit"
-              label={messages.save}
-              primary
               className={style.button}
               disabled={pristine || submitting}
-            />
+            >
+              {messages.save}
+            </Button>
           </div>
         </Paper>
       </form>

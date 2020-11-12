@@ -1,7 +1,6 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import { RadioButton } from "material-ui/RadioButton"
-import RaisedButton from "material-ui/RaisedButton"
-import React from "react"
+import React, { FC, useEffect } from "react"
 import { Field, reduxForm } from "redux-form"
 import { RadioButtonGroup, TextField } from "redux-form-material-ui"
 import { messages } from "../../../../lib"
@@ -12,73 +11,76 @@ const radioButtonStyle = {
   marginBottom: 14,
 }
 
-class CheckoutFieldForm extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+interface props {
+  handleSubmit
+  pristine
+  submitting
+  onLoad: Function
+}
 
-  componentDidMount() {
-    this.props.onLoad()
-  }
+const CheckoutFieldForm: FC<props> = (props: props) => {
+  const { handleSubmit, pristine, submitting, onLoad } = props
 
-  render() {
-    let { handleSubmit, pristine, submitting } = this.props
+  useEffect(() => {
+    onLoad()
+  }, [])
 
-    return (
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "initial",
-          width: "100%",
-        }}
-      >
-        <Paper className="paper-box" elevation={4}>
-          <div className={style.innerBox}>
-            <Field
-              component={TextField}
-              fullWidth
-              name="label"
-              floatingLabelText={messages.settings_fieldLabel}
+  return (
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "initial",
+        width: "100%",
+      }}
+    >
+      <Paper className="paper-box" elevation={4}>
+        <div className={style.innerBox}>
+          <Field
+            component={TextField}
+            fullWidth
+            name="label"
+            floatingLabelText={messages.settings_fieldLabel}
+          />
+          <Field
+            component={TextField}
+            fullWidth
+            name="placeholder"
+            floatingLabelText={messages.settings_fieldPlaceholder}
+          />
+          <div className="blue-title">{messages.settings_fieldStatus}</div>
+
+          <Field name="status" component={RadioButtonGroup}>
+            <RadioButton
+              value="required"
+              label={messages.settings_fieldRequired}
+              style={radioButtonStyle}
             />
-            <Field
-              component={TextField}
-              fullWidth
-              name="placeholder"
-              floatingLabelText={messages.settings_fieldPlaceholder}
+            <RadioButton
+              value="optional"
+              label={messages.settings_fieldOptional}
+              style={radioButtonStyle}
             />
-            <div className="blue-title">{messages.settings_fieldStatus}</div>
-
-            <Field name="status" component={RadioButtonGroup}>
-              <RadioButton
-                value="required"
-                label={messages.settings_fieldRequired}
-                style={radioButtonStyle}
-              />
-              <RadioButton
-                value="optional"
-                label={messages.settings_fieldOptional}
-                style={radioButtonStyle}
-              />
-              <RadioButton
-                value="hidden"
-                label={messages.settings_fieldHidden}
-                style={radioButtonStyle}
-              />
-            </Field>
-          </div>
-          <div className="buttons-box">
-            <RaisedButton
-              type="submit"
-              label={messages.save}
-              primary
-              className={style.button}
-              disabled={pristine || submitting}
+            <RadioButton
+              value="hidden"
+              label={messages.settings_fieldHidden}
+              style={radioButtonStyle}
             />
-          </div>
-        </Paper>
-      </form>
-    )
-  }
+          </Field>
+        </div>
+        <div className="buttons-box">
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            className={style.button}
+            disabled={pristine || submitting}
+          >
+            {messages.save}
+          </Button>
+        </div>
+      </Paper>
+    </form>
+  )
 }
 
 export default reduxForm({

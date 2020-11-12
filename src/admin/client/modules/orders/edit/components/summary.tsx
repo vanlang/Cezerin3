@@ -1,6 +1,5 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import Dialog from "material-ui/Dialog"
-import RaisedButton from "material-ui/RaisedButton"
 import moment from "moment"
 import React from "react"
 import { messages } from "../../../../lib"
@@ -178,19 +177,24 @@ class OrderSummary extends React.Component {
 
           <div style={{ marginTop: 20 }}>
             {allowEdit && (
-              <RaisedButton
-                label="Edit"
+              <Button
+                variant="contained"
+                color="primary"
                 style={{ marginRight: 15 }}
                 onClick={this.showSummaryEdit}
-              />
+              >
+                Edit
+              </Button>
             )}
             {isDraft && (
-              <RaisedButton
-                label={messages.placeOrder}
-                primary={true}
+              <Button
+                variant="contained"
+                color="primary"
                 onClick={onCheckout}
                 disabled={processingCheckout}
-              />
+              >
+                {messages.placeOrder}
+              </Button>
             )}
           </div>
 

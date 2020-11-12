@@ -1,5 +1,4 @@
-import { Paper } from "@material-ui/core"
-import FlatButton from "material-ui/FlatButton"
+import { Button, Paper } from "@material-ui/core"
 import React from "react"
 import { api, messages } from "../../../../../lib"
 
@@ -567,14 +566,16 @@ class ProductImport extends React.Component {
                 </div>
               </fieldset>
               <div className="buttons-box">
-                <FlatButton
-                  label={messages.import}
+                <Button
+                  variant="contained"
+                  color="primary"
                   files={files}
-                  primary
-                  keyboardFocused
+                  focusRipple
                   onClick={this.fetchData}
                   className={"spread-sheet-save-btn"}
-                />
+                >
+                  {messages.import}
+                </Button>
               </div>
             </Paper>
           </div>

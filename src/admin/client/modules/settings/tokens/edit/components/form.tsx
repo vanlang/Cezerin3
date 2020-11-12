@@ -1,5 +1,4 @@
-import { Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Paper } from "@material-ui/core"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -116,20 +115,24 @@ class EditTokenForm extends React.Component {
             </div>
             <div className="buttons-box">
               {!isAdd && (
-                <RaisedButton
-                  label={messages.settings_revokeAccess}
-                  secondary={true}
+                <Button
+                  variant="contained"
+                  color="secondary"
                   style={{ float: "left" }}
                   onClick={this.handleRevoke}
-                />
+                >
+                  {messages.settings_revokeAccess}
+                </Button>
               )}
-              <RaisedButton
+              <Button
+                variant="contained"
+                color="primary"
                 type="submit"
-                label={isAdd ? messages.settings_generateToken : messages.save}
-                primary={true}
                 className={style.button}
                 disabled={pristine || submitting}
-              />
+              >
+                {isAdd ? messages.settings_generateToken : messages.save}
+              </Button>
             </div>
           </Paper>
         </form>

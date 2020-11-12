@@ -1,6 +1,5 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import { Add } from "@material-ui/icons"
-import FlatButton from "material-ui/FlatButton"
 import FloatingActionButton from "material-ui/FloatingActionButton"
 import React from "react"
 import { messages } from "../../../../lib"
@@ -37,24 +36,32 @@ const ArrayEditor = (props: props) => {
               elevation={4}
             >
               <div className={style.arrayItemHead}>
-                <FlatButton
-                  label={messages.actions_delete}
-                  secondary={true}
+                <Button
+                  variant="contained"
+                  color="secondary"
                   onClick={() => fields.remove(index)}
-                />
+                >
+                  {messages.actions_delete}
+                </Button>
 
                 {index > 0 && (
-                  <FlatButton
-                    label={messages.actions_moveUp}
+                  <Button
+                    variant="contained"
+                    color="primary"
                     onClick={() => fields.move(index, index - 1)}
-                  />
+                  >
+                    {messages.actions_moveUp}
+                  </Button>
                 )}
 
                 {index + 1 < fields.length && (
-                  <FlatButton
-                    label={messages.actions_moveDown}
+                  <Button
+                    variant="contained"
+                    color="primary"
                     onClick={() => fields.move(index, index + 1)}
-                  />
+                  >
+                    {messages.actions_moveDown}
+                  </Button>
                 )}
               </div>
 

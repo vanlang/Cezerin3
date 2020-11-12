@@ -1,7 +1,6 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import { RadioButton } from "material-ui/RadioButton"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import {
@@ -187,13 +186,15 @@ class CommerceForm extends React.Component {
             </>
           </div>
           <div className="buttons-box">
-            <RaisedButton
+            <Button
+              variant="contained"
+              color="primary"
               type="submit"
-              label={messages.save}
-              primary
               className={style.button}
               disabled={pristine || submitting}
-            />
+            >
+              {messages.save}
+            </Button>
           </div>
         </Paper>
       </form>

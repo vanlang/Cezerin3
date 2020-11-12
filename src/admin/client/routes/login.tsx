@@ -1,9 +1,8 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import CezerinClient from "cezerin2-client"
 import * as auth from "lib/auth"
 import settings from "lib/settings"
 import messages from "lib/text"
-import RaisedButton from "material-ui/RaisedButton"
 import TextField from "material-ui/TextField"
 import React from "react"
 
@@ -97,12 +96,15 @@ class LoginForm extends React.Component {
                 hintText={messages.email}
               />
             </div>
-            <RaisedButton
-              label={messages.loginButton}
-              primary={true}
+            <Button
+              variant="contained"
+              color="primary"
               disabled={isFetching || emailIsSent}
               onClick={this.handleSubmit}
-            />
+            >
+              {messages.loginButton}
+            </Button>
+
             {response}
           </Paper>
         </div>

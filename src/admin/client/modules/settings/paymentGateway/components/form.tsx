@@ -1,6 +1,5 @@
+import { Button } from "@material-ui/core"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { reduxForm } from "redux-form"
 import { messages } from "../../../../lib"
@@ -43,11 +42,14 @@ class EditPaymentGatewayForm extends React.Component {
     if (this.props.gateway && this.props.gateway.length > 0) {
       return (
         <>
-          <RaisedButton
+          <Button
+            variant="contained"
+            color="primary"
             onClick={this.handleOpen}
-            label={messages.drawer_settings}
             style={{ margin: "15px 0 30px 0" }}
-          />
+          >
+            {messages.drawer_settings}
+          </Button>
 
           <Dialog
             title={gatewayDetails.name}
@@ -64,18 +66,23 @@ class EditPaymentGatewayForm extends React.Component {
               <GatewaySettings gateway={this.props.gateway} />
 
               <div className={style.buttons}>
-                <FlatButton
-                  label={messages.cancel}
+                <Button
+                  variant="contained"
+                  color="primary"
                   onClick={this.handleClose}
-                />
-                <FlatButton
-                  label={messages.save}
-                  primary
+                >
+                  {messages.cancel}
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
                   type="submit"
                   onClick={this.handleClose}
                   style={{ marginLeft: 12 }}
                   disabled={pristine || submitting}
-                />
+                >
+                  {messages.save}
+                </Button>
               </div>
             </form>
           </Dialog>

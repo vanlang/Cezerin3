@@ -1,5 +1,4 @@
-import { Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Paper } from "@material-ui/core"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -58,13 +57,15 @@ class EditRedirectForm extends React.Component {
                 pristine && !isAdd ? "buttons-box-pristine" : "buttons-box-show"
               }`}
             >
-              <RaisedButton
+              <Button
+                variant="contained"
+                color="primary"
                 type="submit"
-                label={isAdd ? messages.add : messages.save}
-                primary
                 className={style.button}
                 disabled={pristine || submitting}
-              />
+              >
+                {isAdd ? messages.add : messages.save}
+              </Button>
             </div>
           </Paper>
         </form>

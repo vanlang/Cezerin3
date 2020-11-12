@@ -1,13 +1,11 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import { MoreVert } from "@material-ui/icons"
 import api from "lib/api"
 import * as helper from "lib/helper"
 import messages from "lib/text"
-import FlatButton from "material-ui/FlatButton"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
-import RaisedButton from "material-ui/RaisedButton"
 import React, { FC } from "react"
 import { Link } from "react-router-dom"
 import TagsInput from "react-tagsinput"
@@ -208,11 +206,9 @@ class ProductsArray extends React.Component {
             cancelLabel={messages.cancel}
           />
         </Paper>
-
-        <RaisedButton
-          label={messages.addOrderItem}
-          onClick={this.showAddItem}
-        />
+        <Button variant="contained" color="primary" onClick={this.showAddItem}>
+          {messages.addOrderItem}
+        </Button>
       </>
     )
   }
@@ -223,7 +219,6 @@ interface props {
   pristine
   reset
   submitting
-
   settings
   categories
 }
@@ -323,19 +318,24 @@ const ProductAdditionalForm: FC<props> = (props: props) => {
             (pristine ? "buttons-box-pristine" : "buttons-box-show")
           }
         >
-          <FlatButton
-            label={messages.cancel}
+          <Button
+            variant="contained"
+            color="primary"
             className={style.button}
             onClick={reset}
             disabled={pristine || submitting}
-          />
-          <RaisedButton
+          >
+            {messages.cancel}
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
             type="submit"
-            label={messages.save}
-            primary={true}
             className={style.button}
             disabled={pristine || submitting}
-          />
+          >
+            {messages.save}
+          </Button>
         </div>
       </Paper>
     </form>

@@ -1,4 +1,4 @@
-import RaisedButton from "material-ui/RaisedButton"
+import { Button } from "@material-ui/core"
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import apps from "../../../../apps"
@@ -56,7 +56,9 @@ const ServicesList = (props: props) => {
         >
           {messages.loadFromWebstore}&nbsp;&nbsp;
           <Link to="/admin/apps/login">
-            <RaisedButton label={messages.loginTitle} />
+            <Button variant="contained" color="primary">
+              {messages.loginTitle}
+            </Button>
           </Link>
         </div>
       )}

@@ -1,5 +1,4 @@
-import { Divider, Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Divider, Paper } from "@material-ui/core"
 import React, { FC, useEffect } from "react"
 import { Field, FieldArray, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -183,13 +182,15 @@ const EditShippingMethodForm: FC = (props: any) => {
           </div>
         </div>
         <div className="buttons-box">
-          <RaisedButton
+          <Button
+            variant="contained"
+            color="primary"
             type="submit"
-            label={isAdd ? messages.add : messages.save}
-            primary
             className={style.button}
             disabled={pristine || submitting}
-          />
+          >
+            {isAdd ? messages.add : messages.save}
+          </Button>
         </div>
       </Paper>
     </form>

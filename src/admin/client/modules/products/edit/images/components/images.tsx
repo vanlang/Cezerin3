@@ -1,7 +1,6 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import TextField from "material-ui/TextField"
 import React from "react"
 import Gallery from "../../../../shared/imageUploadMultiple"
@@ -53,17 +52,22 @@ class ProductImages extends React.Component {
     const alt = imageData ? imageData.alt : ""
 
     const dialogButtons = [
-      <FlatButton
-        label={messages.cancel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.closeEdit}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={messages.save}
-        primary={true}
-        keyboardFocused={true}
+      >
+        {messages.cancel}
+      </Button>,
+      <Button
+        variant="contained"
+        color="primary"
+        focusRipple
         onClick={this.handleEditSave}
-      />,
+      >
+        {messages.save}
+      </Button>,
     ]
 
     return (

@@ -1,7 +1,5 @@
-import { Divider, Paper } from "@material-ui/core"
+import { Button, Divider, Paper } from "@material-ui/core"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { Link } from "react-router-dom"
 import { helper, messages } from "../../../../lib"
@@ -197,14 +195,19 @@ class OrderCustomer extends React.Component {
             <ShippingAddress order={order} settings={settings} />
 
             {allowEdit && (
-              <RaisedButton
-                label={messages.edit}
+              <Button
+                variant="contained"
+                color="primary"
                 style={{ marginRight: 15 }}
                 onClick={this.showShippingEdit}
-              />
+              >
+                {messages.edit}
+              </Button>
             )}
             <a href={mapUrl} target="_blank">
-              <FlatButton label="View map" />
+              <Button variant="contained" color="primary">
+                View map
+              </Button>
             </a>
 
             <BillingAddress

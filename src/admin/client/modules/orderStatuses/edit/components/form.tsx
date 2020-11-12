@@ -1,6 +1,4 @@
-import { Paper } from "@material-ui/core"
-import FlatButton from "material-ui/FlatButton"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Paper } from "@material-ui/core"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -20,64 +18,57 @@ const validate = values => {
   return errors
 }
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props)
+const Form = props => {
+  const { handleSubmit, pristine, submitting, isSaving, initialValues } = props
+
+  let statusId = null
+
+  if (initialValues) {
+    statusId = initialValues.id
   }
 
-  render() {
-    let {
-      handleSubmit,
-      pristine,
-      submitting,
-      isSaving,
-      initialValues,
-    } = this.props
-
-    let statusId = null
-
-    if (initialValues) {
-      statusId = initialValues.id
-    }
-
-    return (
-      <Paper className="paper-box" elevation={4}>
-        <form onSubmit={handleSubmit}>
-          <div className={style.innerBox}>
-            <Field
-              name="name"
-              component={TextField}
-              floatingLabelText={messages.orderStatusName + " *"}
-              fullWidth={true}
-            />
-            <br />
-            <Field
-              name="description"
-              component={TextField}
-              floatingLabelText={messages.description}
-              fullWidth={true}
-              multiLine={true}
-              rows={1}
-            />
-          </div>
-          <div className="buttons-box">
-            <FlatButton
-              label={messages.cancel}
-              className={style.button}
-              onClick={this.props.onCancel}
-            />
-            <RaisedButton
-              type="submit"
-              label={statusId ? messages.save : messages.add}
-              primary={true}
-              className={style.button}
-              disabled={pristine || submitting || isSaving}
-            />
-          </div>
-        </form>
-      </Paper>
-    )
-  }
+  return (
+    <Paper className="paper-box" elevation={4}>
+      <form onSubmit={handleSubmit}>
+        <div className={style.innerBox}>
+          <Field
+            name="name"
+            component={TextField}
+            floatingLabelText={messages.orderStatusName + " *"}
+            fullWidth
+          />
+          <br />
+          <Field
+            name="description"
+            component={TextField}
+            floatingLabelText={messages.description}
+            fullWidth
+            multiLine
+            rows={1}
+          />
+        </div>
+        <div className="buttons-box">
+          <Button
+            variant="contained"
+            color="primary"
+            className={style.button}
+            onClick={props.onCancel}
+          >
+            {messages.cancel}
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            className={style.button}
+            disabled={pristine || submitting || isSaving}
+          >
+            {statusId ? messages.save : messages.add}
+          </Button>
+        </div>
+      </form>
+    </Paper>
+  )
 }
 
 export default reduxForm({

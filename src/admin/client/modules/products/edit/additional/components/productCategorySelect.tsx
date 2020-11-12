@@ -1,6 +1,6 @@
+import { Button } from "@material-ui/core"
 import { Create } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import React from "react"
 import { messages } from "../../../../../lib"
 import CategorySelect from "../../../../productCategories/select"
@@ -33,17 +33,22 @@ class ProductCategorySelect extends React.Component {
     const categoryName = category ? category.name : ""
 
     const dialogButtons = [
-      <FlatButton
-        label={messages.cancel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.close}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={messages.save}
-        primary
-        keyboardFocused
+      >
+        {messages.cancel}
+      </Button>,
+      <Button
+        variant="contained"
+        color="primary"
+        focusRipple
         onClick={this.close}
-      />,
+      >
+        {messages.save}
+      </Button>,
     ]
 
     return (
@@ -62,11 +67,14 @@ class ProductCategorySelect extends React.Component {
             opened={false}
           />
         </Dialog>
-        <FlatButton
-          label={categoryName}
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<Create htmlColor="#777" />}
           onClick={this.open}
-          icon={<Create htmlColor="#777" />}
-        />
+        >
+          {categoryName}
+        </Button>
       </>
     )
   }

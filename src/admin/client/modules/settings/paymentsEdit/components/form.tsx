@@ -1,6 +1,5 @@
 import { Divider, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
@@ -176,13 +175,15 @@ class EditPaymentMethodForm extends React.Component {
             </div>
           </div>
           <div className="buttons-box">
-            <RaisedButton
+            <Button
+              variant="contained"
+              color="primary"
               type="submit"
-              label={isAdd ? messages.add : messages.save}
-              primary
               className={style.button}
               disabled={pristine || submitting}
-            />
+            >
+              {isAdd ? messages.add : messages.save}
+            </Button>
           </div>
         </Paper>
       </form>

@@ -1,5 +1,4 @@
-import { Divider, Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Divider, Paper } from "@material-ui/core"
 import React from "react"
 import { messages } from "../../../../lib"
 import ThemeSettings from "../../../settings/themeSettings"
@@ -59,16 +58,16 @@ class Theme extends React.Component {
                 {messages.settings_themeExportDesciption}
               </div>
               <div className="col-xs-4" style={{ textAlign: "right" }}>
-                <RaisedButton
-                  label={
-                    exportInProcess
-                      ? messages.settings_themeExporting
-                      : messages.settings_themeExport
-                  }
+                <Button
+                  variant="contained"
+                  color="primary"
                   disabled={exportInProcess || installInProcess}
                   onClick={this.onExportClick.bind(this)}
-                  primary
-                />
+                >
+                  {exportInProcess
+                    ? messages.settings_themeExporting
+                    : messages.settings_themeExport}
+                </Button>
               </div>
             </div>
 
@@ -86,24 +85,23 @@ class Theme extends React.Component {
                 {messages.settings_themeInstallDesciption}
               </div>
               <div className="col-xs-4" style={{ textAlign: "right" }}>
-                <RaisedButton
-                  label={
-                    installInProcess
-                      ? messages.settings_themeInstalling
-                      : messages.settings_themeInstall
-                  }
+                <Button
+                  variant="contained"
+                  color="primary"
                   disabled={installInProcess}
-                  labelPosition="before"
-                  containerElement="label"
-                  primary
                 >
-                  <input
-                    type="file"
-                    onChange={this.onImportFileChoose.bind(this)}
-                    disabled={installInProcess}
-                    style={styles.exampleImageInput}
-                  />
-                </RaisedButton>
+                  <>
+                    {installInProcess
+                      ? messages.settings_themeInstalling
+                      : messages.settings_themeInstall}
+                    <input
+                      type="file"
+                      onChange={this.onImportFileChoose.bind(this)}
+                      disabled={installInProcess}
+                      style={styles.exampleImageInput}
+                    />
+                  </>
+                </Button>
               </div>
             </div>
           </div>

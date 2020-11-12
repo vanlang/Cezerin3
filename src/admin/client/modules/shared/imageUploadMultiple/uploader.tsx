@@ -1,4 +1,4 @@
-import RaisedButton from "material-ui/RaisedButton"
+import { Button } from "@material-ui/core"
 import Snackbar from "material-ui/Snackbar"
 import React from "react"
 import Dropzone from "react-dropzone"
@@ -44,14 +44,16 @@ class MultiUploader extends React.Component {
         </Dropzone>
 
         {!uploading && (
-          <RaisedButton
-            primary={true}
-            label={messages.chooseImage}
+          <Button
+            variant="contained"
+            color="primary"
             style={{ marginLeft: 20, marginTop: 10 }}
             onClick={() => {
               this.dropzone.open()
             }}
-          />
+          >
+            {messages.chooseImage}
+          </Button>
         )}
 
         <Snackbar open={uploading} message={messages.messages_uploading} />
