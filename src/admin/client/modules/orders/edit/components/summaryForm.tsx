@@ -1,5 +1,5 @@
+import { Button } from "@material-ui/core"
 import api from "lib/api"
-import FlatButton from "material-ui/FlatButton"
 import MenuItem from "material-ui/MenuItem"
 import React, { FC, useEffect, useState } from "react"
 import { Field, reduxForm } from "redux-form"
@@ -141,14 +141,18 @@ const SummaryForm: FC<props> = (props: props) => {
         </>
       </>
       <div className={style.shippingButtons}>
-        <FlatButton label={messages.cancel} onClick={() => onCancel} />
-        <FlatButton
-          label={messages.save}
-          primary
+        <Button variant="contained" color="primary" onClick={() => onCancel}>
+          {messages.cancel}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
           type="submit"
           style={{ marginLeft: 12 }}
           disabled={pristine || submitting}
-        />
+        >
+          {messages.save}
+        </Button>
       </div>
     </form>
   )

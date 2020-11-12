@@ -1,5 +1,4 @@
-import { Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Paper } from "@material-ui/core"
 import React from "react"
 import { api, messages } from "../../../../lib"
 import style from "./style.module.sass"
@@ -38,12 +37,14 @@ class ActionComponent extends React.Component {
             {action.description}
           </div>
           <div className="col-xs-5" style={{ textAlign: "right" }}>
-            <RaisedButton
-              label={action.name}
-              primary
+            <Button
+              variant="contained"
+              color="primary"
               disabled={this.state.loading}
               onClick={this.handleActionCall}
-            />
+            >
+              {action.name}
+            </Button>
           </div>
         </div>
       </div>

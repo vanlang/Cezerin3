@@ -1,7 +1,6 @@
-import { Divider } from "@material-ui/core"
+import { Button, Divider } from "@material-ui/core"
 import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -28,7 +27,7 @@ const ProductOption = ({ option, onChange, selectedOptions }) => {
   return (
     <SelectField
       floatingLabelText={option.name}
-      fullWidth={true}
+      fullWidth
       value={selectedValue}
       onChange={(event, index, value) => {
         onChange(option.id, value)
@@ -169,16 +168,12 @@ export class OrderItem extends React.Component {
     const { item, settings, allowEdit } = this.props
 
     const editFormActions = [
-      <FlatButton
-        label={messages.cancel}
-        onClick={this.hideEditForm}
-        style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={messages.save}
-        primary={true}
-        onClick={this.submitEditForm}
-      />,
+      <Button onClick={this.hideEditForm} style={{ marginRight: 10 }}>
+        {messages.cancel}
+      </Button>,
+      <Button color="primary" onClick={this.submitEditForm}>
+        {messages.save}
+      </Button>,
     ]
 
     let { quantity } = this.state
@@ -279,7 +274,7 @@ export class OrderItem extends React.Component {
             />
             <SelectField
               floatingLabelText={messages.quantity}
-              fullWidth={true}
+              fullWidth
               value={quantity}
               onChange={this.quantityChange}
             >

@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core"
 import {
   Add,
   ArrowDownward,
@@ -7,7 +8,6 @@ import {
 } from "@material-ui/icons"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import CategorySelect from "../../../productCategories/select"
@@ -61,17 +61,22 @@ class Buttons extends React.Component {
         : "Draft"
 
     const actionsMoveTo = [
-      <FlatButton
-        label={messages.cancel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.closeMoveTo}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={messages.actions_moveHere}
-        primary
-        keyboardFocused
+      >
+        {messages.cancel}
+      </Button>,
+      <Button
+        variant="contained"
+        color="primary"
+        focusRipple
         onClick={this.saveMoveTo}
-      />,
+      >
+        {messages.actions_moveHere}
+      </Button>,
     ]
 
     return (

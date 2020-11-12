@@ -1,4 +1,4 @@
-import FlatButton from "material-ui/FlatButton"
+import { Button } from "@material-ui/core"
 import Snackbar from "material-ui/Snackbar"
 import React from "react"
 import Dropzone from "react-dropzone"
@@ -32,13 +32,14 @@ class MultiUploader extends React.Component {
         >
           <div className={style.dropzoneEmpty}>
             {messages.help_dropHere}
-            <FlatButton
-              label={messages.chooseImage}
+            <Button
               className={style.button}
               onClick={() => {
                 this.dropzone.open()
               }}
-            />
+            >
+              {messages.chooseImage}
+            </Button>
           </div>
         </Dropzone>
 

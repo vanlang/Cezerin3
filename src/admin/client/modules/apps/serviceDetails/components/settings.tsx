@@ -1,5 +1,4 @@
-import { Divider, Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Divider, Paper } from "@material-ui/core"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -73,13 +72,15 @@ const ServiceSettingsForm = (props: props) => {
             className="buttons-box"
             style={{ display: pristine ? "none" : "block" }}
           >
-            <RaisedButton
+            <Button
+              variant="contained"
+              color="primary"
               type="submit"
-              label={messages.save}
-              primary={true}
               className={style.button}
               disabled={pristine || submitting}
-            />
+            >
+              {messages.save}
+            </Button>
           </div>
         </Paper>
       </form>

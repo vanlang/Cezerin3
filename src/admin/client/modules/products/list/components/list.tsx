@@ -1,7 +1,6 @@
-import { Divider } from "@material-ui/core"
+import { Button, Divider } from "@material-ui/core"
 import { Refresh } from "@material-ui/icons"
 import { List } from "material-ui/List"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { messages } from "../../../../lib"
 import Head from "./head"
@@ -51,14 +50,15 @@ class ProductsList extends React.Component {
           <Divider />
           {rows}
           <div className={style.more}>
-            <RaisedButton
+            <Button
+              variant="contained"
+              color="primary"
               disabled={loadingItems || !hasMore}
-              label={messages.actions_loadMore}
-              labelPosition="before"
-              primary={false}
-              icon={<Refresh />}
+              endIcon={<Refresh />}
               onClick={loadMore}
-            />
+            >
+              {messages.actions_loadMore}
+            </Button>
           </div>
         </List>
       </div>

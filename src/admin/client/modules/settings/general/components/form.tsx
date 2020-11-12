@@ -1,8 +1,7 @@
-import { Divider, Paper } from "@material-ui/core"
+import { Button, Divider, Paper } from "@material-ui/core"
 import { KeyboardArrowRight } from "@material-ui/icons"
 import { List, ListItem } from "material-ui/List"
 import MenuItem from "material-ui/MenuItem"
-import RaisedButton from "material-ui/RaisedButton"
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Field, reduxForm } from "redux-form"
@@ -541,13 +540,15 @@ const GeneralSettings = (props: props) => {
           </div>
         </div>
         <div className="buttons-box">
-          <RaisedButton
+          <Button
+            variant="contained"
+            color="primary"
             type="submit"
-            label={messages.save}
-            primary
             className={style.button}
             disabled={pristine || submitting}
-          />
+          >
+            {messages.save}
+          </Button>
         </div>
       </Paper>
     </form>

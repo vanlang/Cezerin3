@@ -1,6 +1,4 @@
-import { Divider, Paper } from "@material-ui/core"
-import FlatButton from "material-ui/FlatButton"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Divider, Paper } from "@material-ui/core"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { DatePicker, TextField } from "redux-form-material-ui"
@@ -101,7 +99,7 @@ const ProductInventoryForm = (props: props) => {
                       messages.products_regularPrice +
                       ` (${settings.currency_symbol})`
                     }
-                    fullWidth={true}
+                    fullWidth
                   />
                 </div>
                 <div className="col-xs-6">
@@ -112,7 +110,7 @@ const ProductInventoryForm = (props: props) => {
                       messages.products_salePrice +
                       ` (${settings.currency_symbol})`
                     }
-                    fullWidth={true}
+                    fullWidth
                   />
                 </div>
                 <div className="col-xs-6">
@@ -143,7 +141,7 @@ const ProductInventoryForm = (props: props) => {
                 name="sku"
                 component={TextField}
                 floatingLabelText={messages.products_sku}
-                fullWidth={true}
+                fullWidth
               />
 
               <div className="row">
@@ -152,7 +150,7 @@ const ProductInventoryForm = (props: props) => {
                     name="stock_quantity"
                     component={TextField}
                     floatingLabelText={messages.products_stockQuantity}
-                    fullWidth={true}
+                    fullWidth
                   />
                 </div>
                 <div className="col-xs-6">
@@ -162,7 +160,7 @@ const ProductInventoryForm = (props: props) => {
                     floatingLabelText={
                       messages.products_weight + ` (${settings.weight_unit})`
                     }
-                    fullWidth={true}
+                    fullWidth
                   />
                 </div>
               </div>
@@ -233,19 +231,24 @@ const ProductInventoryForm = (props: props) => {
             (pristine ? "buttons-box-pristine" : "buttons-box-show")
           }
         >
-          <FlatButton
-            label={messages.cancel}
+          <Button
+            variant="contained"
+            color="primary"
             className={style.button}
             onClick={reset}
             disabled={pristine || submitting}
-          />
-          <RaisedButton
+          >
+            {messages.cancel}
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
             type="submit"
-            label={messages.save}
-            primary={true}
             className={style.button}
             disabled={pristine || submitting}
-          />
+          >
+            {messages.save}
+          </Button>
         </div>
       </Paper>
     </form>

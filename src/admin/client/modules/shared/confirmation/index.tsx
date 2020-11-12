@@ -1,5 +1,5 @@
+import { Button } from "@material-ui/core"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import React from "react"
 
 class ConfirmationDialog extends React.Component {
@@ -42,17 +42,22 @@ class ConfirmationDialog extends React.Component {
     } = this.props
 
     const actions = [
-      <FlatButton
-        label={cancelLabel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.handleCancel}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={submitLabel}
-        primary={true}
-        keyboardFocused={true}
+      >
+        {cancelLabel}
+      </Button>,
+      <Button
+        variant="contained"
+        color="primary"
+        focusRipple
         onClick={this.handleSubmit}
-      />,
+      >
+        {submitLabel}
+      </Button>,
     ]
 
     return (

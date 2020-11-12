@@ -1,5 +1,4 @@
-import { Paper } from "@material-ui/core"
-import RaisedButton from "material-ui/RaisedButton"
+import { Button, Paper } from "@material-ui/core"
 import React, { FC, useEffect } from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
@@ -73,13 +72,15 @@ const EmailSettings: FC<props> = (props: props) => {
           />
         </div>
         <div className="buttons-box">
-          <RaisedButton
+          <Button
+            variant="contained"
+            color="primary"
             type="submit"
-            label={messages.save}
-            primary
             className={style.button}
             disabled={pristine || submitting}
-          />
+          >
+            {messages.save}
+          </Button>
         </div>
       </Paper>
     </form>

@@ -1,6 +1,6 @@
+import { Button } from "@material-ui/core"
 import { Add } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import React from "react"
 import { messages } from "../../../../../lib"
 import CategoryMultiselect from "../../../../productCategories/components/multiselectList"
@@ -53,26 +53,27 @@ class ProductCategoryMultiSelect extends React.Component {
   }
 
   render() {
-    const {
-      categories,
-      fields,
-      meta: { touched, error, submitFailed },
-    } = this.props
+    const { categories, fields } = this.props
     const { open } = this.state
     const selectedIds = fields.getAll()
 
     const dialogButtons = [
-      <FlatButton
-        label={messages.cancel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.close}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={messages.save}
-        primary={true}
-        keyboardFocused={true}
+      >
+        {messages.cancel}
+      </Button>,
+      <Button
+        variant="contained"
+        color="primary"
+        focusRipple
         onClick={this.close}
-      />,
+      >
+        {messages.save}
+      </Button>,
     ]
 
     return (
@@ -108,11 +109,14 @@ class ProductCategoryMultiSelect extends React.Component {
               onCheck={this.handleCheck}
             />
           </Dialog>
-          <FlatButton
+          <Button
+            variant="contained"
+            color="primary"
             style={{ minWidth: 52 }}
             onClick={this.open}
-            icon={<Add htmlColor="#333" />}
-          />
+          >
+            <Add htmlColor="#333" />
+          </Button>
         </span>
       </div>
     )

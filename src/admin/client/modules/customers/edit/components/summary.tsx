@@ -1,6 +1,5 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import Dialog from "material-ui/Dialog"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
@@ -75,11 +74,14 @@ class CustomerSummary extends React.Component {
           </div>
 
           <div style={{ marginTop: 20 }}>
-            <RaisedButton
-              label="Edit"
+            <Button
+              variant="contained"
+              color="primary"
               style={{ marginRight: 15 }}
               onClick={this.showSummaryEdit}
-            />
+            >
+              Edit
+            </Button>
           </div>
 
           <Dialog

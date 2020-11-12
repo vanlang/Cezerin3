@@ -1,9 +1,8 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import { Delete } from "@material-ui/icons"
 import DropDownMenu from "material-ui/DropDownMenu"
 import IconButton from "material-ui/IconButton"
 import MenuItem from "material-ui/MenuItem"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import { Link } from "react-router-dom"
 import { messages } from "../../../../../lib"
@@ -214,13 +213,18 @@ const ProductVariantsGrid = (props: VariantGridProps) => {
         {variantRows}
       </div>
       <div className={style.innerBox}>
-        <RaisedButton
-          label={messages.addVariant}
+        <Button
+          variant="contained"
+          color="primary"
           onClick={createVariant}
           style={{ marginRight: 20 }}
           disabled={!hasOptions}
-        />
-        <RaisedButton label={messages.addOption} onClick={createOption} />
+        >
+          {messages.addVariant}
+        </Button>
+        <Button variant="contained" color="primary" onClick={createOption}>
+          {messages.addOption}
+        </Button>
       </div>
     </Paper>
   )

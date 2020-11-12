@@ -1,6 +1,5 @@
-import { Paper } from "@material-ui/core"
+import { Button, Paper } from "@material-ui/core"
 import messages from "lib/text"
-import RaisedButton from "material-ui/RaisedButton"
 import React from "react"
 import style from "./style.module.sass"
 
@@ -30,19 +29,24 @@ const ServiceDescription = (props: props) => {
                 <h1 className={style.title}>{service.name}</h1>
                 <div className={style.developer}>{service.developer.name}</div>
                 {!service.enabled && (
-                  <RaisedButton
-                    label={messages.enable}
-                    primary={true}
+                  <Button
+                    variant="contained"
+                    color="primary"
                     disabled={loadingEnableDisable}
                     onClick={enableService}
-                  />
+                  >
+                    {messages.enable}
+                  </Button>
                 )}
                 {service.enabled && (
-                  <RaisedButton
-                    label={messages.disable}
+                  <Button
+                    variant="contained"
+                    color="primary"
                     disabled={loadingEnableDisable}
                     onClick={disableService}
-                  />
+                  >
+                    {messages.disable}
+                  </Button>
                 )}
               </div>
             </div>

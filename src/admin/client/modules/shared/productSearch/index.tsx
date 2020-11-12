@@ -1,8 +1,8 @@
+import { Button } from "@material-ui/core"
 import api from "lib/api"
 import * as helper from "lib/helper"
 import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
-import FlatButton from "material-ui/FlatButton"
 import { Table, TableBody, TableRow, TableRowColumn } from "material-ui/Table"
 import TextField from "material-ui/TextField"
 import React from "react"
@@ -10,7 +10,7 @@ import React from "react"
 const SearchBox = ({ text, onChange }) => {
   return (
     <TextField
-      fullWidth={true}
+      fullWidth
       floatingLabelText={messages.products_search}
       onChange={onChange}
       value={text}
@@ -38,7 +38,7 @@ const SearchResult = ({ products, selectedId, settings, onSelect }) => {
   return (
     <Table
       height="400px"
-      selectable={true}
+      selectable
       multiSelectable={false}
       onRowSelection={onSelect}
     >
@@ -123,16 +123,17 @@ class ConfirmationDialog extends React.Component {
     } = this.props
 
     const actions = [
-      <FlatButton
-        label={cancelLabel}
+      <Button
+        variant="contained"
+        color="primary"
         onClick={this.handleCancel}
         style={{ marginRight: 10 }}
-      />,
-      <FlatButton
-        label={submitLabel}
-        primary={true}
-        onClick={this.handleSubmit}
-      />,
+      >
+        {cancelLabel}
+      </Button>,
+      <Button variant="contained" color="primary" onClick={this.handleSubmit}>
+        {submitLabel}
+      </Button>,
     ]
 
     return (
