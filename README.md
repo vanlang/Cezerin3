@@ -2,9 +2,9 @@
 
 Cezerin - Ecommerce Progressive Web Apps. Complete Solution.
 
-# Contributers are wanted!!! (Anyone are welcome!)
+### Contributers are wanted!!! (Anyone are welcome!)
 
-# And put a star above if you like this, it'll help us a lot...!
+### And put a star above if you like this, it'll help us a lot...!
 
 ## Quick Start
 
@@ -43,16 +43,16 @@ Cezerin - Ecommerce Progressive Web Apps. Complete Solution.
 
 ## Links
 
-- [GitHub](https://github.com/cezerin2)
-- [Community Site](https://cezerin.org)
+- [GitHub](https://github.com/Cezerin3)
+- [Community Site](https://cezerin3.web.app/)
 - [Demo Store - Plusha Theme](https://plusha.cezerin.net)
 - [Demo Store - Default Theme](https://cezerin.net)
 - [Demo Dashboard](https://cezerin.net/admin)
 - [Telegram Chat: Cezerin](https://t.me/cezerin)
 - [Forum](https://groups.google.com/g/cezerin)
-- [Docs](https://github.com/cezerin2/cezerin2/blob/master/docs)
-- [Facebook](https://facebook.com/cezerin)
-- [Twitter](https://twitter.com/cezerin2)
+- [Docs](https://cezerin3.web.app/docs)
+- [Facebook](https://facebook.com/cezerin) Not active!
+- [Twitter](https://twitter.com/cezerin2) Not active!
 
 ## Store
 
@@ -90,29 +90,29 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 - Installation Guides
 
-  - [Prerequisites](./docs/prerequisites.md)
-  - [Setup Database](./docs/setup-database.md)
-  - [Using source code](./docs/using-source-code.md)
-  - [Using docker](./docs/using-docker.md)
+  - [Prerequisites](https://cezerin3.web.app/prerequisites)
+  - [Setup Database](https://cezerin3.web.app/docs/setup-database)
+  - [Using source code](https://cezerin3.web.app/docs/using-source-code)
+  - [Using docker](https://cezerin3.web.app/docs/using-docker)
 
 - Deploy on Web
 
-  - [Hosting](./docs/deploy-on-web-hosting.md)
-  - [Create droplet](./docs/deploy-on-web-droplet.md)
-  - [Setup domain](./docs/deploy-on-web-domain.md)
-  - [Install NGinx Web Server + MERN Stack](./docs/deploy-on-web-mern.md)
-  - [Run MongoDB](./docs/deploy-on-web-mongodb.md)
-  - [Run Cezerin](./docs/deploy-on-web-cezerin.md)
-  - [Run NGinx](./docs/deploy-on-web-nginx.md)
-  - [Cezerin configs changes](./docs/deploy-on-web-cezerin-configs.md)
-  - [Final checks](./docs/deploy-on-web-final-checks.md)
-  - [Setup Let's Encrypt SSL Certificate](./docs/deploy-on-web-lets-encrypt.md)
-  - [Turn off Developer Mode](./docs/deploy-on-web-production-mode.md)
+  - [Hosting](https://cezerin3.web.app/docs/deploy/hosting)
+  - [Create droplet](https://cezerin3.web.app/docs/deploy/droplet)
+  - [Setup domain](https://cezerin3.web.app/docs/deploy/domain)
+  - [Install NGinx Web Server + MERN Stack](https://cezerin3.web.app/docs/deploy/mern)
+  - [Run MongoDB](https://cezerin3.web.app/docs/deploy/mongodb)
+  - [Run Cezerin](https://cezerin3.web.app/docs/deploy/cezerin)
+  - [Run NGinx](https://cezerin3.web.app/docs/deploy/nginx)
+  - [Cezerin configs changes](https://cezerin3.web.app/docs/deploy/cezerin-configs)
+  - [Final checks](https://cezerin3.web.app/docs/deploy/final-checks)
+  - [Setup Let's Encrypt SSL Certificate](https://cezerin3.web.app/docs/deploy/lets-encrypt)
+  - [Turn off Developer Mode](https://cezerin3.web.app/docs/deploy/production-mode)
 
 - API
 
   - [API Reference](https://cezerin3.web.app/docs/api)
-  - [API Client](https://github.com/cezerin2/cezerin2-client)
+  - [API Client](https://github.com/Cezerin3/Client)
 
 - Help
   - [FAQ](https://cezerin3.web.app/docs/faq)
@@ -157,25 +157,27 @@ Client-side dashboard use JSON Web Token (JWT) to access REST API.
 
 | `yarn <script>`      | Description                                                           |
 | -------------------- | --------------------------------------------------------------------- |
-| `clean`              | Delete store and admin asset bundles.                                 |
-| `compile:dev`        | Compiles the application to disk **and watch** (`~/dist` by default). |
+| `clean`              | Delete store and admin asset bundles.                                 | Not working!
+| `compile:watch`      | Compiles the application to disk **and watch** (`~/dist` by default). |
 | `compile`            | Compiles the application to disk (`~/dist` by default).               |
-| `webpack:admin:dev`  | Assemble admin bundles **and watch**.                                 |
-| `webpack:store:dev`  | Assemble store bundles **and watch**.                                 |
-| `webpack:admin:prod` | Assemble admin bundles.                                               |
-| `webpack:store:prod` | Assemble store bundles.                                               |
+| `webpack:admin:watch`| Assemble admin bundles **and watch**.                                 |
+| `webpack:store:watch`| Assemble store bundles **and watch**.                                 |
+| `webpack:admin`      | Assemble admin bundles.                                               |
+| `webpack:store`      | Assemble store bundles.                                               |
 | `theme:install`      | Install theme from /public/<file>.zip                                 |
 | `theme:export`       | Zip current theme to /public/<file>.zip                               |
-| `theme:copy`         | Compile theme and copy assets to /public/                             |
-| `theme:build:dev`    | Refresh theme after modification **and watch**.                       |
-| `theme:build:prod`   | Refresh theme after modification.                                     |
-| `build:dev`          | Compile and assemble bundles **and watch**.                           |
+| `theme:copy`         | Compile theme and copy assets to /public/                             | Not working!
+| `theme:build:watch`  | Refresh theme after modification **and watch**.                       | Not working!
+| `theme:build`        | Refresh theme after modification.                                     |
+| `build:watch`        | Compile and assemble bundles **and watch**.                           |
 | `build`              | Compile and assemble bundles.                                         |
 | `start`              | Start node server.                                                    |
 
 ## Financial contributions
 
-We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/cezerin3).
+We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/cezerin3),
+[Issue Hunt](https://issuehunt.io/r/Cezerin3/Store) or [PayPal](https://www.paypal.com/paypalme/himadu1).
+And all financial transaction will be publically displayed it's our duty to do so!
 Anyone can file an expense. If the expense makes sense for the development of the community, it will be "merged" in the ledger of our open collective by the core contributors and the person who filed the expense will be reimbursed.
 
 ## Credits
@@ -184,14 +186,14 @@ Anyone can file an expense. If the expense makes sense for the development of th
 
 Thank you to all the people who have already contributed to Cezerin/Cezerin2/Cezerin3!
 <a href="https://github.com/Cezerin3/Store/graphs/contributors"><img src="https://opencollective.com/cezerin3/contributors.svg?width=890" /></a>
+<a href="https://github.com/Cezerin2/cezerin2/graphs/contributors"><img src="https://opencollective.com/cezerin2/contributors.svg?width=890" /></a>
+<a href="https://github.com/cezerin/cezerin/graphs/contributors"><img src="https://opencollective.com/cezerin3/contributors.svg?width=890" /></a>
 
 ### Backers
 
 Thank you to all our backers! [[Become a backer](https://opencollective.com/cezerin3#backer)]
 
 <a href="https://opencollective.com/cezerin3#backers" target="_blank"><img src="https://opencollective.com/cezerin3/tiers/backer.svg?avatarHeight=36&width=600"></a>
-<a href="https://opencollective.com/cezerin2#backers" target="_blank"><img src="https://opencollective.com/cezerin2/tiers/backer.svg?avatarHeight=36&width=600"></a>
-<a href="https://opencollective.com/cezerin#backers" target="_blank"></a>
 
 ### Sponsors
 
