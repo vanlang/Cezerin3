@@ -1,7 +1,7 @@
 import { Delete, OpenInNew } from "@material-ui/icons"
-import messages from "lib/text"
 import IconButton from "material-ui/IconButton"
 import React, { FC, useState } from "react"
+import { messages } from "../../../../lib"
 import DeleteConfirmation from "../../../shared/deleteConfirmation"
 
 interface props {

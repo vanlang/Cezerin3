@@ -1,4 +1,4 @@
-import api from "lib/api"
+import { api } from "../../lib"
 import * as t from "./actionTypes"
 
 const push = () => {}
@@ -103,7 +103,7 @@ function setGroupSuccess() {
 }
 
 const getFilter = (state, offset = 0) => {
-  let filter = {
+  let filter: any = {
     limit: 50,
     offset: offset,
   }

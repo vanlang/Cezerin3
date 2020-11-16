@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core"
-import React, { useEffect } from "react"
+import React, { FC, useEffect } from "react"
 import { Link } from "react-router-dom"
 import apps from "../../../../apps"
 import { messages } from "../../../../lib"
@@ -22,7 +22,7 @@ interface props {
   fetchData: Function
 }
 
-const ServicesList = (props: props) => {
+const ServicesList: FC<props> = (props: props) => {
   const { services, webstoreAuthorized, fetchData } = props
 
   useEffect(() => {

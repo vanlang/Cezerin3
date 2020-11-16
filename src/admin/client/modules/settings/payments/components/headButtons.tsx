@@ -1,14 +1,14 @@
 import { Add } from "@material-ui/icons"
-import messages from "lib/text"
 import IconButton from "material-ui/IconButton"
 import React from "react"
 import { Link } from "react-router-dom"
+import { messages } from "../../../../lib"
 
 const Buttons = () => (
   <span>
     <Link to="/admin/settings/payments/add">
       <IconButton
-        touch={true}
+        touch
         tooltipPosition="bottom-left"
         tooltip={messages.settings_addPaymentMethod}
       >

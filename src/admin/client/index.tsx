@@ -11,23 +11,24 @@ import { fetchSettings } from "./modules/settings/actions"
 import store from "./store"
 
 const { connectToWebSocket } = apiWebSoket
-const DEVELOPER_MODE = settings.developerMode === true
-if (DEVELOPER_MODE === false) {
+const developerMode = settings.developerMode === true
+if (developerMode === false) {
   auth.validateCurrentToken()
 }
 
-//@ts-ignore
 store.dispatch(fetchSettings())
 
 if (window.WebSocket) {
   connectToWebSocket(store)
 } else {
-  console.log("WebSocket is not supported by your browser.")
+  console.info("WebSocket is not supported by your browser.")
 }
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </Provider>,
-  document.getElementById("app")
+  document.getElementById("root")
 )

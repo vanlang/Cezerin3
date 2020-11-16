@@ -10,10 +10,10 @@ import {
   SwapCalls,
   VpnKey,
 } from "@material-ui/icons"
-import messages from "lib/text"
 import { List, ListItem } from "material-ui/List"
 import React from "react"
 import { NavLink, Route, Switch } from "react-router-dom"
+import { messages } from "../lib"
 import Checkout from "../modules/settings/checkout"
 import CheckoutFields from "../modules/settings/checkoutFields"
 import Email from "../modules/settings/email"
@@ -35,7 +35,7 @@ import Tokens from "../modules/settings/tokens/list"
 import WebhooksEdit from "../modules/settings/webhooks/edit"
 import Webhooks from "../modules/settings/webhooks/list"
 
-const styles = {
+const styles: any = {
   link: {
     color: "inherit",
     textDecoration: "none",

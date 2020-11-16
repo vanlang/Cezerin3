@@ -1,8 +1,8 @@
 import { Button, Paper } from "@material-ui/core"
-import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import TextField from "material-ui/TextField"
 import React, { useState } from "react"
+import { messages } from "../../../../../lib"
 import Gallery from "../../../../shared/imageUploadMultiple"
 
 const ProductImages = props => {

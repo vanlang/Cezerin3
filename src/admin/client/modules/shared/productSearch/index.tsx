@@ -1,11 +1,11 @@
 import { Button } from "@material-ui/core"
 import api from "lib/api"
 import * as helper from "lib/helper"
-import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import { Table, TableBody, TableRow, TableRowColumn } from "material-ui/Table"
 import TextField from "material-ui/TextField"
-import React, { useEffect, useState } from "react"
+import React, { FC, useEffect, useState } from "react"
+import { messages } from "../../../lib"
 
 const SearchBox = ({ text, onChange }) => {
   return (
@@ -18,7 +18,15 @@ const SearchBox = ({ text, onChange }) => {
   )
 }
 
-const SearchResult = ({ products, selectedId, settings, onSelect }) => {
+interface SearchResultProps {
+  products
+  selectedId
+  settings
+  onSelect: Function
+}
+
+const SearchResult = (props: SearchResultProps) => {
+  const { products, selectedId, settings, onSelect } = props
   const rows = products.map((product, index) => {
     let priceFormatted = helper.formatCurrency(product.price, settings)
     const isSelected = product.id === selectedId
@@ -40,20 +48,39 @@ const SearchResult = ({ products, selectedId, settings, onSelect }) => {
       height="400px"
       selectable
       multiSelectable={false}
-      onRowSelection={onSelect}
+      onRowSelection={() => onSelect}
     >
       <TableBody>{rows}</TableBody>
     </Table>
   )
 }
 
-const ConfirmationDialog = props => {
+interface props {
+  title: string
+  submitLabel: string
+  cancelLabel: string
+  modal?: boolean
+  settings
+  open: boolean
+  onCancel: Function
+  onSubmit: Function
+}
+
+const ConfirmationDialog: FC<props> = (props: props) => {
   const [open, setOpen] = useState(props.open)
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState("")
   const [selectedId, setSelectedId] = useState(null)
 
-  const { title, submitLabel, cancelLabel, modal = false, settings } = props
+  const {
+    title,
+    submitLabel,
+    cancelLabel,
+    modal = false,
+    settings,
+    onCancel,
+    onSubmit,
+  } = props
 
   useEffect(() => {
     setOpen(props.open)
@@ -61,15 +88,15 @@ const ConfirmationDialog = props => {
 
   const handleCancel = () => {
     setOpen(false)
-    if (props.onCancel) {
-      props.onCancel()
+    if (onCancel) {
+      onCancel()
     }
   }
 
   const handleSubmit = () => {
     setOpen(false)
-    if (props.onSubmit) {
-      props.onSubmit(selectedId)
+    if (onSubmit) {
+      onSubmit(selectedId)
     }
   }
 

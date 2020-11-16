@@ -2,7 +2,6 @@ import { Button, Paper } from "@material-ui/core"
 import { MoreVert } from "@material-ui/icons"
 import api from "lib/api"
 import * as helper from "lib/helper"
-import messages from "lib/text"
 import IconButton from "material-ui/IconButton"
 import IconMenu from "material-ui/IconMenu"
 import MenuItem from "material-ui/MenuItem"
@@ -11,6 +10,7 @@ import { Link } from "react-router-dom"
 import TagsInput from "react-tagsinput"
 import { Field, FieldArray, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
+import { messages } from "../../../../../lib"
 import ProductSearchDialog from "../../../../shared/productSearch"
 import ProductCategoryMultiSelect from "./productCategoryMultiSelect"
 import ProductCategorySelect from "./productCategorySelect"
@@ -29,34 +29,48 @@ const TagsField = ({ input, placeholder }) => {
   )
 }
 
-const ProductShort = ({
-  id,
-  name,
-  thumbnailUrl,
-  priceFormatted,
-  enabled,
-  discontinued,
-  actions,
-}) => (
-  <div
-    className={
-      style.relatedProduct +
-      (enabled === false || discontinued === true
-        ? " " + style.relatedProductDisabled
-        : "")
-    }
-  >
-    <div className={style.relatedProductImage}>
-      {thumbnailUrl && thumbnailUrl !== "" && <img src={thumbnailUrl} />}
+interface ProductShortProps {
+  id: string
+  name: string
+  thumbnailUrl: string
+  priceFormatted: string
+  enabled?: boolean
+  discontinued?: boolean
+  actions?: any
+}
+
+const ProductShort = (props: ProductShortProps) => {
+  const {
+    id,
+    name,
+    thumbnailUrl,
+    priceFormatted,
+    enabled,
+    discontinued,
+    actions,
+  } = props
+
+  return (
+    <div
+      className={
+        style.relatedProduct +
+        (enabled === false || discontinued === true
+          ? " " + style.relatedProductDisabled
+          : "")
+      }
+    >
+      <div className={style.relatedProductImage}>
+        {thumbnailUrl && thumbnailUrl !== "" && <img src={thumbnailUrl} />}
+      </div>
+      <div className={style.relatedProductText}>
+        <Link to={`/admin/product/${id}`}>{name}</Link>
+        <br />
+        <p>{priceFormatted}</p>
+      </div>
+      <div className={style.relatedProductActions}>{actions}</div>
     </div>
-    <div className={style.relatedProductText}>
-      <Link to={`/admin/product/${id}`}>{name}</Link>
-      <br />
-      <p>{priceFormatted}</p>
-    </div>
-    <div className={style.relatedProductActions}>{actions}</div>
-  </div>
-)
+  )
+}
 
 const RelatedProductActions = ({ fields, index }) => (
   <IconMenu

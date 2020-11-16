@@ -1,8 +1,8 @@
 import { Folder, Settings } from "@material-ui/icons"
-import messages from "lib/text"
 import { List, ListItem } from "material-ui/List"
 import React, { FC, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { messages } from "../../../lib"
 
 const styles = {
   selectedItem: {
@@ -19,8 +19,9 @@ interface props {
   onSelect
   selectedId
   items
-  showAll
-  showManage
+  showAll?: boolean
+  showAdd?: boolean
+  showManage?
   onLoad: Function
 }
 

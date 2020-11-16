@@ -1,9 +1,9 @@
 import { Paper } from "@material-ui/core"
 import { KeyboardArrowRight } from "@material-ui/icons"
-import messages from "lib/text"
 import { List, ListItem } from "material-ui/List"
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { messages } from "../../../../lib"
 
 interface props {
   importSettings

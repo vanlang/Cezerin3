@@ -1,20 +1,20 @@
 import { Button } from "@material-ui/core"
 import { Add, Delete, Folder } from "@material-ui/icons"
-import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import IconButton from "material-ui/IconButton"
 import React, { FC, useState } from "react"
+import { messages } from "../../../../lib"
 import CategorySelect from "../../../productCategories/select"
 import DeleteConfirmation from "../../../shared/deleteConfirmation"
 import Search from "./search"
 
 interface props {
-  search
-  setSearch
-  selectedCount
+  search: string
+  setSearch: Function
+  selectedCount: number
   onDelete: Function
-  onCreate
-  onImportProducts
+  onCreate: Function
+  onImportProducts: Function
   onMoveTo: Function
 }
 
@@ -114,7 +114,7 @@ const Buttons: FC<props> = (props: props) => {
         touch
         tooltipPosition="bottom-left"
         tooltip={messages.addProduct}
-        onClick={onCreate}
+        onClick={() => onCreate}
       >
         <Add htmlColor="#fff" />
       </IconButton>
