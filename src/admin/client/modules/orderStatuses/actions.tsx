@@ -1,6 +1,6 @@
-import * as t from "./actionTypes"
 import api from "lib/api"
-import messages from "lib/text"
+import { messages } from "../../lib"
+import * as t from "./actionTypes"
 
 function requestStatuses() {
   return {

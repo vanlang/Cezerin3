@@ -1,7 +1,6 @@
-import * as t from "./actionTypes"
 import api from "lib/api"
-import messages from "lib/text"
 import moment from "moment"
+import * as t from "./actionTypes"
 
 function requestProduct() {
   return {
@@ -176,7 +175,7 @@ const getFilter = (state, offset = 0) => {
 
   console.log(searchTerm)
 
-  let filter = {
+  let filter: any = {
     limit: 50,
     fields:
       "id,name,category_id,category_ids,category_name,sku,images,enabled,discontinued,stock_status,stock_quantity,price,on_sale,regular_price,url",

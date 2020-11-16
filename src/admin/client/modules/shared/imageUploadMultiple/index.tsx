@@ -36,15 +36,17 @@ const SortableList = SortableContainer(({ items, onDelete, onImageEdit }) => (
   </ul>
 ))
 
-const Gallery = ({
-  productId,
-  images,
-  onImageDelete,
-  onImageSort,
-  onImageUpload,
-  uploading,
-  onImageEdit,
-}) => {
+const Gallery = props => {
+  const {
+    productId,
+    images,
+    onImageDelete,
+    onImageSort,
+    onImageUpload,
+    uploading,
+    onImageEdit,
+  } = props
+
   if (images && images.length > 0) {
     return (
       <MultiUploader onUpload={onImageUpload} uploading={uploading}>

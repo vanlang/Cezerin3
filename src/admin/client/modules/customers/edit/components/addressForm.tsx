@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core"
-import React from "react"
+import React, { FC } from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
 import { messages } from "../../../../lib"
@@ -18,8 +18,16 @@ const validate = values => {
   return errors
 }
 
-const CustomerAddressForm = props => {
-  const { handleSubmit, pristine, submitting, onCancel } = props
+interface props {
+  handleSubmit
+  pristine
+  submitting
+  onCancel: Function
+  onSubmit: Function
+}
+
+const CustomerAddressForm: FC<props> = (props: props) => {
+  const { handleSubmit, pristine, submitting, onCancel, onSubmit } = props
 
   return (
     <form
@@ -86,7 +94,7 @@ const CustomerAddressForm = props => {
         />
       </>
       <div className={style.shippingButtons}>
-        <Button variant="contained" color="primary" onClick={onCancel}>
+        <Button variant="contained" color="primary" onClick={() => onCancel}>
           {messages.cancel}
         </Button>
         <Button

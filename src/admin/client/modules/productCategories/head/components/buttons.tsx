@@ -6,10 +6,10 @@ import {
   Delete,
   Folder,
 } from "@material-ui/icons"
-import messages from "lib/text"
 import Dialog from "material-ui/Dialog"
 import IconButton from "material-ui/IconButton"
 import React, { FC, useState } from "react"
+import { messages } from "../../../../lib"
 import CategorySelect from "../../../productCategories/select"
 import DeleteConfirmation from "../../../shared/deleteConfirmation"
 

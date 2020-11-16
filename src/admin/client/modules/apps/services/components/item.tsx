@@ -1,4 +1,3 @@
-import { CheckCircle } from "@material-ui/icons"
 import { Card, CardMedia, CardTitle } from "material-ui/Card"
 import React, { FC } from "react"
 import { Link } from "react-router-dom"
@@ -36,11 +35,11 @@ const styles = {
 }
 
 interface props {
-  path
-  coverUrl
-  title
-  developer
-  enabled
+  path: string
+  coverUrl: string
+  title: string
+  developer?: string
+  enabled?: boolean
 }
 
 const Item: FC<props> = (props: props) => {

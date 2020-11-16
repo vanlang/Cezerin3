@@ -1,5 +1,5 @@
-import messages from "lib/text"
 import moment from "moment"
+import { messages } from "../../../lib"
 
 const chartColors = {
   red: "rgb(255, 99, 132)",

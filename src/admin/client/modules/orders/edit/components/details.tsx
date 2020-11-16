@@ -9,11 +9,11 @@ import OrderTotals from "./totals"
 interface props {
   order
   settings
-  onItemDelete
-  onItemUpdate
-  onShippingAddressUpdate
-  onOrderSummaryUpdate
-  onCheckout
+  onItemDelete: Function
+  onItemUpdate: Function
+  onShippingAddressUpdate: Function
+  onOrderSummaryUpdate: Function
+  onCheckout: Function
   processingCheckout
   fetchData: Function
   clearData: Function
@@ -35,9 +35,6 @@ const OrderDetails: FC<props> = (props: props) => {
 
   useEffect(() => {
     fetchData()
-  }, [])
-
-  useEffect(() => {
     return () => clearData()
   }, [])
 

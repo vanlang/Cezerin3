@@ -1,6 +1,6 @@
 import { Button, Paper } from "@material-ui/core"
-import messages from "lib/text"
 import React from "react"
+import { messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 interface props {

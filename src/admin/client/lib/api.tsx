@@ -1,10 +1,10 @@
 import CezerinClient from "cezerin2-client"
-import { settings } from "../lib"
+import settings from "./settings"
 
 const dashboardToken = localStorage.getItem("dashboard_token")
 const webstoreToken = localStorage.getItem("webstore_token")
 
-const developerMode = settings.developerMode
+const developerMode = settings.developerMode === true
 
 let api = new CezerinClient({
   apiBaseUrl: settings.apiBaseUrl || "/api/v1",

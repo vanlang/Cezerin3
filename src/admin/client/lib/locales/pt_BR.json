@@ -115,6 +115,8 @@
   "settings_checkout": "Finalização de compra",
   "settings_emails": "Emails",
   "settings_taxes": "Impostos",
+  "settings_taxIncluded": "Taxas incluídas",
+  "settings_taxRate": "Taxa de imposto",
   "settings_security": "Segurança",
   "settings_currencyFormatting": "Formatação de moeda",
   "settings_currencySymbol": "Símbolo da Moeda",

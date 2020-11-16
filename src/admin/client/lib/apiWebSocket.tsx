@@ -1,7 +1,7 @@
-import settings from "lib/settings"
-import messages from "lib/text"
 import { fetchOrders } from "../modules/orders/actions"
 import { installReceive } from "../modules/settings/actions"
+import settings from "./settings"
+import messages from "./text"
 
 const autoReconnectInterval = 1000 //1 seconds
 const orderCreated = "order.created"
@@ -73,7 +73,7 @@ const showNotification = (
 
   msg.addEventListener("click", event => {
     parent.focus()
-    event.target.close()
+    // event.target.close()
   })
 }
 
