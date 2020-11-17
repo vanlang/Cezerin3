@@ -1,10 +1,9 @@
 import { Button } from "@material-ui/core"
-import api from "lib/api"
 import MenuItem from "material-ui/MenuItem"
 import React, { FC, useEffect, useState } from "react"
 import { Field, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
-import { messages } from "../../../../lib"
+import { api, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const validate = (values: []) => {

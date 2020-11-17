@@ -4,9 +4,9 @@ import * as React from "react"
 import App from "../app"
 
 describe("<App>", () => {
-  it("renders learn react link", () => {
+  it("renders title Dashboard", () => {
     const { getByText } = render(<App />)
-    const linkElement = getByText(/learn react/i)
+    const linkElement = getByText(/Dashboard/i)
     expect(document.body.contains(linkElement))
   })
 })

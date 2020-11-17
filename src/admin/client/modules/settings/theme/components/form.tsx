@@ -1,7 +1,6 @@
 import { Button, Divider, Paper } from "@material-ui/core"
-import api from "lib/api"
 import React from "react"
-import { messages } from "../../../../lib"
+import { api, messages } from "../../../../lib"
 import ThemeSettings from "../../../settings/themeSettings"
 import style from "./style.module.sass"
 

@@ -1,11 +1,9 @@
 import { Button } from "@material-ui/core"
-import api from "lib/api"
-import * as helper from "lib/helper"
 import Dialog from "material-ui/Dialog"
 import { Table, TableBody, TableRow, TableRowColumn } from "material-ui/Table"
 import TextField from "material-ui/TextField"
 import React, { FC, useEffect, useState } from "react"
-import { messages } from "../../../lib"
+import { api, helper, messages } from "../../../lib"
 
 const SearchBox = ({ text, onChange }) => {
   return (

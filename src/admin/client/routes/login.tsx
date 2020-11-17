@@ -1,10 +1,8 @@
 import { Button, Paper } from "@material-ui/core"
 import CezerinClient from "cezerin2-client"
-import * as auth from "lib/auth"
-import settings from "lib/settings"
 import TextField from "material-ui/TextField"
 import React, { FC, useEffect, useState } from "react"
-import { messages } from "../lib"
+import { auth, messages, settings } from "../lib"
 
 const LoginForm: FC = () => {
   const [email, setEmail] = useState(

@@ -1,4 +1,4 @@
-import api from "lib/api"
+import { api } from "../../lib"
 import * as t from "./actionTypes"
 
 export function exportRequest() {
@@ -296,7 +296,7 @@ export function updateEmailTemplate(emailTemplate) {
     return api.settings
       .updateEmailTemplate(emailTemplate.templateName, emailTemplate)
       .then(({ status, json }) => {
-        json.templateName = templateName
+        json.templateName = emailTemplate.templateName
         dispatch(receiveEmailTemplate(json))
       })
       .catch(error => {})
@@ -332,7 +332,7 @@ export function updateCheckoutField(checkoutField) {
     return api.checkoutFields
       .update(checkoutField.fieldName, checkoutField)
       .then(({ status, json }) => {
-        json.fieldName = fieldName
+        json.fieldName = checkoutField.fieldName
         dispatch(receiveCheckoutField(json))
       })
       .catch(error => {})

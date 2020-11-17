@@ -1,5 +1,5 @@
-import api from "lib/api"
 import moment from "moment"
+import { api } from "../../lib"
 import * as t from "./actionTypes"
 
 function requestProduct() {
@@ -210,7 +210,7 @@ const getFilter = (state, offset = 0) => {
   return filter
 }
 
-export function importProducts() {}
+export function importProducts(history) {}
 
 export function fetchProducts() {
   return (dispatch, getState) => {

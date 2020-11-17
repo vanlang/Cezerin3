@@ -1,9 +1,8 @@
 import { Divider } from "@material-ui/core"
 import { PhotoCamera } from "@material-ui/icons"
-import * as helper from "lib/helper"
 import React from "react"
 import { Link } from "react-router-dom"
-import { messages } from "../../../../lib"
+import { helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const THUMBNAIL_WIDTH = 100

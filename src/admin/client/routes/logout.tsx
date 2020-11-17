@@ -1,5 +1,5 @@
-import * as auth from "lib/auth"
 import { FC, useEffect } from "react"
+import { auth } from "../lib"
 
 const Logout: FC = () => {
   useEffect(() => {
