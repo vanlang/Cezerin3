@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { themeSettings, text } from "../../lib/settings"
 
 class Quantity extends React.PureComponent {

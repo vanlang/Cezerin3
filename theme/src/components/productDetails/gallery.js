@@ -1,9 +1,8 @@
-import React, { Fragment } from "react"
-import { NavLink } from "react-router-dom"
+import React from "react"
 import ImageGallery from "react-image-gallery"
 import Lightbox from "react-image-lightbox"
 import * as helper from "../../lib/helper"
-import { themeSettings, text } from "../../lib/settings"
+import { themeSettings } from "../../lib/settings"
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -48,7 +47,7 @@ class Gallery extends React.Component {
       const showThumbnails = images.length > 1
 
       return (
-        <Fragment>
+        <>
           <ImageGallery
             items={imagesArray}
             showThumbnails={showThumbnails}
@@ -93,7 +92,7 @@ class Gallery extends React.Component {
               }
             />
           )}
-        </Fragment>
+        </>
       )
     } else {
       return <div className="large-image-placeholder" />

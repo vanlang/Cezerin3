@@ -1,7 +1,7 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { NavLink } from "react-router-dom"
 import Lscache from "lscache"
-import { themeSettings, text } from "../../lib/settings"
+import { text } from "../../lib/settings"
 import Cart from "./cart"
 import CartIndicator from "./cartIndicator"
 import Login from "./login"
@@ -163,7 +163,7 @@ class Header extends React.Component {
     const showBackButton = currentPage.type === "product" && location.hasHistory
 
     return (
-      <Fragment>
+      <>
         <header
           className={this.state.mobileSearchIsActive ? "search-active" : ""}
         >
@@ -256,7 +256,7 @@ class Header extends React.Component {
             onClick={() => this.setSiteState(state.SITE)}
           />
         </div>
-      </Fragment>
+      </>
     )
   }
 }
