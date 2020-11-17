@@ -7,7 +7,16 @@ import Dropzone from "react-dropzone"
 import { messages } from "../../../lib"
 import style from "./style.module.sass"
 
-class ImageUpload extends React.Component {
+interface props {
+  imageUrl: string
+  onDelete: Function
+  onUpload: Function
+  uploading
+}
+
+class ImageUpload extends React.Component<props> {
+  dropzone: any
+  state: any
   constructor(props) {
     super(props)
     this.state = {

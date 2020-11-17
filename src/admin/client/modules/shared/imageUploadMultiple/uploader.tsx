@@ -5,7 +5,12 @@ import Dropzone from "react-dropzone"
 import { messages } from "../../../lib"
 import style from "./style.module.sass"
 
-class MultiUploader extends React.Component {
+interface props {
+  uploading
+  onUpload: Function
+}
+
+class MultiUploader extends React.Component<props> {
   onDrop = files => {
     let form = new FormData()
     files.map(file => {
@@ -18,6 +23,7 @@ class MultiUploader extends React.Component {
 
     this.props.onUpload(form)
   }
+  dropzone: any
 
   render() {
     const { uploading } = this.props

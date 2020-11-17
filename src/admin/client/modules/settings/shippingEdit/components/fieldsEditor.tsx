@@ -21,7 +21,7 @@ const FieldsEditor = ({ fields }) => {
           <Paper
             className="paper-box"
             elevation={4}
-            rounded={false}
+            square
             key={index}
             style={{
               padding: "0px 20px",

@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core"
 import React, { FC } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
 import { helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
@@ -26,11 +26,13 @@ interface props {
   handleSubmit
   pristine
   submitting
-  onCancel
+  onCancel: Function
   shippingMethod
 }
 
-const ShippingAddressForm: FC<props> = (props: props) => {
+const ShippingAddressForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, submitting, onCancel, shippingMethod } = props
 
   let shippingFields = null
@@ -90,7 +92,7 @@ const ShippingAddressForm: FC<props> = (props: props) => {
         />
       </>
       <div className={style.shippingButtons}>
-        <Button variant="contained" color="primary" onClick={onCancel}>
+        <Button variant="contained" color="primary" onClick={() => onCancel}>
           {messages.cancel}
         </Button>
         <Button
@@ -107,7 +109,7 @@ const ShippingAddressForm: FC<props> = (props: props) => {
   )
 }
 
-export default reduxForm({
+export default reduxForm<props, { onCancel: Function; shippingMethod }>({
   form: "ShippingAddressForm",
   validate,
   enableReinitialize: true,

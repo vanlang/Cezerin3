@@ -1,7 +1,7 @@
 import { Button, Paper } from "@material-ui/core"
 import sortBy from "lodash/sortBy"
-import React, { useEffect } from "react"
-import { reduxForm } from "redux-form"
+import React, { FC, useEffect } from "react"
+import { InjectedFormProps, reduxForm } from "redux-form"
 import { messages } from "../../../../lib"
 import DynamicEditControl from "./dynamicEditControl"
 import style from "./style.module.sass"
@@ -16,7 +16,9 @@ interface props {
   onLoad: Function
 }
 
-const ThemeSettings = (props: props) => {
+const ThemeSettings: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const {
     handleSubmit,
     pristine,

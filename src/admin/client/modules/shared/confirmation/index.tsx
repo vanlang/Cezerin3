@@ -9,8 +9,8 @@ interface props {
   cancelLabel
   modal?: boolean
   open: boolean
-  onCancel: Function
-  onSubmit: Function
+  onCancel?: Function
+  onSubmit?: Function
 }
 
 const ConfirmationDialog: FC<props> = (props: props) => {

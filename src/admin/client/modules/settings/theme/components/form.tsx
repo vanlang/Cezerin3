@@ -4,7 +4,7 @@ import { api, messages } from "../../../../lib"
 import ThemeSettings from "../../../settings/themeSettings"
 import style from "./style.module.sass"
 
-const styles = {
+const styles: any = {
   button: {
     margin: 12,
   },

@@ -1,12 +1,12 @@
 import { Button } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import React, { FC, useEffect, useState } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
 import { api, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
-const validate = (values: []) => {
+const validate = (values: any) => {
   const errors = {}
   const requiredFields = []
 
@@ -20,14 +20,16 @@ const validate = (values: []) => {
 }
 
 interface props {
-  handleSubmit: Function
-  pristine: boolean
-  submitting: boolean
-  onCancel: Function
-  initialValues: { id: string }
+  handleSubmit
+  pristine
+  submitting
+  onCancel?: Function
+  initialValues
 }
 
-const SummaryForm: FC<props> = (props: props) => {
+const SummaryForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const [shippingMethods, setShippingMethods] = useState([])
   const [paymentMethods, setPaymentMethods] = useState([])
   const [orderStatuses, setOrderStatuses] = useState([])
@@ -157,7 +159,7 @@ const SummaryForm: FC<props> = (props: props) => {
   )
 }
 
-export default reduxForm({
+export default reduxForm<props, { onCancel?: Function }>({
   form: "SummaryForm",
   validate,
   enableReinitialize: true,

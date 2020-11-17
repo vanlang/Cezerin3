@@ -1,6 +1,5 @@
-import { Button, Paper } from "@material-ui/core"
+import { Button, Paper, TextField } from "@material-ui/core"
 import CezerinClient from "cezerin2-client"
-import TextField from "material-ui/TextField"
 import React, { FC, useEffect, useState } from "react"
 import { auth, messages, settings } from "../lib"
 
@@ -71,8 +70,8 @@ const LoginForm: FC = () => {
               onKeyPress={handleKeyPress}
               label={messages.email}
               fullWidth
-              hintStyle={{ width: "100%" }}
-              hintText={messages.email}
+              // hintStyle={{ width: "100%" }}
+              helperText={messages.email}
             />
           </div>
           <Button

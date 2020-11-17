@@ -1,25 +1,12 @@
 import { Button, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import React, { FC, useEffect } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
 import { messages } from "../../../../../lib"
 import { CustomToggle } from "../../../../shared/form"
 import style from "./style.module.sass"
 import OptionValues from "./values"
-
-const validate = (values: []) => {
-  const errors = {}
-  const requiredFields = ["name"]
-
-  requiredFields.map(field => {
-    if (values && !values[field]) {
-      errors[field] = messages.errors_required
-    }
-  })
-
-  return errors
-}
 
 interface props {
   handleSubmit
@@ -34,7 +21,22 @@ interface props {
   fetchData: Function
 }
 
-const ProductOptionForm: FC<props> = (props: props) => {
+const validate = (values: props) => {
+  const errors = {}
+  const requiredFields = ["name"]
+
+  requiredFields.map(field => {
+    if (values && !values[field]) {
+      errors[field] = messages.errors_required
+    }
+  })
+
+  return errors
+}
+
+const ProductOptionForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const {
     handleSubmit,
     pristine,

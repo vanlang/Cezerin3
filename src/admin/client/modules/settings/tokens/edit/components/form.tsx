@@ -1,6 +1,6 @@
 import { Button, Paper } from "@material-ui/core"
 import React, { FC, useEffect, useState } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
 import { messages } from "../../../../../lib"
 import ConfirmationDialog from "../../../../shared/confirmation"
@@ -61,7 +61,9 @@ interface props {
   onLoad: Function
 }
 
-const EditTokenForm: FC<props> = (props: props) => {
+const EditTokenForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const [showRevokeDialog, setShowRevokeDialog] = useState(false)
 
   const {

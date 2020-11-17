@@ -7,34 +7,46 @@ import {
 import GalleryItem from "./item"
 import style from "./style.module.sass"
 import MultiUploader from "./uploader"
-
-const SortableItem = SortableElement(({ image, onDelete, onImageEdit }) => (
-  <li className={style.item}>
-    <GalleryItem
-      url={image.url}
-      alt={image.alt}
-      id={image.id}
-      onDelete={onDelete}
-      onImageEdit={() => {
-        onImageEdit(image)
-      }}
-    />
-  </li>
-))
-
-const SortableList = SortableContainer(({ items, onDelete, onImageEdit }) => (
-  <ul className={style.list}>
-    {items.map((value, index) => (
-      <SortableItem
-        key={`item-${index}`}
-        index={index}
-        image={value}
+interface SortableItemProps {
+  image
+  onDelete
+  onImageEdit
+}
+const SortableItem = SortableElement(
+  ({ image, onDelete, onImageEdit }: SortableItemProps) => (
+    <li className={style.item}>
+      <GalleryItem
+        url={image.url}
+        alt={image.alt}
+        id={image.id}
         onDelete={onDelete}
-        onImageEdit={onImageEdit}
+        onImageEdit={() => {
+          onImageEdit(image)
+        }}
       />
-    ))}
-  </ul>
-))
+    </li>
+  )
+)
+interface SortableListProps {
+  items
+  onDelete
+  onImageEdit
+}
+const SortableList = SortableContainer(
+  ({ items, onDelete, onImageEdit }: SortableListProps) => (
+    <ul className={style.list}>
+      {items.map((value, index) => (
+        <SortableItem
+          key={`item-${index}`}
+          index={index}
+          image={value}
+          onDelete={onDelete}
+          onImageEdit={onImageEdit}
+        />
+      ))}
+    </ul>
+  )
+)
 
 const Gallery = props => {
   const {
@@ -60,10 +72,12 @@ const Gallery = props => {
             onImageEdit={onImageEdit}
             onSortEnd={({ oldIndex, newIndex }) => {
               let sortedItems = arrayMove(images, oldIndex, newIndex)
-              let withNewPosition = sortedItems.map((image, index) => {
-                image.position = index
-                return image
-              })
+              let withNewPosition = sortedItems.map(
+                (image: any, index: number) => {
+                  image.position = index
+                  return image
+                }
+              )
               onImageSort(productId, withNewPosition)
             }}
           />

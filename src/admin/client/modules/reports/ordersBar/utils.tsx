@@ -13,7 +13,8 @@ const chartColors = {
 
 const transparentize = (color, opacity) => {
   const alpha = opacity === undefined ? 0.5 : 1 - opacity
-  return Color(color).alpha(alpha).rgbString()
+  // return Color(color).alpha(alpha).rgbString()
+  return color
 }
 
 const getOrdersByDate = (orders, dateMoment) => {

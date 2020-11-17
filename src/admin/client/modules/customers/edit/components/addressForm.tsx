@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core"
 import React, { FC } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
 import { messages } from "../../../../lib"
 import style from "./style.module.sass"
@@ -26,7 +26,9 @@ interface props {
   onSubmit?: Function
 }
 
-const CustomerAddressForm: FC<props> = (props: props) => {
+const CustomerAddressForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, submitting, onCancel, onSubmit } = props
 
   return (
@@ -111,7 +113,7 @@ const CustomerAddressForm: FC<props> = (props: props) => {
   )
 }
 
-export default reduxForm({
+export default reduxForm<props, { onCancel?: Function }>({
   form: "CustomerAddressForm",
   validate,
   enableReinitialize: true,
