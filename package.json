@@ -31,10 +31,10 @@
     "setup": "node -r esm src/api/server/setup.js",
     "compile": "babel src/store -d dist/store --presets @babel/react --plugins transform-class-properties --quiet",
     "compile:watch": "concurrently -n storeWatcher,themeWatcher \"babel src/store -d dist/store --presets @babel/react --plugins transform-class-properties --watch\" \"babel theme/src -d theme/dist --presets @babel/react --plugins transform-class-properties --watch\"",
-    "webpack:admin": "webpack --config webpack.config.admin.ts --mode production",
-    "webpack:store": "webpack --config webpack.config.store.ts --mode production",
-    "webpack:admin:watch": "webpack --config webpack.config.admin.ts --mode development --watch",
-    "webpack:store:watch": "webpack --config webpack.config.store.ts --mode development --watch",
+    "webpack:admin": "webpack --config webpack.config.admin.js --mode production",
+    "webpack:store": "webpack --config webpack.config.store.js --mode production",
+    "webpack:admin:watch": "webpack --config webpack.config.admin.js --mode development --watch",
+    "webpack:store:watch": "webpack --config webpack.config.store.js --mode development --watch",
     "theme:install": "./scripts/theme-install.sh",
     "theme:export": "./scripts/theme-export.sh",
     "theme:build": "babel theme/src -d theme/dist --presets @babel/react --plugins transform-class-properties --quiet",
@@ -75,7 +75,6 @@
     "core-js": "^3.6.5",
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.0",
-    "dotenv-webpack": "^5.1.0",
     "draft-js": "^0.11.7",
     "draft-js-alignment-plugin": "^2.0.6",
     "draft-js-focus-plugin": "^3.0.1",
@@ -152,14 +151,13 @@
     "ts-loader": "^8.0.7",
     "ua-parser-js": "^0.7.18",
     "url-loader": "^4.1.1",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
+    "webpack": "^5.5.0",
+    "webpack-cli": "^4.2.0",
     "winston": "^3.0.0",
     "workbox-webpack-plugin": "^5.1.4",
     "ws": "^6.0.0"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.12.1",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@types/bcrypt": "^3.0.0",
@@ -192,7 +190,6 @@
     "@types/ua-parser-js": "^0.7.33",
     "@types/workbox-webpack-plugin": "^5.1.4",
     "@types/ws": "^7.2.6",
-    "babel-plugin-css-modules-transform": "^1.6.2",
     "chai": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
@@ -200,5 +197,7 @@
     "prettier": "^2.1.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.0.5"
-  }
+  },
+  "node": "~12.0.0",
+  "yarn": ">=1.0.0"
 }
