@@ -22,7 +22,7 @@ const validate = values => {
 }
 
 const asyncValidate = values => {
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     if (values.slug && values.slug.length > 0) {
       api.sitemap
         .retrieve({ path: "/" + values.slug })
@@ -43,17 +43,18 @@ const asyncValidate = values => {
   })
 }
 
-const ProductCategoryEditForm = ({
-  uploadingImage,
-  handleSubmit,
-  pristine,
-  reset,
-  submitting,
-  onImageUpload,
-  onImageDelete,
-  isSaving,
-  initialValues,
-}) => {
+const ProductCategoryEditForm = props => {
+  const {
+    uploadingImage,
+    handleSubmit,
+    pristine,
+    reset,
+    submitting,
+    onImageUpload,
+    onImageDelete,
+    isSaving,
+    initialValues,
+  } = props
   let imageUrl = null
   let categoryId = null
 

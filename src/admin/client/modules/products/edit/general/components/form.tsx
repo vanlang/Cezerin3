@@ -1,9 +1,8 @@
 import { Button, Paper } from "@material-ui/core"
-import api from "lib/api"
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
-import { messages } from "../../../../../lib"
+import { api, messages } from "../../../../../lib"
 import Editor from "../../../../shared/editor"
 import style from "./style.module.sass"
 

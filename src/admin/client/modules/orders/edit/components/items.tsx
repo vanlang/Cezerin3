@@ -1,4 +1,4 @@
-import { Button, Divider } from "@material-ui/core"
+import { Button, Divider, Select } from "@material-ui/core"
 import { MoreVert } from "@material-ui/icons"
 import Dialog from "material-ui/Dialog"
 import IconButton from "material-ui/IconButton"
@@ -244,14 +244,14 @@ export const OrderItem = props => {
             onChange={onOptionChange}
             selectedOptions={selectedOptions}
           />
-          <SelectField
-            floatingLabelText={messages.quantity}
+          <Select
+            label={messages.quantity}
             fullWidth
             value={quantity}
             onChange={({ target }) => setQuantity(target.value)}
           >
             {quantityItems}
-          </SelectField>
+          </Select>
         </>
       </Dialog>
     </>

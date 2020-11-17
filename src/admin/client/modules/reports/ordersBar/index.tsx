@@ -1,7 +1,6 @@
-import api from "lib/api"
 import moment from "moment"
 import React, { FC, useEffect, useState } from "react"
-import { messages } from "../../../lib"
+import { api, messages } from "../../../lib"
 import BarChart from "./barChart"
 import * as utils from "./utils"
 

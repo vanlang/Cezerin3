@@ -23,7 +23,7 @@ const ProductImport = props => {
   const [errors, setErrors] = useState(0)
   const [dashboardsettings, setDashboardsettings] = useState(true)
 
-  const loader = React.createRef()
+  const loader: any = React.createRef()
 
   const { onImportProducts, files } = props
 
@@ -84,7 +84,9 @@ const ProductImport = props => {
    */
   function uploadProducts() {
     let productDraft: any = {}
-    const statusCell = document.getElementsByClassName("sheet-cell-state")
+    const statusCell = document.getElementsByClassName(
+      "sheet-cell-state"
+    ) as HTMLCollectionOf<HTMLElement>
     let errorsCounter = errors
 
     for (let i = 1; i < product_items.length; i++) {
@@ -330,7 +332,8 @@ const ProductImport = props => {
               xhr.responseType = "arraybuffer"
               var form = null
 
-              xhr.onload = function (e) {
+              xhr.onload = e => {
+                let response
                 // Obtain a blob: URL for the image data.
                 var arrayBufferView = new Uint8Array(response)
                 var blob = new Blob([arrayBufferView], { type: "image/jpeg" })
@@ -361,8 +364,10 @@ const ProductImport = props => {
   }
 
   useEffect(() => {
-    let spreadsheetApiCredentials = null
-    document.getElementsByClassName("product-list")[0].style.display = "none"
+    let spreadsheetApiCredentials
+    ;(document.getElementsByClassName("product-list") as HTMLCollectionOf<
+      HTMLElement
+    >)[0].style.display = "none"
 
     // fetch product import spreadsheet data from settings and set api credentials for google
     api.settings.retrieveImportSettings().then(({ status, json }) => {
@@ -423,8 +428,8 @@ const ProductImport = props => {
                     suppressContentEditableWarning={true}
                     key={p[i] + j + i + p[j]}
                     contentEditable="true"
-                    value={k}
-                    onInput={editColumn}
+                    // value={k}
+                    // onInput={editColumn}
                   >
                     {p[k]}
                   </div>
@@ -452,8 +457,8 @@ const ProductImport = props => {
                     suppressContentEditableWarning={true}
                     key={p[i] + j + i + p[j]}
                     contentEditable="true"
-                    value={k}
-                    onInput={editColumn}
+                    // value={k}
+                    // onInput={editColumn}
                   >
                     {p[k]}
                   </div>
@@ -466,13 +471,16 @@ const ProductImport = props => {
     keyCounter++
   })
 
-  const tableStyle = {
+  const tableStyle: any = {
     align: "center",
   }
 
-  const showLoader = {
+  const showLoader: any = {
     display: "none",
   }
+
+  const productsImport: any = {}
+
   return (
     <>
       <div style={{ width: "100%" }}>
@@ -540,7 +548,7 @@ const ProductImport = props => {
               <Button
                 variant="contained"
                 color="primary"
-                files={files}
+                // files={files}
                 focusRipple
                 onClick={fetchData}
                 className={"spread-sheet-save-btn"}

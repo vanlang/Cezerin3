@@ -1,12 +1,10 @@
 import { Divider, Paper } from "@material-ui/core"
 import { KeyboardArrowRight } from "@material-ui/icons"
-import api from "lib/api"
-import * as helper from "lib/helper"
 import { List, ListItem } from "material-ui/List"
 import moment from "moment"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { messages } from "../../../../lib"
+import { api, helper, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const getOrderStates = order => {

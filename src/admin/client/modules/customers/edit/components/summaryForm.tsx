@@ -1,10 +1,9 @@
 import { Button } from "@material-ui/core"
-import api from "lib/api"
 import MenuItem from "material-ui/MenuItem"
-import React, { useEffect, useState } from "react"
-import { Field, reduxForm } from "redux-form"
+import React, { FC, useEffect, useState } from "react"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
-import { messages } from "../../../../lib"
+import { api, messages } from "../../../../lib"
 import style from "./style.module.sass"
 
 const validate = values => {
@@ -20,7 +19,16 @@ const validate = values => {
   return errors
 }
 
-const CustomerEditForm = props => {
+interface props {
+  handleSubmit
+  pristine
+  submitting
+  onCancel
+}
+
+const CustomerEditForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const [groups, setGroups] = useState([])
 
   useEffect(() => {
@@ -103,7 +111,7 @@ const CustomerEditForm = props => {
   )
 }
 
-export default reduxForm({
+export default reduxForm<props, { onCancel: Function }>({
   form: "CustomerEditForm",
   validate,
   enableReinitialize: true,

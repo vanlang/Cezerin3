@@ -1,4 +1,4 @@
-import api from "lib/api"
+import { api } from "../../lib"
 import * as t from "./actionTypes"
 
 function requestOrder() {
@@ -158,7 +158,7 @@ function failOrderUpdate(error) {
 
 const getFilter = (state, offset = 0) => {
   const filterState = state.orders.filter
-  let filter = {
+  let filter: any = {
     limit: 50,
     offset: offset,
   }

@@ -7,7 +7,7 @@ import Search from "./search"
 
 interface props {
   search
-  setSearch
+  setSearch: Function
   selectedCount
   onDelete: Function
   onCreate: Function
@@ -49,7 +49,7 @@ const Buttons: FC<props> = (props: props) => {
         touch
         tooltipPosition="bottom-left"
         tooltip={messages.orders_titleAdd}
-        onClick={onCreate}
+        onClick={() => onCreate}
       >
         <Add htmlColor="#fff" />
       </IconButton>

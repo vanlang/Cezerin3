@@ -2,9 +2,9 @@ import { Button, Divider, Paper } from "@material-ui/core"
 import { KeyboardArrowRight } from "@material-ui/icons"
 import { List, ListItem } from "material-ui/List"
 import MenuItem from "material-ui/MenuItem"
-import React, { useEffect } from "react"
+import React, { FC, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { SelectField, TextField } from "redux-form-material-ui"
 import { data, messages } from "../../../../lib"
 import { CustomToggle } from "../../../shared/form"
@@ -17,7 +17,9 @@ interface props {
   onLoad: Function
 }
 
-const GeneralSettings = (props: props) => {
+const GeneralSettings: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, submitting, onLoad } = props
 
   useEffect(() => {
@@ -35,16 +37,16 @@ const GeneralSettings = (props: props) => {
     )
   }
 
-  const taxItems = []
-  for (const key in data.taxs) {
-    taxItems.push(
-      <MenuItem
-        value={key}
-        key={key}
-        primaryText={`${key} - ${data.taxs[key]}`}
-      />
-    )
-  }
+  // const taxItems = []
+  // for (const key in data.taxs) {
+  //   taxItems.push(
+  //     <MenuItem
+  //       value={key}
+  //       key={key}
+  //       primaryText={`${key} - ${data.taxs[key]}`}
+  //     />
+  //   )
+  // }
 
   const timezoneItems = []
   for (const key in data.timezones) {

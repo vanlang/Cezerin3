@@ -1,9 +1,7 @@
-import { Button, Paper } from "@material-ui/core"
+import { Button, Paper, TextField } from "@material-ui/core"
 import CezerinClient from "cezerin2-client"
-import * as auth from "lib/webstoreAuth"
-import TextField from "material-ui/TextField"
 import React, { useEffect, useState } from "react"
-import { messages } from "../../lib"
+import { auth, messages } from "../../lib"
 
 const LoginForm = () => {
   const [email, setEmail] = useState(
@@ -63,9 +61,9 @@ const LoginForm = () => {
               onChange={({ target }) => setEmail(target.value)}
               onKeyPress={handleKeyPress}
               label={messages.email}
-              fullWidth={true}
-              hintStyle={{ width: "100%" }}
-              hintText={messages.email}
+              fullWidth
+              style={{ width: "100%" }}
+              helperText={messages.email}
             />
           </div>
           <Button

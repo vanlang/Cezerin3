@@ -273,3 +273,9 @@ export function setDefaultShippingAddress(customerId, addressId) {
       .catch(error => {})
   }
 }
+
+export function fetchProducts() {}
+export function setFilterActive(value) {}
+export function setFilterDiscontinued(value) {}
+export function setFilterOnSale(value) {}
+export function setFilterStock(value) {}

@@ -1,6 +1,6 @@
 import { Button, Divider, Paper } from "@material-ui/core"
-import React from "react"
-import { Field, reduxForm } from "redux-form"
+import React, { FC } from "react"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { DatePicker, TextField } from "redux-form-material-ui"
 import { api, messages } from "../../../../../lib"
 import { CustomToggle } from "../../../../shared/form"
@@ -54,7 +54,7 @@ const skuExists = values => {
 const asyncValidate = values => {
   return Promise.all([slugExists(values), skuExists(values)]).then(
     ([isSlugExists, isSkuExists]) => {
-      let errors = {}
+      let errors: { slug?: string; sku?: string } = {}
 
       if (isSlugExists) {
         errors.slug = messages.errors_urlTaken
@@ -81,7 +81,9 @@ interface props {
   settings
 }
 
-const ProductInventoryForm = (props: props) => {
+const ProductInventoryForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, reset, submitting, settings } = props
   return (
     <form onSubmit={handleSubmit}>

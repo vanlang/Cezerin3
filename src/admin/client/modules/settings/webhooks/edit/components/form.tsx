@@ -1,6 +1,6 @@
 import { Button, Paper } from "@material-ui/core"
 import React, { FC, useEffect } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { TextField } from "redux-form-material-ui"
 import { messages } from "../../../../../lib"
 import { CustomToggle, MultiSelect } from "../../../../shared/form"
@@ -39,7 +39,9 @@ interface props {
   onLoad: Function
 }
 
-const EditWebhookForm: FC<props> = (props: props) => {
+const EditWebhookForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, submitting, webhookId, onLoad } = props
 
   useEffect(() => {

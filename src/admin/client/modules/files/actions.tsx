@@ -1,4 +1,4 @@
-import api from "lib/api"
+import { api } from "../../lib"
 import * as t from "./actionTypes"
 
 function receiveFiles(files) {

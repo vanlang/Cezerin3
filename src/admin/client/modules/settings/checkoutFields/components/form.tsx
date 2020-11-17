@@ -1,7 +1,7 @@
 import { Button, Paper } from "@material-ui/core"
 import { RadioButton } from "material-ui/RadioButton"
 import React, { FC, useEffect } from "react"
-import { Field, reduxForm } from "redux-form"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import { RadioButtonGroup, TextField } from "redux-form-material-ui"
 import { messages } from "../../../../lib"
 import style from "./style.module.sass"
@@ -18,7 +18,9 @@ interface props {
   onLoad: Function
 }
 
-const CheckoutFieldForm: FC<props> = (props: props) => {
+const CheckoutFieldForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const { handleSubmit, pristine, submitting, onLoad } = props
 
   useEffect(() => {
