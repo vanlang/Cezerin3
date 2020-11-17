@@ -9,6 +9,10 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest",
   },
 
+  moduleNameMapper: {
+    "^.+\\.(css|less|scss|sass)$": "identity-obj-proxy",
+  },
+
   // Runs special logic, such as cleaning up components
   // when using React Testing Library and adds special
   // extended assertions to Jest

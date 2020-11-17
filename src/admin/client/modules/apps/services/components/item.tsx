@@ -1,7 +1,16 @@
-import { Card, CardMedia, CardTitle } from "material-ui/Card"
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import { CheckCircle } from "@material-ui/icons"
 import React, { FC } from "react"
 import { Link } from "react-router-dom"
-import style from "./style.module.sass"
+
+// import style from "./style.module.sass"
 
 const styles = {
   card: {
@@ -34,6 +43,12 @@ const styles = {
   },
 }
 
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+})
+
 interface props {
   path: string
   coverUrl: string
@@ -44,30 +59,48 @@ interface props {
 
 const Item: FC<props> = (props: props) => {
   const { path, coverUrl, title, developer, enabled } = props
+  const classes = useStyles()
   return (
     <Link to={path} style={styles.link}>
-      <Card
+      {/**<Card
         style={styles.card}
         containerStyle={styles.textContainer}
         className={style.card}
-      >
-        <CardMedia
-          className={style.servicesCover}
-          style={{ backgroundImage: `url(${coverUrl})` }}
-        />
-        <CardTitle
-          title={title}
-          subtitle={
-            <>
+      > */}
+      {/**<CardMedia
+          className={style.servicesCover}/> */}
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            alt={title}
+            height="140"
+            image={coverUrl}
+            title={title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {/**titleStyle={styles.title}
+          subtitleStyle={styles.subtitle} */}
               {developer}
               {enabled && (
                 <CheckCircle style={{ color: "#FF9900", float: "right" }} />
               )}
-            </>
-          }
-          titleStyle={styles.title}
-          subtitleStyle={styles.subtitle}
-        />
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        {/**
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions> */}
       </Card>
     </Link>
   )

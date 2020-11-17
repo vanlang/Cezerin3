@@ -19,11 +19,11 @@ const validate = values => {
 }
 
 interface props {
-  handleSubmit
-  pristine
-  submitting
-  onCancel: Function
-  onSubmit: Function
+  handleSubmit?
+  pristine?
+  submitting?
+  onCancel?: Function
+  onSubmit?: Function
 }
 
 const CustomerAddressForm: FC<props> = (props: props) => {
