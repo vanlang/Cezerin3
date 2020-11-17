@@ -2,7 +2,7 @@ import { Button, Divider, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import React, { useEffect, useState } from "react"
 import { Field, reduxForm } from "redux-form"
-import { TextField } from "redux-form-material-ui"
+import { SelectField, TextField } from "redux-form-material-ui"
 import { messages } from "../../../../lib"
 import { CustomToggle } from "../../../shared/form"
 import PaymentGateway from "../../paymentGateway"
@@ -65,12 +65,12 @@ const EditPaymentMethodForm = props => {
             </div>
             <div className="col-xs-12 col-sm-8">
               <Field
-                // component={SelectField}
-                // autoWidth
-                // fullWidth
+                component={SelectField}
+                autoWidth
+                fullWidth
                 name="gateway"
-                // floatingLabelFixed
-                // floatingLabelText={messages.paymentGateway}
+                floatingLabelFixed
+                floatingLabelText={messages.paymentGateway}
                 onChange={(event, currentValue, prevValue) => {
                   setGateway(currentValue)
                 }}

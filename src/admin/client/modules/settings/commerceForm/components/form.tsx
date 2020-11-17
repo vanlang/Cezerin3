@@ -1,8 +1,8 @@
 import { Button, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import { RadioButton } from "material-ui/RadioButton"
-import React, { useEffect, useState } from "react"
-import { Field, reduxForm } from "redux-form"
+import React, { FC, useEffect, useState } from "react"
+import { Field, InjectedFormProps, reduxForm } from "redux-form"
 import {
   RadioButtonGroup,
   SelectField,
@@ -17,7 +17,7 @@ const radioButtonStyle = {
 }
 
 const validate = values => {
-  const errors = {}
+  const errors: { email?: string } = {}
   const requiredFields = [
     "firstName",
     "lastName",
@@ -48,9 +48,12 @@ interface props {
   pristine
   submitting
   initialValues
+  onLoad
 }
 
-const CommerceForm = (props: props) => {
+const CommerceForm: FC<props & InjectedFormProps<{}, props>> = (
+  props: props & InjectedFormProps<{}, props>
+) => {
   const [isSelectField, setIsSelectField] = useState(false)
   const [isTextField, setIsTextField] = useState(false)
   const [isServiceOptions, setIsServiceOptions] = useState(false)
