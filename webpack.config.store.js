@@ -130,7 +130,7 @@ module.exports = {
       swDest: "assets/sw.js",
       clientsClaim: true,
       skipWaiting: true,
-      exclude: [/\.html$/],
+      exclude: [/\.html$/, /\.svg$/],
       runtimeCaching: [
         {
           urlPattern: new RegExp("/(images|assets|admin-assets)/"),
