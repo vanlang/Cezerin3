@@ -154,7 +154,7 @@
     "webpack-cli": "^4.2.0",
     "winston": "^3.0.0",
     "workbox-webpack-plugin": "^5.1.4",
-    "ws": "^6.0.0"
+    "ws": "^7.4.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.6",
