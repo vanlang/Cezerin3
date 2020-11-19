@@ -131,7 +131,7 @@
     "react-scroll": "^1.7.10",
     "react-slick": "^0.27.13",
     "react-sortable-hoc": "^1.11.0",
-    "react-stripe-elements": "^2.0.1",
+    "react-stripe-elements": "^6.1.2",
     "react-tagsinput": "^3.19.0",
     "react-yandex-maps": "^4.2.0",
     "redux": "^4.0.0",
