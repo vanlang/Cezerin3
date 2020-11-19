@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Button, Divider, Paper } from "@material-ui/core"
 import MenuItem from "material-ui/MenuItem"
 import React, { useEffect, useState } from "react"
@@ -70,7 +71,7 @@ const EditPaymentMethodForm = props => {
                 fullWidth
                 name="gateway"
                 floatingLabelFixed
-                floatingLabelText={messages.paymentGateway}
+                title={messages.paymentGateway}
                 onChange={(event, currentValue, prevValue) => {
                   setGateway(currentValue)
                 }}
