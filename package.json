@@ -80,7 +80,7 @@
     "cssnano": "^4.1.0",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
-    "eslint": "^7.14.0",
+    "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.14.0",
