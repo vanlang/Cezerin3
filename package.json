@@ -183,7 +183,7 @@
     "@types/react-tagsinput": "^3.19.7",
     "@types/redux-form": "^8.3.0",
     "@types/response-time": "^2.3.4",
-    "@types/ua-parser-js": "^0.7.33",
+    "@types/ua-parser-js": "^0.7.34",
     "@types/workbox-webpack-plugin": "^5.1.4",
     "@types/ws": "^7.4.0",
     "chai": "^4.2.0",
