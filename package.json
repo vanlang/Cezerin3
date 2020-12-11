@@ -141,7 +141,7 @@
     "sass-loader": "^10.1.0",
     "sitemap": "^6.3.3",
     "slug": "^4.0.2",
-    "stripe": "^8.127.0",
+    "stripe": "^8.128.0",
     "svg-inline-loader": "^0.8.2",
     "theme": "./theme",
     "ts-loader": "^8.0.11",
