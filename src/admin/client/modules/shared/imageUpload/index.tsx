@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Paper } from "@material-ui/core"
 import { CloudUpload, Delete, PhotoCamera } from "@material-ui/icons"
 import IconButton from "material-ui/IconButton"

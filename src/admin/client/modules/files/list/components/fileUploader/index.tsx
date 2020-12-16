@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Button } from "@material-ui/core"
 import Snackbar from "material-ui/Snackbar"
 import React from "react"
