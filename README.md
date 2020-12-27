@@ -1,6 +1,8 @@
 # Cezerin is React and Node.js based eCommerce platform. React Shopping Cart.
 
-Cezerin - Ecommerce Progressive Web Apps. Complete Solution.
+Cezerin - Ecommerce Progressive Web App. Complete Solution.
+
+⭐**[Please read this: Link](https://github.com/Cezerin3/Store-NX/discussions/36)**‼
 
 ### Contributers are wanted!!! (Anyone are welcome!)
 
@@ -8,7 +10,7 @@ Cezerin - Ecommerce Progressive Web Apps. Complete Solution.
 
 ## Quick Start
 
-1. Download from https://github.com/Cezerin3/Documentation/raw/main/src/cezerin3.zip
+1. Download from https://github.com/Cezerin3/Store/archive/main.zip
 2. Extract file with zip extacter such as 7zip
 3. You must have,
 
