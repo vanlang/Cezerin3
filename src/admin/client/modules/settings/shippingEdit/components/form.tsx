@@ -178,7 +178,8 @@ const EditShippingMethodForm: FC = (props: any) => {
             </div>
           </div>
           <div className="col-xs-12 col-sm-8">
-            <FieldArray name="fields" component={FieldsEditor} />
+            {/* TODO: should fields be null */}
+            <FieldArray name="fields" component={FieldsEditor} fields={null} />
           </div>
         </div>
         <div className="buttons-box">

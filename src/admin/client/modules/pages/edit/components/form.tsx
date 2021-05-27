@@ -34,8 +34,8 @@ const validate = values => {
   return errors
 }
 
-const asyncValidate = (values /*, dispatch */) => {
-  return new Promise((resolve, reject) => {
+const asyncValidate = values => {
+  return new Promise<void>((resolve, reject) => {
     if (!values.slug && values.is_system) {
       resolve()
     } else {
@@ -56,8 +56,8 @@ const asyncValidate = (values /*, dispatch */) => {
 
 interface props {
   handleSubmit
-  pristine
-  submitting
+  pristine: boolean
+  submitting: boolean
   initialValues
   pageId
 }

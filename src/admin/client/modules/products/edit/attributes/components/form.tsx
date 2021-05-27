@@ -17,7 +17,7 @@ const AttributesGrid = ({ fields }) => (
       </div>
     </div>
 
-    {fields.map((field, index) => {
+    {fields.map((field: string, index) => {
       const fieldName = `${field}.name`
       const fieldValue = `${field}.value`
       return (
@@ -87,7 +87,12 @@ const ProductAttributesForm = (props: props) => {
   return (
     <form onSubmit={() => handleSubmit}>
       <Paper className="paper-box" elevation={4}>
-        <FieldArray name="attributes" component={AttributesGrid} />
+        {/* TODO: should fields be null */}
+        <FieldArray
+          name="attributes"
+          component={AttributesGrid}
+          fields={null}
+        />
         <div
           className={
             "buttons-box " +
